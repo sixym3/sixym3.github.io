@@ -165,6 +165,10 @@ input, select, textarea {
 		color: inherit;
 	}
 
+	.no_bottom_line {
+		border-bottom-color: transparent;
+	}
+
 		a:hover {
 			border-bottom-color: transparent;
 		}
