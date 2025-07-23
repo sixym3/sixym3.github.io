@@ -1,150 +1,402 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Project Name</title>
-	<link rel="icon" href="../images/logo.svg" type="image/icon type">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="../assets/css/noscript.css" />
-	</noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | PID Turntable</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link active">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<body class="is-preload">
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">PID Turntable</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> Completed Fall 2024
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    MEC 411: Control Systems - Analog and digital PID control implementation for precise turntable positioning
+                </p>
+            </div>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/mechanical/PIDTurntable/setup.jpg" alt="PID Turntable Setup" 
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
 
-		<!-- Header -->
-		<header id="header">
-			<h1>PID Turntable</h1>
-			<p>This project was completed in Fall 2024</p>
-			<p>This project was completed as a part of the course MEC 411: Control Systems.</p>
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Project Overview -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-cog"></i>
+                        Project Overview
+                    </h2>
+                    <div style="display: grid; grid-template-columns: 1fr 300px; gap: var(--space-xl); align-items: start;">
+                        <div>
+                            <p style="color: var(--text-secondary);">
+                                Precise control of rotational systems is crucial in many applications, from robotics to industrial automation. 
+                                This project addressed the challenge of creating a turntable system that could accurately follow a complex, 
+                                user-defined waveform with minimal tracking error.
+                            </p>
+                            <p style="color: var(--text-secondary);">
+                                The primary objective was to design and implement a control system that could minimize the error between the 
+                                desired waveform and the actual turntable position, while ensuring stability and responsiveness. The project 
+                                explored both analog and digital control implementations to understand their relative merits.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="../images/mechanical/PIDTurntable/circuit.jpg" alt="PID Control Circuit" 
+                                 class="lightbox-trigger"
+                                 style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer;"
+                                 onclick="openLightbox(this)">
+                            <p style="text-align: center; color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs);">
+                                Analog PID Control Circuit
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Technical Challenge -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Technical Challenge
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🎯 Control Objectives</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Achieve precise angular position tracking for complex waveforms</li>
+                                <li>Minimize steady-state error and transient response time</li>
+                                <li>Maintain system stability across varying operating conditions</li>
+                                <li>Compare analog vs. digital control implementation performance</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">⚡ System Requirements</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Fast response to step inputs with minimal overshoot</li>
+                                <li>Accurate tracking of sinusoidal and triangular reference signals</li>
+                                <li>Robust performance despite system parameter variations</li>
+                                <li>Smooth operation without excessive control effort</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-		</header>
+                <!-- Technology Stack -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Technology & Components
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">Operational Amplifiers</span>
+                        <span class="tech-tag">Analog Circuits</span>
+                        <span class="tech-tag">LabVIEW</span>
+                        <span class="tech-tag">DAQ System</span>
+                        <span class="tech-tag">PID Control</span>
+                        <span class="tech-tag">Rotary Encoder</span>
+                        <span class="tech-tag">Motor Control</span>
+                        <span class="tech-tag">Oscilloscope</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Analog Implementation</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Operational amplifiers for PID computation</li>
+                                <li>Resistors and capacitors for gain setting</li>
+                                <li>Potentiometers for tuning parameters</li>
+                                <li>Turntable with DC motor and encoder</li>
+                                <li>Wave generator for reference signals</li>
+                                <li>Oscilloscope for signal monitoring</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Digital Implementation</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>LabVIEW programming environment</li>
+                                <li>Data Acquisition (DAQ) system</li>
+                                <li>Digital signal processing algorithms</li>
+                                <li>Real-time control loop implementation</li>
+                                <li>Computer-based parameter adjustment</li>
+                                <li>Advanced control algorithms capability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-		<!-- Main -->
-		<div id="main">
+                <!-- Key Learnings -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-graduation-cap"></i>
+                        Key Technical Learnings
+                    </h2>
+                    <div style="display: grid; gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-microchip" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                PID Control Theory & Implementation
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Gained deep understanding of PID control principles, including the effects of proportional, integral, 
+                                and derivative gains on system response. Learned systematic approaches to PID tuning for optimal 
+                                performance while maintaining stability margins.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-wave-square" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Analog Circuit Design & Analysis
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Developed skills in designing analog circuits using operational amplifiers for signal conditioning, 
+                                amplification, and mathematical operations. Learned to implement analog PID controllers with precise 
+                                component selection and noise considerations.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-laptop-code" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Digital Control & LabVIEW Programming
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Gained experience using LabVIEW for real-time control applications and data acquisition. 
+                                Learned to implement digital control algorithms and interface with hardware through DAQ systems 
+                                for hybrid control solutions.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-balance-scale" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Analog vs. Digital Control Trade-offs
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                <strong>Analog Advantages:</strong> The analog PID implementation offers simplicity, continuous operation, 
+                                and faster response times without digital sampling delays. It provides smoother control action and 
+                                avoids quantization errors, making it ideal for high-speed applications requiring immediate response.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-puzzle-piece" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                System Integration & Troubleshooting
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Learned to integrate various hardware and software components into a complete control system. 
+                                Developed troubleshooting skills for identifying and resolving issues in complex electromechanical systems, 
+                                including signal integrity and grounding considerations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- Content -->
-			<section id="content" class="main">
+                <!-- Future Improvements -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Future Enhancements
+                    </h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🎛️ Advanced Control</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Implement feed-forward control for disturbance rejection</li>
+                                <li>Explore adaptive control algorithms</li>
+                                <li>Add velocity and acceleration feedforward</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔧 Hardware Optimization</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Higher resolution encoder for improved accuracy</li>
+                                <li>Better motor with reduced backlash</li>
+                                <li>Improved analog circuit board design</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 Microcontroller Implementation</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Embedded system for standalone operation</li>
+                                <li>Real-time parameter tuning interface</li>
+                                <li>Data logging and analysis capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-				<section>
-					<h2>Problem:</h2>
-					<p><span class="image right"><img src="../images/mechanical/PIDTurntable/setup.jpg"
-						alt="" /></span>
-						Precise control of rotational systems is crucial in many applications,
-						from robotics to industrial automation. This project addressed the challenge of creating a
-						turntable system that could accurately follow a complex, user-defined waveform. The primary
-						problem was to design and implement a control system that could minimize the error between the
-						desired waveform and the actual turntable position, while also ensuring stability and
-						responsiveness. Furthermore, the project explored the differences and relative merits of
-						implementing such a system using entirely analog components versus incorporating digital control
-						elements.</p>
-				</section>
+                <!-- Project Impact -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-trophy"></i>
+                        Project Impact
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        This project successfully demonstrated both <strong>analog and digital PID control implementations</strong>, 
+                        providing hands-on experience with classical control theory, circuit design, and modern control software. 
+                        The analog implementation showcased the benefits of <strong>continuous control</strong> with faster response 
+                        and smoother operation, making it ideal for precision motion control applications.
+                    </p>
+                </div>
 
-				<section>
-					<h2>Technology Used:</h2>
-					<ul>
-						<li><span class="image right"><img src="../images/mechanical/PIDTurntable/circuit.jpg"
-							alt="" /></span>Operational amplifiers, resistors, capacitors, potentiometers for implementing the PID
-							control loop.</li>
-						<li>Turntable with a motor and a rotary encoder.</li>
-						<li>Wave Generator</li>
-						<li>DAQ (Data Acquisition System)</li>
-						<li>LabVIEW</li>
-						<li>Oscilloscope</li>
-					</ul>
-				</section>
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="HardDriveHolder.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Next Project
+                    </a>
+                    <a href="../mechanical.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
-				<section>
-					<h2>What I Learned:</h2>
-					<ul>
-						<li><b>PID Control Theory and Implementation:</b> Gained a deep understanding of PID control
-							principles and practical experience tuning PID gains for optimal performance.</li>
-						<li><b>Analog Circuit Design:</b> Developed skills in designing and building analog circuits for
-							signal conditioning, amplification, and PID control.</li>
-						<li><b>DAQ and LabVIEW Programming (Hybrid System):</b> Gained experience using a DAQ and
-							LabVIEW for data acquisition and control.</li>
-						<li><b>System Integration:</b> Learned how to integrate various hardware and software components
-							to create a complete control system.</li>
-						<li><b>Advantages of Analog Control:</b> The analog version of the PID turntable offers several
-							distinct advantages. It is generally simpler to implement and requires less complex software
-							or programming. This can lead to faster development times and lower overall system cost.
-							Furthermore, the direct, continuous nature of analog control results in smoother responses
-							and avoids potential quantization errors or delays associated with digital systems.</li>
-					</ul>
-				</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-				<section>
-					<h2>Looking Ahead:</h2>
-					<ul>
-						<li>Optimizing the PID gains for even better tracking performance.</li>
-						<li>Implementing more advanced control algorithms (e.g., feed-forward control) to further reduce
-							tracking error.</li>
-						<li>Exploring the use of a microcontroller for digital control, potentially offering a more
-							compact and cost-effective solution compared to the DAQ-based hybrid system.</li>
-						<li>Further investigation into the advantages of the analog system.</li>
-					</ul>
-				</section>
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
-				<a href="#" class="small primary button">Next Project</a>
-				<a href="../mechanical.html" class="small button">Return to Portfolio</a>
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
-			</section>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
 
-		</div>
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
 
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
 
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Contact Me</h2>
-				<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my
-					social media, or send me a message below.</p>
-				<ul class="actions">
-					<li><a href="../message.html" class="button">Message Me</a></li>
-					<li><a href="../index.html" class="button">Home</a></li>
-				</ul>
-			</section>
-			<section>
-
-				<h2>Social Media</h2>
-				<dl class="alt">
-					<dt>Location</dt>
-					<dd>Lake Grove, NY</dd>
-					<dt>Email</dt>
-					<dd><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt"><span
-								class="label">LinkedIn</span></a></li>
-					<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt"><span
-								class="label">Instagram</span></a></li>
-					<li><a href="https://github.com/sixym3" class="icon brands fa-github alt"><span
-								class="label">GitHub</span></a></li>
-					<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt"><span
-								class="label">Twitter</span></a></li>
-				</ul>
-			</section>
-			<p class="copyright">&copy; 2025. Eric Xiao | <a href="../index.html">Portfolio</a>.</p>
-		</footer>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
-
 </html>

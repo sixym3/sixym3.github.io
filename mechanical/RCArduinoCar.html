@@ -1,134 +1,401 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Project Name</title>
-		<link rel="icon" href="../images/logo.svg" type="image/icon type">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | RC Arduino Car</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link active">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">RC Arduino Car</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> Completed Fall 2021
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    MEC 101: Freshman Design Innovation - Bluetooth-controlled car with custom four-bar steering mechanism
+                </p>
+            </div>
 
-				<!-- Header -->
-					<header id="header">
-						<h1>RC Arduino Car</h1>
-						<p>This project was completed in Fall 2021</p>
-						<p>This project was completed as a part of the course MEC 101: Freshman Design Innovation.</p>
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/mechanical/RCArduinoCar/banner.png" alt="RC Arduino Car Banner" 
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
 
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Project Overview -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-car"></i>
+                        Project Summary
+                    </h2>
+                    <div style="display: grid; grid-template-columns: 1fr 300px; gap: var(--space-xl); align-items: start;">
+                        <div>
+                            <p style="color: var(--text-secondary);">
+                                This project involved the design and construction of a Bluetooth-controlled car using an Arduino microcontroller. 
+                                The primary goal was to create a wirelessly controlled vehicle capable of forward, reverse, left, and right movement.
+                            </p>
+                            <p style="color: var(--text-secondary);">
+                                This project distinguished itself by incorporating a custom-designed four-bar mechanism for steering the front wheels, 
+                                rather than relying solely on differential speed control. The result was a functional and responsive remote-controlled 
+                                car with proper Ackermann steering geometry.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="../images/mechanical/RCArduinoCar/fourbarmechanism.jpg" alt="Four Bar Mechanism" 
+                                 class="lightbox-trigger"
+                                 style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer;"
+                                 onclick="openLightbox(this)">
+                            <p style="text-align: center; color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs);">
+                                Custom Four-Bar Steering Mechanism
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-					</header>
+                <!-- Technical Challenge -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Technical Challenge
+                    </h2>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                        This project aimed to explore the potential of Bluetooth technology for a more modern and versatile control interface. 
+                        Many simpler RC cars use differential speed (varying the speed of the left and right wheels) for steering, which can be 
+                        imprecise and less stable.
+                    </p>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🎯 Primary Goals</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Implement Bluetooth wireless control interface</li>
+                                <li>Design mechanically accurate steering system</li>
+                                <li>Create custom four-bar linkage mechanism</li>
+                                <li>Achieve Ackermann steering geometry</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">⚡ Technical Challenges</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Interface Bluetooth module with Arduino effectively</li>
+                                <li>Process control signals and translate to motor movements</li>
+                                <li>Control servo motor actuating steering linkage</li>
+                                <li>Design and fabricate four-bar mechanism</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-				<!-- Main -->
-					<div id="main">
+                <!-- Materials & Technology -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Materials & Technology
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">Arduino Uno</span>
+                        <span class="tech-tag">HC-05 Bluetooth</span>
+                        <span class="tech-tag">L298N Motor Driver</span>
+                        <span class="tech-tag">Servo Motor</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Arduino IDE</span>
+                        <span class="tech-tag">Laser Cutting</span>
+                        <span class="tech-tag">ArduinoBlue</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Electronic Components</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Arduino Uno microcontroller</li>
+                                <li>HC-05 Bluetooth Module</li>
+                                <li>L298N Motor Driver</li>
+                                <li>9V Battery power supply</li>
+                                <li>DC Motors with wheels</li>
+                                <li>Servo Motor for steering</li>
+                                <li>Jumper Wires and Breadboard</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Software & Tools</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Arduino IDE programming environment</li>
+                                <li>ArduinoBlue smartphone app</li>
+                                <li>C++ programming language</li>
+                                <li>Laser cutting for chassis parts</li>
+                                <li>CAD design for mechanism</li>
+                                <li>Bluetooth serial communication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-						<!-- Content -->
-							<section id="content" class="main">
-								<span class="image main"><img src="../images/mechanical/RCArduinoCar/banner.png" alt="" /></span>
+                <!-- Key Learnings -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-graduation-cap"></i>
+                        Key Learnings
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-microchip" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Microcontroller Programming
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Gained proficiency in programming the Arduino using the Arduino IDE and C++, learning to interface 
+                                multiple sensors and actuators simultaneously.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-bluetooth" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Wireless Communication
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Learned how to interface a Bluetooth module with Arduino and implement wireless data transmission/reception 
+                                for real-time control applications.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-cog" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Motor Control Systems
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Developed skills in using motor drivers for DC motor control (speed and direction) and servo motor control 
+                                for precise angular positioning in steering applications.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-drafting-compass" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Mechanical Design
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Gained experience designing and building a four-bar steering mechanism, including considerations for 
+                                geometry, material selection, and Ackermann steering principles.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-puzzle-piece" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Problem-Solving
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Encountered and overcame technical challenges including debugging wiring issues, refining control logic, 
+                                and ensuring proper functioning of the four-bar linkage system.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-								<h1>RC Arduino Car</h1>
+                <!-- Future Improvements -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Future Improvements
+                    </h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 Advanced Features</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Obstacle avoidance using ultrasonic sensors</li>
+                                <li>Camera integration for FPV control</li>
+                                <li>GPS navigation capabilities</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔧 Hardware Upgrades</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>More robust chassis design</li>
+                                <li>Different motor types for improved performance</li>
+                                <li>Custom 3D printed rack and pinion system</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">📊 Control Systems</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Encoder feedback for precise control</li>
+                                <li>PID control implementation</li>
+                                <li>Real-time telemetry monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-								<section>
-									<h2>Summary:</h2>
-									<p><span class="image right"><img src="../images/mechanical/RCArduinoCar/fourbarmechanism.jpg" alt="" /></span>This project involved the design and construction of a Bluetooth-controlled car using an Arduino microcontroller. The primary goal was to create a wirelessly controlled vehicle capable of forward, reverse, left, and right movement. This project distinguished itself by incorporating a custom-designed and built four-bar mechanism for steering the front wheels, rather than relying solely on differential speed control. The project successfully demonstrated the integration of Bluetooth communication with both motor and steering control, resulting in a functional and responsive remote-controlled car with Ackermann steering geometry.</p>
-								</section>
+                <!-- Project Impact -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-trophy"></i>
+                        Project Impact
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        This project successfully demonstrated the integration of <strong>Bluetooth communication</strong> with both motor and 
+                        steering control, resulting in a functional remote-controlled car with proper <strong>Ackermann steering geometry</strong>. 
+                        It provided hands-on experience with microcontroller programming, wireless communication, and mechanical design principles.
+                    </p>
+                </div>
 
-								<section>
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="PIDTurntable.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Next Project
+                    </a>
+                    <a href="../mechanical.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<h2>Problem:</h2>
-									<p>This project aimed to explore the potential of Bluetooth technology for a more modern and versatile control interface. Furthermore, many simpler RC cars use differential speed (varying the speed of the left and right wheels) for steering, which can be imprecise and less stable. This project sought to implement a more mechanically sound and accurate steering system. The challenge lay in effectively interfacing the Bluetooth module with the Arduino, processing the control signals, translating them into precise motor movements and controlling the servo motor actuating the four-bar steering linkage. This included the design and fabrication of the four-bar mechanism itself.</p>
-								</section>
-							
-								<section>
-									<h2>Materials Used:</h2>
-									<ul>
-										<li>Arduino Uno</li>
-										<li>HC-05 Bluetooth Module</li>
-										<li>L298N Motor Driver</li>
-										<li>9V Battery</li>
-										<li>DC Motors with wheels</li>
-										<li>Servo Motor</li>
-										<li>Laser cut plastic parts for the frame</li>
-										<li>Jumper Wires and Breadboard</li>
-										<li>Arduino IDE</li>
-										<li>A Smartphone with ArduinoBlue</li>
-									</ul>
-								</section>
-							
-								<section>
-									<h2>What I Learned:</h2>
-									<ul>
-										<li><b>Microcontroller Programming:</b> Gained proficiency in programming the Arduino using the Arduino IDE and C++.</li>
-										<li><b>Bluetooth Communication:</b> Learned how to interface a Bluetooth module with the Arduino and transmit/receive data wirelessly.</li>
-										<li><b>Motor Control:</b> Developed skills in using a motor driver to control DC motors, including speed and direction.</li>
-										<li><b>Servo Motor Control:</b> Learned how to control a servo motor for precise angular positioning.</li>
-										<li><b>Hardware Interfacing:</b> Improved my understanding of how to connect various electronic components together.</li>
-										<li><b>Mechanical Design:</b> Gained experience designing and building a four-bar steering mechanism, including considerations for geometry and material selection.</li>
-										<li><b>Problem-Solving:</b> Encountered and overcame several technical challenges, including debugging wiring issues, refining the control logic, and ensuring the proper functioning of the four-bar linkage.</li>
-									</ul>
-								</section>
-							
-								<section>
-									<h2>Looking Ahead:</h2>
-									<ul>
-										<li>Implementing more advanced features like obstacle avoidance using ultrasonic sensors.</li>
-										<li>Designing a more robust chassis for the car.</li>
-										<li>Exploring the use of different types of motors or drive systems for improved performance.</li>
-										<li>Adding feedback mechanisms, such as encoders, to provide more precise control over the car's movements.</li>
-										<li>Custom print the rack and pinion for the four-bar mechanism for improved steering performance and durability.</li>
-									</ul>
-								</section>
-								
-								<a href="#" class="small primary button">Next Project</a>
-								<a href="../mechanical.html" class="small button">Return to Portfolio</a>
-								
-							</section>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
-					</div>
-					
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-				<!-- Footer -->
-				<footer id="footer">
-					<section>
-						<h2>Contact Me</h2>
-						<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my social media, or send me a message below.</p>
-						<ul class="actions">
-							<li><a href="../message.html" class="button">Message Me</a></li>
-							<li><a href="../index.html" class="button">Home</a></li>
-						</ul>
-					</section>
-					<section>
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
-						<h2>Social Media</h2>
-						<dl class="alt">
-							<dt>Location</dt>
-							<dd>Lake Grove, NY</dd>
-							<dt>Email</dt>
-							<dd><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></dd>
-						</dl>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/sixym3" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-							<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-						</ul>
-					</section>
-					<p class="copyright">&copy; 2025. Eric Xiao | <a href="../index.html">Portfolio</a>.</p>
-				</footer>
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
-			</div>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
 
-	</body>
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
 </html>

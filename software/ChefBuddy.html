@@ -1,137 +1,427 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Project Name</title>
-	<link rel="icon" href="../images/logo.svg" type="image/icon type">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="../assets/css/noscript.css" />
-	</noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | ChefBuddy</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link active">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<body class="is-preload">
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">ChefBuddy</h1>
+                    <span style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-clock"></i> In Development
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    AI-powered recipe manager inspired by Paprika V3 - Smart meal planning with automated pantry tracking
+                </p>
+            </div>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/software/ChefBuddy/banner.png" alt="ChefBuddy Application Interface" 
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
 
-		<!-- Header -->
-		<header id="header">
-			<h1>ChefBuddy</h1>
-			<p>An AI-powered recipe manager inspired by Paprika V3</p>
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Problem Statement -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Problem Statement
+                    </h2>
+                    <p style="color: var(--text-secondary);">
+                        Existing recipe management apps, like Paprika V3, often misclassify web-scraped information and lack 
+                        AI-powered features for meal planning and pantry tracking. Users must manually adjust recipes, plan 
+                        meals, and track ingredients, making meal preparation tedious and error-prone.
+                    </p>
+                    <p style="color: var(--text-secondary);">
+                        The manual nature of these tasks creates friction in the cooking process, leading to poor meal planning, 
+                        food waste from expired ingredients, and frustration with inconsistent recipe data quality.
+                    </p>
+                </div>
 
-		</header>
+                <!-- Solution Overview -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-lightbulb"></i>
+                        AI-Powered Solution
+                    </h2>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                        ChefBuddy enhances recipe management with <strong>AI-driven automation</strong>, combining the best of 
+                        traditional recipe apps with intelligent features that eliminate manual tasks.
+                    </p>
+                    
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 Core AI Features</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li><strong>Accurate recipe scraping & summarization</strong> using AI to extract key details</li>
+                                <li><strong>AI-powered meal planning</strong> to suggest and adjust meals based on preferences</li>
+                                <li><strong>Pantry tracking with receipt scanning</strong>, leveraging OCR and AI to update inventory</li>
+                                <li><strong>Automated ingredient tracking</strong>, reminding users about missing or mismarked items</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">📊 Data Architecture</h3>
+                            <p style="color: var(--text-secondary);">
+                                The app maintains a <strong>structured, future-proof JSON schema</strong> with versioning to prevent 
+                                data loss and ensure flexibility for future updates and AI model improvements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-		<!-- Main -->
-		<div id="main">
+                <!-- Technology Stack -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Technology Stack
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">Cheerio</span>
+                        <span class="tech-tag">Axios</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">OCR</span>
+                        <span class="tech-tag">JSON Schema</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Backend Architecture</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Express.js REST API server</li>
+                                <li>OpenAI integration for recipe processing</li>
+                                <li>Cheerio for intelligent web scraping</li>
+                                <li>Structured JSON data management</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Frontend Experience</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Vue.js reactive user interface</li>
+                                <li>Real-time recipe data visualization</li>
+                                <li>Mobile-responsive design</li>
+                                <li>Intuitive meal planning interface</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">AI Integration</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>OpenAI GPT for content analysis</li>
+                                <li>OCR for receipt processing</li>
+                                <li>Natural language meal suggestions</li>
+                                <li>Smart ingredient categorization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- Content -->
-			<section id="content" class="main">
-				<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+                <!-- Key Learnings -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-graduation-cap"></i>
+                        Key Development Learnings
+                    </h2>
+                    <div style="display: grid; gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-database" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Scalable Data Architecture
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Designed a <strong>flexible JSON schema</strong> that supports AI interactions and future expansions. 
+                                Learned the importance of versioning and forward compatibility in data structures for long-term 
+                                application sustainability.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-exchange-alt" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Full-Stack Integration
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Mastered <strong>frontend-backend interactions</strong> and learned to plan for future integrations. 
+                                Gained experience in designing APIs that can accommodate evolving AI capabilities and user requirements.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-spider" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Intelligent Web Scraping
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Developed expertise in using <strong>web scraping tools</strong> effectively for structured data extraction. 
+                                Learned to handle inconsistencies in scraped data and implement AI-powered validation and correction.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-project-diagram" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Modular System Design
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Understood the critical importance of <strong>planning ahead</strong> to ensure modular and scalable design. 
+                                Learned to architect systems that can evolve with changing requirements and new AI capabilities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<h2>Problem</h2>
-				<p>Existing recipe management apps, like Paprika v3, often misclassify web-scraped information and lack
-					AI-powered features for meal planning and pantry tracking. Users must manually adjust recipes, plan
-					meals, and track ingredients, making meal prep tedious.</p>
+                <!-- Development Challenges -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-mountain"></i>
+                        Technical Challenges
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🏗️ Schema Design Complexity</h3>
+                            <p style="color: var(--text-secondary);">
+                                Structuring a <strong>flexible JSON schema</strong> that supports AI interactions and future expansions 
+                                while maintaining data integrity and performance across different AI model versions.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔍 Data Quality Assurance</h3>
+                            <p style="color: var(--text-secondary);">
+                                Ensuring <strong>accurate web scraping</strong> while handling inconsistencies in extracted data from 
+                                various recipe websites with different structures and formatting standards.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 AI Model Integration</h3>
+                            <p style="color: var(--text-secondary);">
+                                Balancing AI processing costs with accuracy requirements while ensuring responsive user experience 
+                                and reliable recipe classification across diverse content sources.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<h2>Solution</h2>
-				<p>ChefBuddy enhances recipe management with <strong>AI-driven automation</strong>. Built using
-					<strong>Express.js, Vue.js, OpenAI, Cheerio, and Axios</strong>, it offers:</p>
-				<ul>
-					<li><strong>Accurate recipe scraping & summarization</strong> using AI to extract key details.</li>
-					<li><strong>AI-powered meal planning</strong> to suggest and adjust meals based on user preferences.
-					</li>
-					<li><strong>Pantry tracking with receipt scanning</strong>, leveraging OCR and AI to update
-						inventory.</li>
-					<li><strong>Automated ingredient tracking</strong>, reminding users to confirm missing or mismarked
-						items.</li>
-				</ul>
-				<p>The app maintains <strong>a structured, future-proof JSON schema</strong> with versioning to prevent
-					data loss and ensure flexibility for future updates.</p>
-					
-				<a href="#" class="small primary button">Live Demo</a>
-				<a href="#" class="small button">Repository</a>
-				<p />
+                <!-- Future Development -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Future Development Plans
+                    </h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">👥 User Features</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li><strong>Multi-user authentication</strong> for shared meal planning</li>
+                                <li><strong>Mobile support</strong> for on-the-go accessibility</li>
+                                <li><strong>Voice recognition integration</strong> for hands-free recipe management</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🚀 Deployment</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li><strong>Small-scale test deployment</strong> to gather user feedback</li>
+                                <li>Performance optimization for production</li>
+                                <li>Scalable cloud infrastructure setup</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🧠 AI Enhancements</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Advanced nutritional analysis</li>
+                                <li>Dietary restriction recommendations</li>
+                                <li>Seasonal ingredient suggestions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-				<h2>What I Learned</h2>
-				<ul>
-					<li>Designing a <strong>scalable JSON schema</strong> for AI communication.</li>
-					<li><strong>Frontend-backend interactions</strong> and planning for future integrations.</li>
-					<li>Using <strong>web scraping tools</strong> effectively for structured data extraction.</li>
-					<li>The importance of <strong>planning ahead</strong> to ensure modular and scalable design.</li>
-				</ul>
+                <!-- Project Impact -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-trophy"></i>
+                        Project Vision
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        ChefBuddy represents the future of <strong>intelligent cooking assistance</strong>, combining traditional 
+                        recipe management with cutting-edge AI technology. The project demonstrates practical application of 
+                        <strong>modern web development</strong>, <strong>AI integration</strong>, and <strong>user-centered design</strong> 
+                        to solve real-world problems in meal planning and kitchen management.
+                    </p>
+                </div>
 
-				<h2>Challenges Faced</h2>
-				<ul>
-					<li>Structuring a <strong>flexible JSON schema</strong> that supports AI interactions and future
-						expansions.</li>
-					<li>Ensuring <strong>accurate web scraping</strong> while handling inconsistencies in extracted
-						data.</li>
-				</ul>
+                <!-- Action Buttons -->
+                <div style="background: var(--card-bg); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h3 style="color: var(--text-primary); margin-bottom: var(--space-lg);">Explore ChefBuddy</h3>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-eye"></i>
+                            Live Demo (Coming Soon)
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-github"></i>
+                            View Repository
+                        </a>
+                    </div>
+                </div>
 
-				<h2>Future Plans</h2>
-				<ul>
-					<li><strong>Multi-user authentication</strong> for shared meal planning.</li>
-					<li><strong>Hosting a small-scale test deployment</strong> to gather user feedback.</li>
-					<li><strong>Mobile support</strong> for on-the-go accessibility.</li>
-					<li><strong>Voice recognition integration</strong> for hands-free recipe management.</li>
-				</ul>
-				<p></p>
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="CarbonShare.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Next Project
+                    </a>
+                    <a href="../software.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<a href="#" class="small primary button">Next Project</a>
-				<a href="../software.html" class="small button">Return to Portfolio</a>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
-			</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-		</div>
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Contact Me</h2>
-				<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my
-					social media, or send me a message below.</p>
-				<ul class="actions">
-					<li><a href="../message.html" class="button">Message Me</a></li>
-					<li><a href="../index.html" class="button">Home</a></li>
-				</ul>
-			</section>
-			<section>
-				<h2>Social Media</h2>
-				<dl class="alt">
-					<dt>Location</dt>
-					<dd>Lake Grove, NY</dd>
-					<dt>Email</dt>
-					<dd><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt"><span
-								class="label">LinkedIn</span></a></li>
-					<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt"><span
-								class="label">Instagram</span></a></li>
-					<li><a href="https://github.com/sixym3" class="icon brands fa-github alt"><span
-								class="label">GitHub</span></a></li>
-					<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt"><span
-								class="label">Twitter</span></a></li>
-				</ul>
-			</section>
-			<p class="copyright">&copy; 2025. Eric Xiao | <a href="../index.html">Portfolio</a>.</p>
-		</footer>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
 
-	</div>
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
 
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
-
 </html>

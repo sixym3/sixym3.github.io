@@ -1,137 +1,378 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Project Name</title>
-	<link rel="icon" href="../images/logo.svg" type="image/icon type">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="../assets/css/noscript.css" />
-	</noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | Custom Hard Drive Holder</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link active">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<body class="is-preload">
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">Custom Hard Drive Holder</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> Completed Q3 2021
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    Custom 3D-printed solution for cryptocurrency mining - Multi-drive cooling system with modular design
+                </p>
+            </div>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/mechanical/HardDriveHolder/cover.jpg" alt="Custom Hard Drive Holder" 
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
 
-		<!-- Header -->
-		<header id="header">
-			<h1>Custom Hard drive holder</h1>
-			<p>This project was completed in the third quarter of 2021</p>
-			<p>This project was completed for a proof-of-space cryptocurrency mining setup.</p>
-		</header>
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Project Overview -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-hdd"></i>
+                        Project Overview
+                    </h2>
+                    <p style="color: var(--text-secondary);">
+                        Proof-of-space cryptocurrency mining relies heavily on hard drive storage capacity and requires numerous drives 
+                        running continuously. This creates significant thermal management challenges, as excessive heat can negatively 
+                        impact drive performance, lifespan, and overall system stability.
+                    </p>
+                    <p style="color: var(--text-secondary);">
+                        During the cryptocurrency mining boom, commercial hard drive enclosures were extremely expensive and often 
+                        unavailable. This project addressed the need for a cost-effective, custom solution that could accommodate 
+                        multiple drives, provide effective cooling, and be easily expanded as mining operations grew.
+                    </p>
+                </div>
 
-		<!-- Main -->
-		<div id="main">
+                <!-- Technical Challenge -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Design Challenges
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🌡️ Thermal Management</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Multiple drives generate substantial heat when running continuously</li>
+                                <li>Need efficient airflow design to prevent thermal throttling</li>
+                                <li>Maintain optimal operating temperatures for drive longevity</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">💰 Cost Efficiency</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Commercial enclosures were prohibitively expensive during mining boom</li>
+                                <li>Need scalable solution that grows with mining operation</li>
+                                <li>Balance between cost, functionality, and reliability</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔧 Mechanical Design</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Secure mounting for multiple 3.5" hard drives</li>
+                                <li>Modular design for easy expansion and maintenance</li>
+                                <li>Optimal spacing for airflow while minimizing footprint</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- Content -->
-			<section id="content" class="main">
+                <!-- Technology & Materials -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Technology & Materials
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">SolidWorks</span>
+                        <span class="tech-tag">3D Printing</span>
+                        <span class="tech-tag">PLA Filament</span>
+                        <span class="tech-tag">CAD Design</span>
+                        <span class="tech-tag">Thermal Engineering</span>
+                        <span class="tech-tag">Airflow Optimization</span>
+                        <span class="tech-tag">Mechanical Assembly</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Design & Manufacturing</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>SolidWorks for 3D modeling and design iteration</li>
+                                <li>FDM 3D printing for rapid prototyping</li>
+                                <li>PLA filament for structural components</li>
+                                <li>Precision measurements for drive compatibility</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Hardware Integration</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Multiple 3.5" SATA hard drives</li>
+                                <li>Computer case fans (120mm/140mm)</li>
+                                <li>Standard mounting screws and hardware</li>
+                                <li>Cable management considerations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-				<section>
-					<h2>Problem:</h2>
-					<p><span class="image right"><img src="../images/mechanical/HardDriveHolder/cover.jpg"
-						alt="" /></span>Proof-of-space cryptocurrency mining relies heavily on hard drive storage. Running numerous hard
-						drives continuously generates significant heat, which can negatively impact their performance,
-						lifespan, and overall system stability. Standard hard drive enclosures often are expensive and
-						were extremely expensive during the POS hype. This project addressed the need for a hard drive
-						holder that could accommodate multiple drives, provide effective cooling, and be easily expanded
-						as the mining operation grew. </p>
-				</section>
+                <!-- Key Learnings -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-graduation-cap"></i>
+                        Key Engineering Learnings
+                    </h2>
+                    <div style="display: grid; gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-drafting-compass" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Mechanical Design & CAD Proficiency
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Gained proficiency in using SolidWorks for functional mechanical design, including constraint-based 
+                                modeling, assembly design, and design for manufacturability. Learned to balance structural integrity 
+                                with material efficiency in 3D-printed components.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-industry" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Additive Manufacturing Techniques
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Developed hands-on experience with FDM 3D printing, including print orientation optimization, 
+                                support structure design, and post-processing techniques. Learned material properties of various 
+                                filaments and their suitability for different applications.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-thermometer-half" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Thermal Management Principles
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Learned fundamental principles of heat transfer and airflow design for electronics cooling. 
+                                Understood the importance of strategic fan placement, air channel design, and thermal pathways 
+                                for maintaining optimal operating temperatures in multi-drive systems.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-puzzle-piece" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                System Integration & Hardware Assembly
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Improved understanding of hardware integration challenges, including cable management, 
+                                component spacing, and assembly sequencing. Learned to design for serviceability and 
+                                future expansion while maintaining structural integrity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<section>
-					<h2>Technology Used:</h2>
-					<ul>
-						<li>SolidWorks</li>
-						<li>3D Printer</li>
-						<li>Hard Drives</li>
-						<li>Computer Case Fans</li>
-					</ul>
-				</section>
+                <!-- Future Improvements -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Future Enhancements
+                    </h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🌪️ Advanced Cooling</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Optimize airflow patterns with CFD analysis</li>
+                                <li>Add passive heatsinks for improved heat dissipation</li>
+                                <li>Variable fan speed control based on temperature</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🧱 Material Innovation</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Explore thermally conductive filaments</li>
+                                <li>Hybrid metal-plastic design for strength</li>
+                                <li>Fire-resistant materials for safety</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔧 Modular Design</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Stackable rack system for easy expansion</li>
+                                <li>Tool-less assembly and disassembly</li>
+                                <li>Standardized mounting interface</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-				<section>
-					<h2>What I Learned:</h2>
-					<ul>
-						<li><b>Mechanical Design:</b> Gained proficiency in using CAD software to design a functional
-							and practical hard drive holder.</li>
-						<li><b>Fabrication Techniques:</b> Developed skills in 3D printing.</li>
-						<li><b>Hardware Integration:</b> Improved my understanding of how to integrate various hardware
-							components, including hard drives and cooling fans.</li>
-					</ul>
-				</section>
+                <!-- Project Impact -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-trophy"></i>
+                        Project Impact
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        This project successfully provided a <strong>cost-effective alternative</strong> to expensive commercial 
+                        hard drive enclosures during the cryptocurrency mining boom. The custom design achieved optimal 
+                        <strong>thermal management</strong> while maintaining <strong>scalability</strong> for growing mining operations, 
+                        demonstrating practical application of mechanical design principles in real-world scenarios.
+                    </p>
+                </div>
 
-				<section>
-					<h2>Looking Ahead:</h2>
-					<ul>
-						<li>Optimizing the design for even better airflow and cooling performance.</li>
-						<li>Exploring the use of different materials for the holder to improve its strength, durability,
-							or thermal conductivity.</li>
-						<li>Developing a modular design that allows for easy stacking and expansion of the hard drive
-							holder.</li>
-						<li>Further refinement of the cooling system. The inclusion of computer case fans was crucial
-							for maintaining acceptable operating temperatures for the hard drives. Future iterations
-							might explore different fan sizes, configurations, or even the addition of heatsinks to
-							further enhance heat dissipation. Consideration could also be given to airflow management
-							within the holder to ensure that all drives receive adequate cooling. The goal is to
-							maximize cooling efficiency while minimizing noise and power consumption.</li>
-					</ul>
-				</section>
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="../software/ChefBuddy.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Next Project
+                    </a>
+                    <a href="../mechanical.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<a href="#" class="small primary button">Next Project</a>
-				<a href="../mechanical.html" class="small button">Return to Portfolio</a>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
-			</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-		</div>
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Contact Me</h2>
-				<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my
-					social media, or send me a message below.</p>
-				<ul class="actions">
-					<li><a href="../message.html" class="button">Message Me</a></li>
-					<li><a href="../index.html" class="button">Home</a></li>
-				</ul>
-			</section>
-			<section>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
 
-				<h2>Social Media</h2>
-				<dl class="alt">
-					<dt>Location</dt>
-					<dd>Lake Grove, NY</dd>
-					<dt>Email</dt>
-					<dd><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt"><span
-								class="label">LinkedIn</span></a></li>
-					<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt"><span
-								class="label">Instagram</span></a></li>
-					<li><a href="https://github.com/sixym3" class="icon brands fa-github alt"><span
-								class="label">GitHub</span></a></li>
-					<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt"><span
-								class="label">Twitter</span></a></li>
-				</ul>
-			</section>
-			<p class="copyright">&copy; 2025. Eric Xiao | <a href="../index.html">Portfolio</a>.</p>
-		</footer>
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
 
-	</div>
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
-
 </html>

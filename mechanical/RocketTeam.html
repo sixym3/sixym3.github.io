@@ -1,169 +1,373 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>SBU Rocket Team</title>
-	<link rel="icon" href="../images/logo.svg" type="image/icon type">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="../assets/css/noscript.css" />
-	</noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | SBU Rocket Team</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link active">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<body class="is-preload">
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">SBU Rocket Team</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    NASA Student Launch Initiative - Designing, manufacturing, and testing a rocket to reach 5,000 feet altitude
+                </p>
+            </div>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/mechanical/RocketTeam/subscale_completed.jpg" alt="Completed Subscale Rocket" 
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
 
-		<!-- Header -->
-		<header id="header">
-			<h1>SBU Rocket Team for NASA's Student Launch Initiative</h1>
-			<p>This project is still ongoing.</p>
-			<p>This project is affilated with the SBU Rocket Team, a part of the American Institute of
-				Aeronautics and Astronautics (AIAA) chapter at Stony Brook University.</p>
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Project Overview -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Project Overview
+                    </h2>
+                    <p style="color: var(--text-secondary);">
+                        Part of the SBU Rocket Team, affiliated with the American Institute of Aeronautics and Astronautics (AIAA) 
+                        chapter at Stony Brook University. Our team is competing in NASA's prestigious Student Launch Initiative, 
+                        designing a rocket system capable of reaching precisely 5,000 feet while carrying scientific payloads.
+                    </p>
+                </div>
 
-		</header>
+                <!-- Technical Challenges -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Technical Challenges
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🎯 Altitude Precision</h3>
+                            <p style="color: var(--text-secondary);">
+                                Achieve the declared altitude of 5,000 feet while maintaining a stable flight profile.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">📡 Payload Integration</h3>
+                            <p style="color: var(--text-secondary);">
+                                Safely transport the STEMNaut payload and gather quality telemetry data throughout the flight.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">📋 Competition Requirements</h3>
+                            <p style="color: var(--text-secondary);">
+                                Comply with NASA's guidelines for scoring, including rocket design, report quality, data accuracy, and altitude achievement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-		<!-- Main -->
-		<div id="main">
+                <!-- Image Gallery -->
+                <div style="margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg); text-align: center;">
+                        <i class="fas fa-images"></i>
+                        Project Gallery
+                    </h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg);">
+                        <div style="background: var(--card-bg); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="../images/mechanical/RocketTeam/payload.jpg" alt="Payload System" 
+                                 class="lightbox-trigger" 
+                                 style="width: 100%; height: 200px; object-fit: cover; cursor: pointer;"
+                                 onclick="openLightbox(this)">
+                            <div style="padding: var(--space-md);">
+                                <h4 style="color: var(--text-primary); margin-bottom: var(--space-xs);">Payload System</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 0;">STEMNaut payload integration and testing</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: var(--card-bg); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="../images/mechanical/RocketTeam/STEMNautCapsule.png" alt="STEMNaut Capsule" 
+                                 class="lightbox-trigger" 
+                                 style="width: 100%; height: 200px; object-fit: cover; cursor: pointer;"
+                                 onclick="openLightbox(this)">
+                            <div style="padding: var(--space-md);">
+                                <h4 style="color: var(--text-primary); margin-bottom: var(--space-xs);">STEMNaut Capsule</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 0;">Scientific payload capsule design</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: var(--card-bg); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); transition: transform var(--transition-normal);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="../images/mechanical/RocketTeam/payloadcad.png" alt="CAD Design" 
+                                 class="lightbox-trigger" 
+                                 style="width: 100%; height: 200px; object-fit: cover; cursor: pointer;"
+                                 onclick="openLightbox(this)">
+                            <div style="padding: var(--space-md);">
+                                <h4 style="color: var(--text-primary); margin-bottom: var(--space-xs);">CAD Model</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.875rem; margin: 0;">Detailed payload compartment design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- Content -->
-			<section id="content" class="main">
-				<span class="image main"><img src="../images/mechanical/RocketTeam/subscale_completed.jpg"
-						alt="" /></span>
+                <!-- Technology Stack -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Technology & Tools
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">RockSim</span>
+                        <span class="tech-tag">SolidWorks</span>
+                        <span class="tech-tag">3D Printing</span>
+                        <span class="tech-tag">Machine Shop</span>
+                        <span class="tech-tag">Power Tools</span>
+                        <span class="tech-tag">Telemetry Systems</span>
+                    </div>
+                    <div style="text-align: center; margin-top: var(--space-lg);">
+                        <img src="../images/mechanical/RocketTeam/Rocksim.png" alt="RockSim Simulation" 
+                             class="lightbox-trigger"
+                             style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-md); cursor: pointer;"
+                             onclick="openLightbox(this)">
+                    </div>
+                </div>
 
-				<h2>Problem</h2>
-				<p><b>Altitude Precision: </b> Achieve the declared altitude of 5,000 feet while maintaining a stable
-					flight
-					profile. <br />
-					<b>Payload Integration: </b> Safely transport the STEMNaut payload and gather quality telemetry data
-					throughout the flight. <br />
-					<b>Competition Requirements: </b> Comply with NASA's guidelines for scoring, which include rocket
-					design,
-					report quality, data accuracy, and altitude achievement.
-				</p>
+                <!-- Key Learnings -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-graduation-cap"></i>
+                        Key Learnings
+                    </h2>
+                    <div style="display: grid; gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-user-tie" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Leadership & Decision-Making
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                When the subscale rocket build stalled due to indecision, I took the initiative to finalize design choices 
+                                and push the project forward. This experience taught me the importance of stepping up as a leader while 
+                                balancing input from teammates.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-shield-alt" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Risk Management & Adaptability
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                When a critical design near-miss with the fins threatened stability with just two days before launch, 
+                                I led a rapid assessment of the compromised stability margin. Despite a slight wobble in flight, 
+                                the subscale launched successfully, reinforcing the importance of thorough risk evaluation and decisive leadership under pressure.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-users" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Collaboration & Communication
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Working with NASA specialists, faculty advisors, and a large, diverse team helped me develop stronger 
+                                communication skills. I learned to clearly articulate design rationale and listen to concerns from colleagues.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="row gtr-uniform">
-					<div class="col-4">
-						<span class="image fit"><img src="../images/mechanical/RocketTeam/payload.jpg" alt="" /></span>
-					</div>
-					<div class="col-4">
-						<span class="image fit"><img src="../images/mechanical/RocketTeam/STEMNautCapsule.png"
-								alt="" /></span>
-					</div>
-					<div class="col-4">
-						<span class="image fit"><img src="../images/mechanical/RocketTeam/payloadcad.png"
-								alt="" /></span>
-					</div>
-				</div>
+                <!-- Future Plans -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Looking Ahead
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🎯 Further Stabilization</h3>
+                            <p style="color: var(--text-secondary);">
+                                Refine fin design and overall stability margin for the full-scale launch in May.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">👥 Enhanced Team Dynamics</h3>
+                            <p style="color: var(--text-secondary);">
+                                Establish clearer accountability and leadership structures to avoid delays.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">📊 Data Integration</h3>
+                            <p style="color: var(--text-secondary);">
+                                Improve telemetry systems for real-time tracking and post-flight analysis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<h2>Technology Used</h2>
-				<ul>
-					<li>RockSim</li>
-					<li>3D Printing</li>
-					<li>Machine Shop & Power Tools</li>
-					<li>Solidworks</li>
-				</ul>
+                <!-- Final Note -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-flag-checkered"></i>
+                        Mission Complete
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        The full-scale rocket was successfully launched in <strong>Alabama</strong>, where we demonstrated 
+                        the final design's performance and collected comprehensive flight data. This project provided 
+                        invaluable hands-on experience in aerospace engineering, team leadership, and practical manufacturing processes.
+                    </p>
+                </div>
 
-				<span class="image fit"><img src="../images/mechanical/RocketTeam/Rocksim.png" alt="" /></span>
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="RCArduinoCar.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Next Project
+                    </a>
+                    <a href="../mechanical.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<h2>What I learned:</h2>
-				<p><b>Leadership & Decision-Making: </b> When the subscale rocket build stalled due to indecision, I
-					took the
-					initiative to finalize design choices and push the project forward. This experience taught me the
-					importance of
-					stepping up as a leader while balancing input from teammates. <br />
-					<b>Risk Management & Adaptability Under Pressure: </b> When a critical design near-miss with the
-					fins
-					threatened the subscale rocket's stability, we had just two days before launch—no time to remake
-					parts. I led a
-					rapid, high-stakes assessment of the compromised stability margin, carefully balancing the risks of
-					flying with
-					imperfect fins against the time and materials constraints. Despite a slight wobble in flight, the
-					subscale launched
-					successfully, reinforcing the importance of thorough risk evaluation, decisive leadership under
-					pressure, and the
-					willingness to adapt plans on tight timelines. <br />
-					<b>Collaboration & Communication: </b> Working with NASA specialists, faculty advisors, and a large,
-					diverse
-					team helped me develop stronger communication skills. I learned to clearly articulate design
-					rationale and listen
-					to concerns from colleagues.
-				</p>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
-				<h2>Looking ahead:</h2>
-				<p><b>Further Stabilization: </b> Refine fin design and overall stability margin for the full-scale
-					launch in May. <br />
-					<b>Enhanced Team Dynamics: </b> Establish clearer accountability and leadership structures to avoid
-					delays.<br />
-					<b>Data Integration: </b> Improve telemetry systems for real-time tracking and post-flight analysis.
-				</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-				<h2>Final Note:</h2>
-				<p>The full-scale rocket is scheduled for launch in May in Alabama, where we will demonstrate the final
-					design's performance and collect comprehensive flight data. This project has already provided
-					invaluable hands-on experience in aerospace engineering, team leadership, and practical manufacturing
-					processes—skills that I
-					intend to carry forward in future endeavors.
-				</p>
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
-				<a href="#" class="small primary button">Next Project</a>
-				<a href="../mechanical.html" class="small button">Return to Portfolio</a>
-			</section>
-		</div>
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
 
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Contact Me</h2>
-				<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my
-					social media, or send me a message below.</p>
-				<ul class="actions">
-					<li><a href="../message.html" class="button">Message Me</a></li>
-					<li><a href="../index.html" class="button">Home</a></li>
-				</ul>
-			</section>
-			<section>
-				<h2>Social Media</h2>
-				<dl class="alt">
-					<dt>Location</dt>
-					<dd>Lake Grove, NY</dd>
-					<dt>Email</dt>
-					<dd><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt">
-							<span class="label">LinkedIn</span>
-						</a></li>
-					<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt">
-							<span class="label">Instagram</span>
-						</a></li>
-					<li><a href="https://github.com/sixym3" class="icon brands fa-github alt">
-							<span class="label">GitHub</span>
-						</a></li>
-					<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt">
-							<span class="label">Twitter</span>
-						</a></li>
-				</ul>
-			</section>
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
 
-			<p class="copyright">&copy; 2025. Eric Xiao | <a href="../index.html">Portfolio</a>.</p>
-		</footer>
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
 
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
-
 </html>

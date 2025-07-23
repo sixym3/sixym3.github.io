@@ -1,142 +1,417 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Project Name</title>
-	<link rel="icon" href="../images/logo.svg" type="image/icon type">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="../assets/css/noscript.css" />
-	</noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | Biomedical ML Bootcamp</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link active">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<body class="is-preload">
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">Biomedical ML Bootcamp</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> Completed Fall 2023
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    Biomedical Data Analytics & Machine Learning Bootcamp - Stony Brook Medicine & CEAS Department intensive program
+                </p>
+            </div>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/software/BMICodeCamp/cover.jpg" alt="Biomedical ML Bootcamp" 
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
 
-		<!-- Header -->
-		<header id="header">
-			<h1>Biomedical Data Analytics & Machine Learning Bootcamp</h1>
-			<p>This Bootcamp was provided by Stony Brook Medicine and the Stony Brook CEAS Department in Fall of 2023.</p>
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Program Overview -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-university"></i>
+                        Program Overview
+                    </h2>
+                    <p style="color: var(--text-secondary);">
+                        This intensive bootcamp was provided by <strong>Stony Brook Medicine</strong> and the 
+                        <strong>Stony Brook CEAS Department</strong> in Fall 2023, focusing on machine learning techniques 
+                        specifically applied to biomedical data analytics and model optimization.
+                    </p>
+                    <p style="color: var(--text-secondary);">
+                        The program provided hands-on experience with fundamental ML concepts, emphasizing both supervised 
+                        and unsupervised learning methods with real-world biomedical applications and datasets.
+                    </p>
+                </div>
 
-		</header>
+                <!-- Learning Objectives -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-target"></i>
+                        Learning Challenge
+                    </h2>
+                    <p style="color: var(--text-secondary);">
+                        Understanding and implementing machine learning techniques is essential for effective data analysis 
+                        and model optimization in biomedical research. The challenge was to master various ML approaches 
+                        and apply them to real biomedical datasets with clinical relevance.
+                    </p>
+                </div>
 
-		<!-- Main -->
-		<div id="main">
+                <!-- Technical Implementation -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-code"></i>
+                        Technical Implementation
+                    </h2>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                        Throughout the bootcamp, I worked with the <strong>Iris dataset</strong> and applied various ML techniques:
+                    </p>
+                    
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 Machine Learning Techniques</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li><strong>K-Means clustering:</strong> Used for unsupervised classification, evaluating metrics such as silhouette scores</li>
+                                <li><strong>Feature selection using SelectKBest:</strong> Improved model efficiency by selecting the most relevant features</li>
+                                <li><strong>Random Forest and Decision Trees:</strong> Applied for classification tasks with ensemble methods</li>
+                                <li><strong>Neural Network Development:</strong> Built and optimized models using PyTorch, fine-tuning layer depth and node count</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔍 Advanced Techniques</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li><strong>Edge Detection with OpenCV:</strong> Processed images using custom convolution kernels</li>
+                                <li><strong>Hyperparameter Tuning with Optuna:</strong> Optimized model performance for better accuracy</li>
+                                <li><strong>Model Evaluation Metrics:</strong> Comprehensive assessment using various performance indicators</li>
+                                <li><strong>Data Preprocessing:</strong> Feature scaling, normalization, and data cleaning techniques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- Content -->
-			<section id="content" class="main">
-				<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+                <!-- Technology Stack -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Technology Stack
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Seaborn</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Optuna</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Core ML Libraries</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>PyTorch for neural network development</li>
+                                <li>Scikit-learn for traditional ML algorithms</li>
+                                <li>Pandas for data manipulation and analysis</li>
+                                <li>NumPy for numerical computations</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Specialized Tools</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>OpenCV for computer vision tasks</li>
+                                <li>Optuna for hyperparameter optimization</li>
+                                <li>Seaborn for statistical data visualization</li>
+                                <li>Matplotlib for custom plotting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-				<h2>Problem</h2>
-				<div class="section">
-					<h2>Problem</h2>
-					<p>Understanding and implementing machine learning techniques is essential for effective data
-						analysis and model optimization.
-						This bootcamp provided hands-on experience with fundamental ML concepts, focusing on supervised
-						and unsupervised learning methods.</p>
-				</div>
+                <!-- Key Learnings -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-graduation-cap"></i>
+                        Key Learnings & Skills Developed
+                    </h2>
+                    <div style="display: grid; gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-brain" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Machine Learning Foundations
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Gained a solid foundation in ML techniques and evaluation metrics, understanding the theoretical 
+                                underpinnings and practical applications of various algorithms in biomedical contexts.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-sliders-h" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Hyperparameter Optimization
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Understood the critical importance of hyperparameter tuning for performance improvement, 
+                                learning to use automated optimization tools like Optuna for efficient parameter search.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-python" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Python ML Ecosystem
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Developed proficiency with essential Python libraries including Scikit-learn, Pandas, Seaborn, 
+                                PyTorch, and OpenCV, building a comprehensive toolkit for ML development.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-eye" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Computer Vision Applications
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Gained experience in image processing and computer vision techniques using OpenCV, 
+                                including edge detection with custom convolution kernels for biomedical imaging applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="section">
-					<h2>Solution</h2>
-					<p>Throughout the bootcamp, I worked with the Iris dataset and applied various ML techniques:</p>
-					<ul>
-						<li><strong>K-Means clustering:</strong> Used for unsupervised classification, evaluating
-							metrics such as silhouette scores.</li>
-						<li><strong>Feature selection using SelectKBest:</strong> Improved model efficiency by selecting
-							the most relevant features.</li>
-						<li><strong>Random Forest and Decision Trees:</strong> Applied for classification tasks.</li>
-						<li><strong>Neural Network Development:</strong> Built and optimized models using PyTorch,
-							fine-tuning layer depth and node count.</li>
-						<li><strong>Edge Detection with OpenCV:</strong> Processed images using custom convolution
-							kernels.</li>
-						<li><strong>Hyperparameter Tuning with Optuna:</strong> Optimized model performance for better
-							accuracy.</li>
-					</ul>
-				</div>
+                <!-- Challenges & Solutions -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-mountain"></i>
+                        Technical Challenges
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🧠 Neural Network Architecture Design</h3>
+                            <p style="color: var(--text-secondary);">
+                                Fine-tuning neural network architectures to achieve optimal learning required careful 
+                                consideration of layer depth, node count, and activation functions to prevent overfitting 
+                                while maintaining good generalization performance.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">⚙️ Parameter Selection Efficiency</h3>
+                            <p style="color: var(--text-secondary);">
+                                Selecting the right hyperparameters efficiently was initially challenging due to the large 
+                                search space. This was successfully addressed using Optuna's automated optimization algorithms, 
+                                significantly reducing training time while improving model performance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="section">
-					<h2>What I Learned</h2>
-					<ul>
-						<li>Gained a solid foundation in ML techniques and evaluation metrics.</li>
-						<li>Understood the importance of hyperparameter tuning for performance improvement.</li>
-						<li>Developed proficiency with Python libraries like Scikit-learn, Pandas, Seaborn, PyTorch, and
-							OpenCV.</li>
-					</ul>
-				</div>
+                <!-- Future Applications -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Future Applications
+                    </h2>
+                    <p style="color: var(--text-secondary);">
+                        I now seek opportunities to gain hands-on experience by applying these techniques to real-world 
+                        datasets and industry applications, particularly in areas where biomedical engineering intersects 
+                        with artificial intelligence and machine learning.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🏥 Medical Imaging</h3>
+                            <p style="color: var(--text-secondary);">
+                                Apply computer vision techniques to medical imaging analysis and diagnostic applications.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">📊 Clinical Data Analysis</h3>
+                            <p style="color: var(--text-secondary);">
+                                Utilize ML models for predictive analytics in clinical research and patient outcome modeling.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 Biomedical Automation</h3>
+                            <p style="color: var(--text-secondary);">
+                                Integrate ML algorithms into biomedical devices and automated diagnostic systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="section">
-					<h2>Challenges Faced</h2>
-					<ul>
-						<li>Fine-tuning neural network architectures to achieve optimal learning.</li>
-						<li>Selecting the right hyperparameters efficiently, which was addressed using Optuna.</li>
-					</ul>
-				</div>
+                <!-- Program Impact -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-trophy"></i>
+                        Professional Development Impact
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        This intensive bootcamp provided <strong>formal credentials</strong> in machine learning and biomedical 
+                        data analytics from a prestigious institution. The program demonstrated my commitment to 
+                        <strong>continuous learning</strong> and established a solid foundation for applying AI/ML techniques 
+                        to engineering challenges, particularly in the intersection of mechanical engineering and intelligent systems.
+                    </p>
+                </div>
 
-				<div class="section">
-					<h2>Future Goals</h2>
-					<p>I now seek opportunities to gain hands-on experience by applying these techniques to real-world
-						datasets and industry applications.</p>
-				</div>
-				<a href="#" class="small button">Repository</a>
-				<p></p>
+                <!-- Action Buttons -->
+                <div style="background: var(--card-bg); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h3 style="color: var(--text-primary); margin-bottom: var(--space-lg);">Explore Project Work</h3>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-github"></i>
+                            View Repository
+                        </a>
+                    </div>
+                </div>
 
-				
-				<a href="#" class="small primary button">Next Project</a>
-				<a href="../software.html" class="small button">Return to Portfolio</a>
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="../software.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			</section>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
-		</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Contact Me</h2>
-				<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my
-					social media, or send me a message below.</p>
-				<ul class="actions">
-					<li><a href="../message.html" class="button">Message Me</a></li>
-					<li><a href="../index.html" class="button">Home</a></li>
-				</ul>
-			</section>
-			<section>
-				<h2>Social Media</h2>
-				<dl class="alt">
-					<dt>Location</dt>
-					<dd>Lake Grove, NY</dd>
-					<dt>Email</dt>
-					<dd><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt"><span
-								class="label">LinkedIn</span></a></li>
-					<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt"><span
-								class="label">Instagram</span></a></li>
-					<li><a href="https://github.com/sixym3" class="icon brands fa-github alt"><span
-								class="label">GitHub</span></a></li>
-					<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt"><span
-								class="label">Twitter</span></a></li>
-				</ul>
-			</section>
-			<p class="copyright">&copy; 2025. Eric Xiao | <a href="../index.html">Portfolio</a>.</p>
-		</footer>
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
-	</div>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
 
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
-
 </html>

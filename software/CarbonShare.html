@@ -1,180 +1,430 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Project Name</title>
-	<link rel="icon" href="../images/logo.svg" type="image/icon type">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="../assets/css/noscript.css" />
-	</noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | CarbonShare</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link active">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<body class="is-preload">
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">CarbonShare</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> Prototype Completed
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    Decentralized Carbon Tracking Solution - Blockchain-powered sustainability rewards with ERC-20 tokens
+                </p>
+            </div>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/software/CarbonShare/main.jpg" alt="CarbonShare Platform Interface" 
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
 
-		<!-- Header -->
-		<header id="header">
-			<h1>CarbonShare: A Decentralized Carbon Tracking Solution</h1>
-			<p>A blockchain-based solution for tracking carbon footprints, powered by Solidity, Angular, and
-				Python.</p>
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Inspiration & Vision -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-lightbulb"></i>
+                        Inspiration & Vision
+                    </h2>
+                    <div style="display: grid; grid-template-columns: 1fr 300px; gap: var(--space-xl); align-items: start;">
+                        <div>
+                            <p style="color: var(--text-secondary);">
+                                The idea for CarbonShare was inspired by <strong>Yun Zhang, CEO of Mobileware</strong>, who envisioned 
+                                a system that would reward users of his app, <strong>onTime Carpool</strong>, for reducing their carbon 
+                                footprint through digital tokens that quantify and verify environmental impact.
+                            </p>
+                            <p style="color: var(--text-secondary);">
+                                Building on this concept, we developed CarbonShare as a decentralized solution that enables companies 
+                                and individuals to track and prove their contributions to sustainability. By leveraging 
+                                <strong>CarbonShare Tokens (CST)</strong> as ERC-20 tokens, organizations can demonstrate their 
+                                commitment to eco-friendly initiatives with blockchain transparency and security.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="../images/software/CarbonShare/IMG_0961.JPG" alt="CarbonShare Team" 
+                                 class="lightbox-trigger"
+                                 style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer;"
+                                 onclick="openLightbox(this)">
+                            <p style="text-align: center; color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs);">
+                                Development Team at Work
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-		</header>
+                <!-- System Architecture -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-cogs"></i>
+                        System Architecture
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🗄️ Data Management</h3>
+                            <p style="color: var(--text-secondary);">
+                                Incoming ride data is processed, filtered, and stored in <strong>MongoDB Atlas</strong> for fast retrieval 
+                                and real-time analytics, ensuring scalable data handling for growing user bases.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔗 Backend & API</h3>
+                            <p style="color: var(--text-secondary);">
+                                Our backend, built with <strong>Flask</strong>, serves a RESTful API that aggregates and retrieves 
+                                data for visualization, providing seamless integration between blockchain and traditional web services.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">⛓️ Smart Contract & Tokens</h3>
+                            <p style="color: var(--text-secondary);">
+                                A microservice interacts with the <strong>Sepolia Ethereum testnet</strong>, analyzing rides to determine 
+                                reward eligibility and executing smart contract transactions to distribute <strong>CST tokens</strong>.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🖥️ Frontend Interface</h3>
+                            <p style="color: var(--text-secondary);">
+                                The user interface, built with <strong>Softheon Armature</strong>, displays key ride and reward 
+                                information in an intuitive dashboard with real-time token balance updates.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-		<!-- Main -->
-		<div id="main">
+                <!-- Technology Stack -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Technology Stack
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">Solidity</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">MongoDB Atlas</span>
+                        <span class="tech-tag">Web3.py</span>
+                        <span class="tech-tag">Truffle</span>
+                        <span class="tech-tag">Ethereum</span>
+                        <span class="tech-tag">ERC-20</span>
+                        <span class="tech-tag">Softheon Armature</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Blockchain Development</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Solidity smart contracts</li>
+                                <li>Truffle deployment framework</li>
+                                <li>Web3 Python library integration</li>
+                                <li>ERC-20 token standard implementation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Backend Infrastructure</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Flask RESTful API server</li>
+                                <li>MongoDB Atlas cloud database</li>
+                                <li>Microservices architecture</li>
+                                <li>Data aggregation and processing</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Frontend & Integration</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Softheon Armature UI framework</li>
+                                <li>Real-time dashboard visualization</li>
+                                <li>Ethereum testnet integration</li>
+                                <li>Token balance tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- Content -->
-			<section id="content" class="main">
-				<span class="image main"><img src="../images/software/CarbonShare/main.jpg" alt="" /></span>
-				
-				<div class="section">
-					<h2>Inspiration</h2>
-					<p>The idea for this project was inspired by Yun Zhang, CEO of Mobileware, who envisioned a system
-						that would reward users of his app, <strong>onTime Carpool</strong>, for reducing their carbon
-						footprint. His concept involved using a digital token to quantify and verify the environmental
-						impact of commuters.</p>
-					<span class="image right"><img src="../images/software/CarbonShare/IMG_0961.JPG" alt="" /></span>
-					<p>Building on this idea, we developed <span class="highlight">CarbonShare</span>, a decentralized
-						solution that enables companies and individuals to track and prove their contributions to
-						sustainability. By leveraging <span class="highlight">CarbonShare Tokens (CST)</span>,
-						organizations can demonstrate their commitment to eco-friendly initiatives. Given the
-						transparency and security of blockchain technology, cryptocurrency became the perfect fit for
-						this application. We implemented <span class="highlight">CST as an ERC-20 token</span>, making
-						it compatible with existing DeFi applications and exchanges.</p>
-				</div>
+                <!-- Development Challenges -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-mountain"></i>
+                        Development Challenges
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🆕 Cutting-Edge Framework</h3>
+                            <p style="color: var(--text-secondary);">
+                                <strong>Softheon Armature</strong> was newly released, requiring extensive debugging, custom modifications, 
+                                and creative workarounds to achieve desired functionality.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🌐 Infrastructure Limitations</h3>
+                            <p style="color: var(--text-secondary);">
+                                <strong>Infura Node restrictions</strong> prevented expected Web3 API interactions, causing delays and 
+                                requiring alternative blockchain connection strategies.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔐 Database Compatibility</h3>
+                            <p style="color: var(--text-secondary);">
+                                <strong>MongoDB SSL compatibility issues</strong> with Python 3.7 required extensive troubleshooting 
+                                and configuration adjustments for secure database connections.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">⏰ Extreme Time Constraints</h3>
+                            <p style="color: var(--text-secondary);">
+                                Developed and deployed the entire system in under <strong>24 hours</strong> with an average of just 
+                                <strong>2 hours of sleep per team member</strong>, demonstrating exceptional dedication and teamwork.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="section">
-					<h2>What It Does</h2>
-					<ul>
-						<li><strong>Data Handling</strong> – Incoming ride data is processed, filtered, and stored in
-							<strong>MongoDB Atlas</strong> for fast retrieval.</li>
-						<li><strong>Backend & API</strong> – Our backend, built with <strong>Flask</strong>, serves a
-							RESTful API that aggregates and retrieves data for visualization.</li>
-						<li><strong>Smart Contract & Token Rewards</strong> – A microservice interacts with the
-							<strong>Sepolia Ethereum testnet</strong>, determining which rides qualify for rewards and
-							executing smart contract transactions to distribute <strong>CST</strong>.</li>
-						<li><strong>Frontend UI</strong> – The user interface, built with <strong>Softheon
-								Armature</strong>, displays key ride and reward information in an intuitive dashboard.
-						</li>
-					</ul>
-				</div>
+                <!-- Key Accomplishments -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-trophy"></i>
+                        Key Accomplishments
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-rocket" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Rapid Prototype Development
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Successfully built and deployed a <strong>working prototype</strong> in less than a day, 
+                                demonstrating exceptional development velocity and team coordination under pressure.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-link" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Live Blockchain Deployment
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Achieved <strong>live smart contract deployment</strong> on Ethereum, with transactions 
+                                viewable on <strong>Etherscan</strong>, proving real-world blockchain integration capabilities.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                <i class="fas fa-desktop" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
+                                Functional User Interface
+                            </h3>
+                            <p style="color: var(--text-secondary);">
+                                Designed and implemented a <strong>functional UI</strong> using Softheon Armature, 
+                                creating an intuitive dashboard for carbon tracking and token rewards visualization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="section">
-					<h2>How We Built It</h2>
-					<ul>
-						<li><strong>Database & Data Simulation</strong> – We used <strong>MongoDB Atlas</strong> and
-							generated test data based on onTime Carpool's API.</li>
-						<li><strong>Smart Contract Development</strong> – Written in <strong>Solidity</strong>, deployed
-							via <strong>Truffle</strong>, and integrated using the <strong>Web3 Python library</strong>.
-						</li>
-						<li><strong>Microservices</strong> – Developed to handle data aggregation, smart contract
-							interactions, and token distribution.</li>
-						<li><strong>Frontend & API</strong> – The UI was built with <strong>Softheon Armature</strong>,
-							communicating with the <strong>Flask backend</strong> through a RESTful API.</li>
-					</ul>
-				</div>
-				
-				<div class="section">
-					<h2>Challenges We Faced</h2>
-					<ul>
-						<li><strong>Softheon Armature</strong> was newly released, requiring extensive debugging and
-							custom modifications.</li>
-						<li><strong>Infura Node Restrictions</strong> prevented expected Web3 API interactions, causing
-							delays.</li>
-						<li><strong>MongoDB SSL Compatibility Issues</strong> with Python 3.7 required troubleshooting.
-						</li>
-						<li><strong>Ethereum Faucet Limitations</strong> made acquiring test ETH difficult due to
-							restrictions caused by malicious actors.</li>
-						<li><strong>Sleep Deprivation</strong> – We developed and deployed the entire system in under
-							<strong>24 hours</strong>, with an average of just <strong>2 hours of sleep per team
-								member</strong>.</li>
-					</ul>
-				</div>
+                <!-- Future Development -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-road"></i>
+                        Future Development Roadmap
+                    </h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">💰 Scaling & Investment</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li><strong>Funding & Expansion</strong> - Seeking investors or crowdfunding</li>
+                                <li>Production infrastructure scaling</li>
+                                <li>Enterprise partnership development</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">📱 Product Development</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li><strong>Mobile App Development</strong> - Dedicated CST token access</li>
+                                <li><strong>UI/UX Enhancements</strong> - Refined interface and features</li>
+                                <li>Advanced analytics dashboard</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔗 Integration & Data</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li><strong>Real Data Integration</strong> - Live onTime Carpool data</li>
+                                <li><strong>Concept Refinement</strong> - Industry expert feedback</li>
+                                <li>Additional carbon source tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="section">
-					<h2>Accomplishments We're Proud Of</h2>
-					<ul>
-						<li>Successfully built and deployed a <strong>working prototype</strong> in less than a day.
-						</li>
-						<li><strong>Live smart contract deployment</strong> on Ethereum, viewable on
-							<strong>Etherscan</strong>.</li>
-						<li>Designed and implemented a <strong>functional UI</strong> using Softheon Armature.</li>
-					</ul>
-				</div>
+                <!-- Project Impact -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-leaf"></i>
+                        Environmental Impact Vision
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        CarbonShare represents a revolutionary approach to <strong>environmental accountability</strong>, combining 
+                        blockchain transparency with real-world sustainability incentives. The project demonstrates the potential 
+                        for <strong>decentralized systems</strong> to drive positive environmental change through economic rewards, 
+                        creating a sustainable future where carbon reduction efforts are accurately tracked and fairly compensated.
+                    </p>
+                </div>
 
-				<div class="section">
-					<h2>What’s Next for CarbonShare?</h2>
-					<ul>
-						<li>🚀 <strong>Funding & Expansion</strong> – Seeking investors or crowdfunding to scale the
-							project.</li>
-						<li>📱 <strong>Mobile App Development</strong> – Creating a dedicated app for easier access to
-							CST tokens.</li>
-						<li>🎨 <strong>UI/UX Enhancements</strong> – Refining the interface and adding new features.
-						</li>
-						<li>📊 <strong>Real Data Integration</strong> – Implementing live data from onTime Carpool for
-							production use.</li>
-						<li>💡 <strong>Concept Refinement</strong> – Incorporating feedback from industry experts and
-							hackathon judges.</li>
-					</ul>
-				</div>
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="BMICodeCamp.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Next Project
+                    </a>
+                    <a href="../software.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<a href="#" class="small primary button">Next Project</a>
-				<a href="../software.html" class="small button">Return to Portfolio</a>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
-			</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-		</div>
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Contact Me</h2>
-				<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my
-					social media, or send me a message below.</p>
-				<ul class="actions">
-					<li><a href="../message.html" class="button">Message Me</a></li>
-					<li><a href="../index.html" class="button">Home</a></li>
-				</ul>
-			</section>
-			<section>
-				<h2>Social Media</h2>
-				<dl class="alt">
-					<dt>Location</dt>
-					<dd>Lake Grove, NY</dd>
-					<dt>Email</dt>
-					<dd><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt"><span
-								class="label">LinkedIn</span></a></li>
-					<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt"><span
-								class="label">Instagram</span></a></li>
-					<li><a href="https://github.com/sixym3" class="icon brands fa-github alt"><span
-								class="label">GitHub</span></a></li>
-					<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt"><span
-								class="label">Twitter</span></a></li>
-				</ul>
-			</section>
-			<p class="copyright">&copy; 2025. Eric Xiao | <a href="../index.html">Portfolio</a>.</p>
-		</footer>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
 
-	</div>
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
 
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
-
 </html>

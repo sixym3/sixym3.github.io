@@ -1,239 +1,414 @@
-<!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Eric Xiao | Portfolio</title>
-		<link rel="icon" href="images/logo.svg" type="image/icon type">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | Portfolio</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#mechanical" class="nav-link">Mechanical</a></li>
+                <li><a href="#software" class="nav-link">Software</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-greeting">👋 Hi, I'm</p>
+                <h1 class="hero-name">Eric Xiao</h1>
+                <p class="hero-title">Mechanical Engineer (EIT) by training, Software Engineer by passion</p>
+                <p class="hero-description">
+                    Life long curiosity in robotics 🤖, Machine Learning 🧠, and Web3 🌐. 
+                    Currently pursuing a Master's in Mechanical Engineering at Stony Brook University.
+                </p>
+                <div class="btn-group">
+                    <a href="#about" class="btn btn-primary">
+                        <i class="fas fa-user"></i>
+                        About Me
+                    </a>
+                    <a href="#mechanical" class="btn btn-secondary">
+                        <i class="fas fa-cog"></i>
+                        View Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1>👋</h1>
-						<!-- <span class="logo"><img src="images/eric.jpg" alt="" /></span> -->
-						<h2>Hi, I'm</h2>
-						<h1>Eric Xiao</h1>
-							<p>
-							Mechanical Engineer by training, Software Engineer by passion.
-							Life long curiousity in <br /> robotics 🤖, Machine Learning 🧠, and Web3 🌐.<br />
-					</header>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">
+                    A results-driven mechanical engineer with a lifelong passion for integrating engineering and computer science.
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a Mechanical Engineer by training and a Software Engineer by passion, currently pursuing a Master's 
+                        in Mechanical Engineering at Stony Brook University. My passion for robotics led me to explore the 
+                        intersection of mechanical systems and intelligent software.
+                    </p>
+                    <p>
+                        I am particularly interested in applying machine learning to enhance automation and data-driven 
+                        decision-making in engineering. After delving into prompt engineering and agentic AI, I've realized 
+                        the transformative potential of these technologies on engineering's future.
+                    </p>
+                    <p>
+                        With a strong foundation in design, analysis, and manufacturing, I'm proficient in SolidWorks with 
+                        FEA optimization experience. I have hands-on experience with 3D printing, laser cutting, and CNC machining.
+                    </p>
+                    
+                    <div class="recent-updates">
+                        <h3>Recent Updates</h3>
+                        <ul>
+                            <li>🎓 Learning about <a href="https://www.coursera.org/specializations/prompt-engineering">prompt engineering</a></li>
+                            <li>🏆 Passed FE Exam (now EIT) and preparing for AWS SAP-C02 Certification</li>
+                            <li>🔨 Working on my portfolio and <a href="https://github.com/sixym3/chefbuddy-backend">ChefBuddy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">About Me</a></li>
-							<li><a href="#status">Recent</a></li>
-							<li><a href="#first">Mechanical</a></li>
-							<li><a href="#second">Software</a></li>
-							<li><a href="#cta">More</a></li>
-						</ul>
-					</nav>
+    <!-- Mechanical Projects Section -->
+    <section id="mechanical" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mechanical Engineering</h2>
+                <p class="section-subtitle">
+                    Here are some of my favorite mechanical engineering related projects.
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Rocket Team Project -->
+                <div class="project-card" onclick="window.location.href='mechanical/RocketTeam.html'">
+                    <img src="images/mechanical/RocketTeam/cover.png" alt="Rocket Team Project" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">SBU Rocket Team</h3>
+                        <p class="project-description">
+                            Our team designed, manufactured, and tested a rocket intended to reach a target altitude of 5,000 feet 
+                            for the NASA Student Launch Competition.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">RockSim</span>
+                            <span class="tech-tag">3D Printing</span>
+                            <span class="tech-tag">SolidWorks</span>
+                        </div>
+                    </div>
+                </div>
 
-				<!-- Main -->
-					<div id="main">
+                <!-- RC Arduino Car -->
+                <div class="project-card" onclick="window.location.href='mechanical/RCArduinoCar.html'">
+                    <img src="images/mechanical/RCArduinoCar/cover.jpg" alt="RC Arduino Car" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">RC Arduino Car</h3>
+                        <p class="project-description">
+                            Bluetooth-controlled Arduino car with custom-designed four-bar mechanism for Ackermann steering 
+                            instead of differential speed control.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Bluetooth</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Mechanical Design</span>
+                        </div>
+                    </div>
+                </div>
 
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>About Me</h2>
-										</header>
-										<p>I am a Mechanical Engineer by training, and a Software Engineer by passion, 
-											currently pursuing a Master's in Mechanical Engineering 
-											at Stony Brook University. My passion for robotics led me to explore the intersection 
-											of mechanical systems and intelligent software. I am particularly interested in 
-											applying machine learning to enhance automation and data-driven decision-making in 
-											engineering.
-										</p>
-										<ul class="actions">
-											<li><a href="aboutme.html" class="button">Learn More</a></li>
-										</ul>
-									</div>
-									<!-- <span class="image"><img src="images/pic01.jpg" alt="" /></span> -->
-									<span class="pfp"><img src="images/index/profile.jpg" alt="" />
-								</div>
-							</section>
+                <!-- PID Turntable -->
+                <div class="project-card" onclick="window.location.href='mechanical/PIDTurntable.html'">
+                    <img src="images/mechanical/PIDTurntable/cover.jpg" alt="PID Turntable" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">PID Turntable</h3>
+                        <p class="project-description">
+                            PID-controlled turntable system designed to accurately follow user-defined waveforms, 
+                            exploring analog vs digital control approaches.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PID Control</span>
+                            <span class="tech-tag">LabVIEW</span>
+                            <span class="tech-tag">Analog Circuits</span>
+                            <span class="tech-tag">DAQ</span>
+                        </div>
+                    </div>
+                </div>
 
-							<!-- Status Section -->
-							<section id="status" class="main special">
-								<header class="major">
-									<h2>Recent Updates</h2>
-								</header>
-								<p>
-									Learning about <a href="https://www.coursera.org/specializations/prompt-engineering">prompt engineering</a>. <br />
-									Preparing for the FE Exam and the AWS SAP-C02 Certification. <br />
-									Working on my portfolio and <a href="https://github.com/sixym3/chefbuddy-backend">ChefBuddy</a>..
-								</p>
-								
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="blog.html" class="button disabled">More at my blog</a></li>
-									</ul>
-								</footer>
-							</section>
+            </div>
+            
+            <div class="text-center mt-lg">
+                <a href="mechanical.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-right"></i>
+                    View All Mechanical Projects
+                </a>
+            </div>
+        </div>
+    </section>
 
-						<!-- First Section -->
-							<section id="first" class="main special">
-								<header class="major">
-									<h2>Everything Mechanical</h2>
-								</header>
-								<p>
-									Here are some of my favorite mechanical engineering related projects.
-								</p>
-								<div class="box alt">
-									<div class="row gtr-uniform">
-										<div class="col-4">
-											<a href="mechanical/RocketTeam.html" class="no_bottom_line">
-												<span class="image fit"><img src="images/mechanical/RocketTeam/cover.png" alt="" /></span>
-												<h3>Rocket Team</h3>
-												<p>Our team designed, manufactured, and tested a rocket intended to reach a target altitude of 5,000 feet for the NASA Student Launch Competition.</p>
-											</a>
-										</div>
+    <!-- Software Projects Section -->
+    <section id="software" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Software Engineering</h2>
+                <p class="section-subtitle">
+                    Here are some of my favorite software engineering related projects.
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- ChefBuddy -->
+                <div class="project-card" onclick="window.location.href='software/ChefBuddy.html'">
+                    <img src="images/software/ChefBuddy/cover.webp" alt="ChefBuddy" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">ChefBuddy</h3>
+                        <p class="project-description">
+                            AI-powered recipe manager that automatically suggests and manages recipes for you. 
+                            Don't know what to cook? Let ChefBuddy help!
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
 
-										<div class="col-4">
-											<a href="mechanical/RCArduinoCar.html" class="no_bottom_line">
-												<span class="image fit"><img src="images/mechanical/RCArduinoCar/cover.jpg" alt="" /></span>
-												<h3>RC Arduino Car</h3>
-												<p>This project is a bluetooth controlled Arduino car. It uses a custom designed four bar mechanism to achieve ackermann steering.</p>
-											</a>
+                <!-- CarbonShare -->
+                <div class="project-card" onclick="window.location.href='software/CarbonShare.html'">
+                    <img src="images/software/CarbonShare/cover.webp" alt="CarbonShare" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">CarbonShare</h3>
+                        <p class="project-description">
+                            Decentralized carbon tracking solution powered by blockchain technology. 
+                            Track your carbon footprint and earn tokens for eco-friendly choices.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Blockchain</span>
+                        </div>
+                    </div>
+                </div>
 
 
-										</div>
-										<div class="col-4">
-											<a href="mechanical/PIDTurntable.html" class="no_bottom_line">
-												<span class="image fit"><img src="images/mechanical/PIDTurntable/cover.jpg" alt="" /></span>
-												<h3>PID Turntable</h3>
-												<p>This project is a PID controlled turntable. It uses a PID controller to control the position of the turntable.</p>
-											</a>
+                <!-- BMI Bootcamp -->
+                <div class="project-card" onclick="window.location.href='software/BMICodeCamp.html'">
+                    <img src="images/software/BMICodeCamp/cover.jpg" alt="BMI Bootcamp" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">ML Bootcamp</h3>
+                        <p class="project-description">
+                            Biomedical Data Analytics & Machine Learning Bootcamp focusing on ML techniques 
+                            for effective data analysis and model optimization.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">ML/AI</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-lg">
+                <a href="software.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-right"></i>
+                    View All Software Projects
+                </a>
+            </div>
+        </div>
+    </section>
 
-										</div>
-									</div>
-								</div>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="mechanical.html" class="button">MEC Portfolio</a></li>
-									</ul>
-								</footer>
-							</section>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    I am always open to new opportunities and collaborations. 
+                    Feel free to reach out with any of my social media, or send me a message.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div>
+                            <strong>Location</strong>
+                            <p>Long Island, NY</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-briefcase contact-icon"></i>
+                        <div>
+                            <strong>Status</strong>
+                            <p>Open to full-time opportunities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-paw contact-icon"></i>
+                        <div>
+                            <strong>Fun Fact</strong>
+                            <p>I have a white shiba named <a href="https://www.instagram.com/mochi_is_a_shiba_inu">Mochi</a> 🦮</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <h3>Send me a message</h3>
+                    <div class="text-center">
+                        <a href="message.html" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Contact Form
+                        </a>
+                        <p class="text-muted" style="margin-top: 1rem;">
+                            Or connect with me on social media
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-						<!-- Second Section -->
-							<section id="second" class="main special">
-								<header class="major">
-									<h2>Everything Software</h2>
-									<p>Here are some of my favorite software engineering related projects.</p>
-								</header>
-								<div class="box alt">
-									<div class="row gtr-uniform">
-										<div class="col-4">
-											<a href="software/ChefBuddy.html" class="no_bottom_line">
-												<span class="image fit"><img src="images/software/ChefBuddy/cover.webp" alt="" /></span>
-												<h3>Recipe Manager powered by AI</h3>
-												<p>Don't know what to cook? Let ChefBuddy help you! An app to automatically suggest and manage recipes for you.</p>
-											</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+        </div>
+    </footer>
 
-										</div>
-										<div class="col-4">
-											<a href="software/CarbonShare.html" class="no_bottom_line">
-												<span class="image fit"><img src="images/software/CarbonShare/cover.webp" alt="" /></span>
-												<h3>Decentralized Carbon Tracking</h3>
-												<p>A blockchain solution for tracking carbon footprint. Powered by Solidity, Angular, and Python.</p>
-											</a>
-										</div>
-										<div class="col-4">
-											<a href="software/BIDashboard.html" class="no_bottom_line">
-												<span class="image fit"><img src="images/software/BIDashboard/cover.webp" alt="" /></span>
-												<h3>BI Dashboard with Python</h3>
-												<p>An reactive dashboard website used to monitor live performance metrics. Powered by Python and Dash Bootstrap Components.</p>
-											</a>
-										</div>
-									</div>
-								</div>
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="software.html" class="button">Software Portfolio</a></li>
-									</ul>
-								</footer>
-							</section>
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
-						<!-- Get Started -->
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>More</h2>
-									<p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
-								</header>
-								<div class="row gtr-uniform">
-									<div class="col-2"></div>
-									<div class="col-4">
-										<span class="image fit"><img src="images/index/cover_mochi.jpg" alt="" /></span>
-										<h3><a href="https://www.instagram.com/mochi_is_a_shiba_inu">Mochi the Shiba</a></h3>
-										<p>A curated collection of Mochi.</p>
-									</div>
-									<div class="col-4">
-										<span class="image fit"><img src="images/index/cover_blog.jpg" alt="" /></span>
-										<h3>Personal Blog</h3>
-										<p>Sometimes I post my thoughts here, sometimes I don't.</p>
-									</div>
-								</div>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="message.html" class="button primary">Contact Me</a></li>
-										<li><a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="button">Contact Mochi</a></li>
-									</ul>
-								</footer>
-							</section>
-					</div>
+        // Active navigation link highlighting
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-				<!-- Footer --> 
-					<footer id="footer">
-						<section>
-							<h2>Contact Me</h2>
-							<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my social media, or send me a message below.</p>
-							<ul class="actions">
-								<li><a href="message.html" class="button">Message Me</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Social Media</h2>
-							<dl class="alt">
-								<dt>Location</dt>
-								<dd>Long Island, NY</dd>
-								<dt>Email</dt>
-								<dd><a href="#">xiao.yuan0217@gmail.com</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="https://github.com/sixym3" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; 2025. Eric Xiao | Portfolio.</p>
-					</footer>
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+    </script>
+</body>
 </html>

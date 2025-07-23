@@ -1,112 +1,321 @@
-<!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Contact me</title>
-		<link rel="icon" href="images/logo.svg" type="image/icon type">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | Contact Me</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="assets/css/modern.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Form-specific styles */
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-label {
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: flex-start;
+            margin-top: var(--space-lg);
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+            
+            .form-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="aboutme.html" class="nav-link">About</a></li>
+                <li><a href="mechanical.html" class="nav-link">Mechanical</a></li>
+                <li><a href="software.html" class="nav-link">Software</a></li>
+                <li><a href="message.html" class="nav-link active">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Contact Form Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Get In Touch</h1>
+                <p class="section-subtitle">
+                    I'm always open to new opportunities and collaborations. Feel free to reach out with any questions, 
+                    project ideas, or just to say hello!
+                </p>
+            </div>
+            
+            <div class="form-container">
+                <!-- Contact Info Cards -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg); margin-bottom: var(--space-3xl);">
+                    <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                        <i class="fas fa-envelope" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: var(--space-md);"></i>
+                        <h3 style="margin-bottom: var(--space-sm);">Email</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 0;">
+                            <a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a>
+                        </p>
+                    </div>
+                    
+                    <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: var(--space-md);"></i>
+                        <h3 style="margin-bottom: var(--space-sm);">Location</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 0;">Long Island, NY</p>
+                    </div>
+                    
+                    <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center;">
+                        <i class="fas fa-briefcase" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: var(--space-md);"></i>
+                        <h3 style="margin-bottom: var(--space-sm);">Status</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 0;">Open to full-time opportunities</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                    <h2 style="margin-bottom: var(--space-lg); text-align: center;">Send me a message</h2>
+                    
+                    <form method="post" action="https://formspree.io/f/xvgzrpww">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name" class="form-label">
+                                    <i class="fas fa-user" style="margin-right: var(--space-xs);"></i>
+                                    Name *
+                                </label>
+                                <input type="text" name="name" id="name" class="form-input" placeholder="Your full name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope" style="margin-right: var(--space-xs);"></i>
+                                    Email *
+                                </label>
+                                <input type="email" name="email" id="email" class="form-input" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="category" class="form-label">
+                                    <i class="fas fa-tag" style="margin-right: var(--space-xs);"></i>
+                                    Category *
+                                </label>
+                                <select name="category" id="category" class="form-select" required>
+                                    <option value="">- Select a category -</option>
+                                    <option value="job">🎯 Job Opportunity</option>
+                                    <option value="project">🤝 Project Collaboration</option>
+                                    <option value="question">❓ General Question</option>
+                                    <option value="other">💬 Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="message" class="form-label">
+                                    <i class="fas fa-comment" style="margin-right: var(--space-xs);"></i>
+                                    Message *
+                                </label>
+                                <textarea name="message" id="message" class="form-textarea" placeholder="Tell me about your project, opportunity, or question..." rows="6" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="fas fa-undo"></i>
+                                Reset Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Response Time Info -->
+                <div style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--radius-lg); margin-top: var(--space-xl); text-align: center;">
+                    <h3 style="color: var(--accent-primary); margin-bottom: var(--space-md);">
+                        <i class="fas fa-clock"></i>
+                        Response Time
+                    </h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">
+                        I typically respond to messages within 24-48 hours. For urgent matters, 
+                        feel free to connect with me on <a href="https://www.linkedin.com/in/eric-xiaoy/">LinkedIn</a>.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links" style="margin-top: var(--space-2xl);">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+            
+            <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-home"></i>
+                    Return Home
+                </a>
+                <a href="aboutme.html" class="btn btn-secondary">
+                    <i class="fas fa-user"></i>
+                    Learn More About Me
+                </a>
+            </div>
+        </div>
+    </section>
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Contact me</h1>
-					</header>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+            </div>
+        </div>
+    </footer>
 
-				<!-- Main -->
-					<div id="main">
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
-						<!-- Content -->
-							<section id="content" class="main">
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
 
-								<!-- Form -->
-									<section>
-										<h2>Send message</h2>
-										<form method="post" action="https://formspree.io/f/xvgzrpww">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="name" id="name" value="" placeholder="Name" required />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="email" name="email" id="email" value="" placeholder="Email" required />
-												</div>
-												<div class="col-12">
-													<select name="category" id="category" required>
-														<option value="">- N/a -</option>
-														<option value="job">Job Opportunity</option>
-														<option value="project">Project Collaboration</option>
-														<option value="question">General Question</option>
-														<option value="other">Other</option>
-													</select>
-												</div>
-												<div class="col-12">
-													<textarea name="message" id="message" placeholder="Enter your message" rows="6" required></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send" class="primary" /></li>
-														<li><input type="reset" value="Reset" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
+        // Form validation and enhancement
+        const form = document.querySelector('form');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        form.addEventListener('submit', function(e) {
+            // Add loading state to submit button
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+        });
 
-								
+        // Reset button functionality
+        form.addEventListener('reset', function() {
+            setTimeout(() => {
+                // Focus on first input after reset
+                document.getElementById('name').focus();
+            }, 100);
+        });
 
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<section>
-						<h2>Contact Me</h2>
-						<p>I am always open to new opportunities and collaborations. Feel free to reach out to me with any of my social media, or send me a message below.</p>
-						<ul class="actions">
-							<li><a href="message.html" class="button">Message Me</a></li>
-							<li><a href="index.html" class="button">Return Home</a></li>
-						</ul>
-					</section>
-					<section>
-						<h2>Contact Me</h2>
-						<dl class="alt">
-							<dt>Location</dt>
-							<dd>Lake Grove, NY</dd>
-							<dt>Email</dt>
-							<dd><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></dd>
-						</dl>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/eric-xiaoy/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://www.instagram.com/sixym3/" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/sixym3" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-							<li><a href="https://x.com/cyberbroker4729" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-						</ul>
-					</section>
-					<p class="copyright">&copy; 2025. Eric Xiao | Portfolio.</p>
-				</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+        // Auto-resize textarea
+        const textarea = document.getElementById('message');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.max(120, this.scrollHeight) + 'px';
+        });
+    </script>
+</body>
 </html>
