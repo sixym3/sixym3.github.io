@@ -147,7 +147,7 @@
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc;">
                                 <li>Quick-release mechanism for pipette swapping</li>
                                 <li>Rigid mounting to eliminate flex during actuation</li>
-                                <li>Universal compatibility with standard pipette sizes</li>
+                                <li>Modular design and compatibility with standard pipette sizes</li>
                                 <li>Lightweight PLA 3D printed construction</li>
                             </ul>
                         </div>
@@ -160,7 +160,7 @@
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc;">
                                 <li>Primary 3D printed actuator for main plunger control</li>
                                 <li>Secondary 3D printed actuator for tip ejection mechanism</li>
-                                <li>Stepper motor precision for repeatable actuation</li>
+                                <li>Linear actuator precision for repeatable actuation</li>
                                 <li>Force feedback to prevent over-compression</li>
                             </ul>
                         </div>
@@ -246,7 +246,7 @@
                                 <div>
                                     <h4 style="color: var(--text-secondary); margin-bottom: var(--space-sm);">Control Challenges</h4>
                                     <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc; font-size: 0.875rem;">
-                                        <li>Microstep motor control</li>
+                                        <li>Position-controlled linear actuators</li>
                                         <li>Force feedback implementation</li>
                                         <li>Repeatable positioning accuracy</li>
                                     </ul>
@@ -260,7 +260,7 @@
                                 Multi-Layer Integration
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                The project demanded seamless integration across multiple software layers - from low-level motor control 
+                                The project demanded seamless integration across multiple software layers - from low-level actuator control 
                                 to high-level research scheduling systems. Each layer required different programming approaches and 
                                 communication protocols while maintaining real-time performance for laboratory applications.
                             </p>
@@ -282,7 +282,7 @@
                                 Microcontroller Code
                             </h3>
                             <p style="color: var(--text-secondary); margin-bottom: var(--space-sm);">
-                                Low-level firmware controlling stepper motors with precision positioning. Handles RS485 communication and provides reliable hardware interface for pipette actuation commands.
+                                Low-level firmware receiving position commands via RS485 from the robot system, then controlling linear actuators through digital outputs to actuator control boards for reliable pipette actuation.
                             </p>
                             <div style="display: flex; flex-wrap: wrap; gap: var(--space-xs);">
                                 <span class="tech-tag">C++</span>
@@ -351,7 +351,7 @@
                             <div style="padding: var(--space-md); background: var(--card-bg); border-radius: var(--radius-sm);">
                                 <i class="fas fa-arrow-right" style="font-size: 2rem; color: var(--text-muted); margin-bottom: var(--space-sm);"></i>
                                 <p style="color: var(--text-primary); font-weight: var(--font-weight-medium);">Microcontroller</p>
-                                <p style="color: var(--text-secondary); font-size: 0.875rem;">Motor Control</p>
+                                <p style="color: var(--text-secondary); font-size: 0.875rem;">Linear Actuator Control</p>
                             </div>
                         </div>
                     </div>
