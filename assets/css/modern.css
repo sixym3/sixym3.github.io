@@ -233,6 +233,7 @@ a:hover {
     font-size: 1.25rem;
     color: var(--text-secondary);
     margin-bottom: var(--space-sm);
+    max-width: none;
 }
 
 .hero-name {
