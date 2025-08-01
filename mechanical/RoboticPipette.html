@@ -51,12 +51,9 @@
                     </span>
                 </div>
                 <p class="section-subtitle">
-                    High-precision robotic liquid handling system achieving 50μL accuracy for scientific research applications
+                    High-precision robotic liquid handling system achieving 5&micro;L accuracy for scientific research applications
                 </p>
                 <div style="display: flex; justify-content: center; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap;">
-                    <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: 0.875rem;">
-                        <i class="fas fa-qrcode"></i> Featured on Research Poster
-                    </span>
                     <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-size: 0.875rem;">
                         <i class="fas fa-robot"></i> UR5e Integration
                     </span>
@@ -70,20 +67,20 @@
                         <i class="fas fa-play-circle"></i>
                         Precision Actuation Demonstration
                     </h2>
-                    <div style="position: relative; max-width: 800px; margin: 0 auto;">
-                        <video 
-                            controls 
-                            preload="metadata"
-                            style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
-                            poster="../images/mechanical/RoboticPipette/video-thumbnail.jpg">
-                            <source src="../images/mechanical/RoboticPipette/Actuate_close_up.mp4" type="video/mp4">
-                            <p style="color: var(--text-secondary); text-align: center; padding: var(--space-lg);">
-                                Your browser does not support the video tag. 
-                                <a href="../images/mechanical/RoboticPipette/Actuate_close_up.mp4" style="color: var(--accent-primary);">Download the video</a>
-                            </p>
-                        </video>
-                        <p style="text-align: center; color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-sm);">
-                            Close-up demonstration of the precision actuator mechanism achieving 50μL accuracy
+                    <div style="position: relative; max-width: 600px; margin: 0 auto;">
+                        <div style="position: relative; cursor: pointer;" class="video-lightbox-trigger" onclick="openVideoLightbox('../images/mechanical/RoboticPipette/actuate_close_up.mp4', 'Close-up demonstration of the precision actuator mechanism')">
+                            <video 
+                                preload="metadata"
+                                style="width: 100%; height: auto; max-height: 400px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); object-fit: contain;"
+                                class="hero-video">
+                                <source src="../images/mechanical/RoboticPipette/actuate_close_up.mp4" type="video/mp4">
+                            </video>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.7); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                                <i class="fas fa-play" style="color: white; font-size: 2rem; margin-left: 4px;"></i>
+                            </div>
+                        </div>
+                        <p style="text-align: center; color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs); max-width: none;">
+                            Close-up demonstration of the precision actuator mechanism
                         </p>
                     </div>
                 </div>
@@ -100,31 +97,30 @@
                     <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-xl); align-items: start;" class="responsive-grid-2-1">
                         <div>
                             <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
-                                Industrial robots like the UR5e excel at precision movement but lack the fine liquid handling capabilities 
-                                required for scientific research. Existing robotic dispensing systems are designed for industrial applications 
-                                (gluing, coating) with accuracies in the milliliter range - insufficient for scientific protocols requiring 
-                                microliter precision.
+                                Industrial robots excel at movement but lack the fine liquid handling needed for scientific research. 
+                                Existing systems provide milliliter accuracy, insufficient for protocols requiring microliter precision.
                             </p>
                             <div style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--radius-md); margin-bottom: var(--space-md);">
                                 <h3 style="color: var(--accent-primary); margin-bottom: var(--space-sm);">
                                     <i class="fas fa-bullseye"></i> Design Requirements
                                 </h3>
                                 <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc;">
-                                    <li><strong>50 microliter accuracy</strong> for scientific protocols</li>
-                                    <li>Integration with existing UR5e robotic arm</li>
-                                    <li>Use standard laboratory pipettes</li>
-                                    <li>Remote control capability for automated workflows</li>
-                                    <li>ROS2 integration for research scheduling systems</li>
+                                    <li><strong>5 microliter accuracy</strong> for scientific protocols</li>
+                                    <li><strong>Quick swap capability</strong> for multiple pipette volumes</li>
+                                    <li>Integration with existing UR5e tool exchanger system</li>
+                                    <li>Use standard laboratory pipettes without modification</li>
+                                    <li>Internal cabling compatibility with other laboratory grippers</li>
+                                    <li>ROS2 integration for automated research scheduling systems</li>
                                 </ul>
                             </div>
                         </div>
                         <div>
-                            <img src="../images/mechanical/RoboticPipette/pipette_end_effector_cad.jpg" alt="Robotic Pipette CAD Design" 
+                            <img src="../images/mechanical/RoboticPipette/pipettor_on_ur5e_close_up.png" alt="Close-up of Integrated System" 
                                  class="lightbox-trigger"
                                  style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer;"
                                  onclick="openLightbox(this)">
                             <p style="text-align: center; color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs);">
-                                CAD Design of End Effector System
+                                Close-up: 3D Printed Integration
                             </p>
                         </div>
                     </div>
@@ -137,52 +133,74 @@
                         Mechanical Engineering Solution
                     </h2>
                     
+
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-xl);" class="responsive-grid-2">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">3D Printed Holder Design</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Quick Swap Mechanism</h3>
                             <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
-                                Designed and 3D printed a precision holder to securely mount standard laboratory pipettes to the UR5e end effector. 
-                                The custom design ensures proper alignment and prevents movement during operation while allowing easy pipette replacement.
+                                Enables rapid pipette changes between different volumes without interrupting automated workflows.
                             </p>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc;">
-                                <li>Quick-release mechanism for pipette swapping</li>
-                                <li>Rigid mounting to eliminate flex during actuation</li>
-                                <li>Modular design and compatibility with standard pipette sizes</li>
-                                <li>Lightweight PLA 3D printed construction</li>
+                                <li><strong>Secure locking mechanism</strong> - Reliable engagement during operation</li>
+                                <li><strong>Universal compatibility</strong> - Works with standard laboratory pipettes</li>
+                                <li><strong>Repeatable positioning</strong> - Consistent alignment for accuracy</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">3D Printed Dual Actuator System</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Dual Actuator System</h3>
                             <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
-                                Designed and 3D printed two independent actuators to replicate human pipetting actions with microliter precision. 
-                                The custom actuator system provides both coarse and fine control for optimal accuracy across different volume ranges.
+                                Two independent 3D printed actuators replicate human pipetting actions with microliter precision and dual control modes.
                             </p>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc;">
-                                <li>Primary 3D printed actuator for main plunger control</li>
-                                <li>Secondary 3D printed actuator for tip ejection mechanism</li>
-                                <li>Linear actuator precision for repeatable actuation</li>
-                                <li>Force feedback to prevent over-compression</li>
+                                <li><strong>Primary actuator</strong> - Main plunger control with position feedback</li>
+                                <li><strong>Secondary actuator</strong> - Tip ejection mechanism with force limiting</li>
+                                <li><strong>Linear precision</strong> - Stepper motor control for repeatable actuation</li>
+                                <li><strong>Integrated mounting</strong> - Combined with quick swap holder design</li>
                             </ul>
                         </div>
                     </div>
 
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
                         <div style="text-align: center;">
-                            <img src="../images/mechanical/RoboticPipette/holder_design.jpg" alt="3D Printed Holder Design" 
-                                 class="lightbox-trigger"
-                                 style="width: 100%; max-height: 200px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer;"
-                                 onclick="openLightbox(this)">
+                            <div style="position: relative; cursor: pointer;" class="video-lightbox-trigger" onclick="openVideoLightbox('../images/mechanical/RoboticPipette/actuate_close_up_cad.mp4', 'CAD Animation: System Operation')">
+                                <video 
+                                    preload="metadata"
+                                    style="width: 100%; max-height: 200px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                                    <source src="../images/mechanical/RoboticPipette/actuate_close_up_cad.mp4" type="video/mp4">
+                                </video>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.7); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                                    <i class="fas fa-play" style="color: white; font-size: 1.5rem; margin-left: 3px;"></i>
+                                </div>
+                            </div>
                             <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs);">
-                                3D Printed Precision Holder
+                                CAD Animation: System Operation
                             </p>
                         </div>
                         <div style="text-align: center;">
-                            <img src="../images/mechanical/RoboticPipette/actuator_design.jpg" alt="3D Printed Actuator Design" 
+                            <img src="../images/mechanical/RoboticPipette/end_effectors_on_quick_swap_holder.png" alt="Quick Swap System with Multiple End Effectors" 
                                  class="lightbox-trigger"
                                  style="width: 100%; max-height: 200px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer;"
                                  onclick="openLightbox(this)">
                             <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs);">
-                                3D Printed Dual Actuator System
+                                Quick Swap with Multiple End Effectors
+                            </p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="../images/mechanical/RoboticPipette/pipettor_on_ur5e.png" alt="Complete System on UR5e Robot" 
+                                 class="lightbox-trigger"
+                                 style="width: 100%; max-height: 200px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer;"
+                                 onclick="openLightbox(this)">
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs);">
+                                Complete System on UR5e
+                            </p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="../images/mechanical/RoboticPipette/pipette_end_effector_cad.jpg" alt="Robotic Pipette CAD Design" 
+                                 class="lightbox-trigger"
+                                 style="width: 100%; max-height: 200px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer;"
+                                 onclick="openLightbox(this)">
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: var(--space-xs);">
+                                CAD Design of End Effector System
                             </p>
                         </div>
                     </div>
@@ -195,74 +213,32 @@
                         Technical Challenges & Solutions
                     </h2>
                     
-                    <div style="display: grid; gap: var(--space-xl);">
+                    <div style="display: grid; gap: var(--space-lg);">
                         <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">
                                 <i class="fas fa-plug" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                Internal Cabling & Communication Protocol
+                                Quick Swap System Requirements
                             </h3>
                             <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
-                                The UR5e robot features a tool exchanger system that allows automatic swapping between different end effectors 
-                                and grippers. This meant external wires running down the robot arm were not feasible - the pipette system had to 
-                                integrate through the robot's internal cabling using the standard 8-pin quick connect/disconnect interface 
-                                (compatible with other robotic grippers in the lab).
+                                Quick swap capability drove the entire system architecture. Laboratory workflows require rapid switching between 
+                                pipette volumes, but the UR5e tool exchanger prohibited external wires, forcing integration through the robot's 
+                                internal 8-pin RS485 interface.
                             </p>
-                            <div style="background: var(--bg-secondary); padding: var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-md);">
-                                <h4 style="color: var(--accent-primary); margin-bottom: var(--space-sm);">Technical Implementation Process</h4>
-                                <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc;">
-                                    <li>Researched robot's internal wiring requirements and pin configurations</li>
-                                    <li>Learned RS485 industrial communication protocol for reliable data transmission</li>
-                                    <li>Conducted pin mapping and connectivity testing for the 8-pin interface</li>
-                                    <li>Integrated RS485 shield with Arduino microcontroller system</li>
-                                    <li>Configured specialized shielding to prevent electromagnetic interference</li>
-                                    <li>Validated compatibility with existing robotic grippers in laboratory</li>
-                                </ul>
-                            </div>
-                            <p style="color: var(--text-secondary); font-style: italic;">
-                                This self-directed investigation and implementation enabled seamless tool swapping while maintaining 
-                                robust communication between the robot controller and pipette system, ensuring compatibility with 
-                                the laboratory's existing multi-gripper workflow.
-                            </p>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc; font-size: 0.875rem;">
+                                <li>Researched internal wiring requirements and RS485 protocol</li>
+                                <li>Implemented Arduino-based communication</li>
+                                <li>Validated compatibility with existing laboratory grippers</li>
+                            </ul>
                         </div>
                         
                         <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">
                                 <i class="fas fa-crosshairs" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                Precision Actuation Requirements
-                            </h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
-                                Achieving 50μL accuracy required precise control of the pipette plunger mechanism while maintaining 
-                                compatibility with standard laboratory pipettes of various sizes.
-                            </p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);" class="responsive-grid-2">
-                                <div>
-                                    <h4 style="color: var(--text-secondary); margin-bottom: var(--space-sm);">Mechanical Challenges</h4>
-                                    <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc; font-size: 0.875rem;">
-                                        <li>Eliminating mechanical backlash</li>
-                                        <li>Consistent force application</li>
-                                        <li>Universal pipette compatibility</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 style="color: var(--text-secondary); margin-bottom: var(--space-sm);">Control Challenges</h4>
-                                    <ul style="color: var(--text-secondary); margin-left: var(--space-lg); list-style-type: disc; font-size: 0.875rem;">
-                                        <li>Position-controlled linear actuators</li>
-                                        <li>Force feedback implementation</li>
-                                        <li>Repeatable positioning accuracy</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">
-                                <i class="fas fa-layer-group" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                Multi-Layer Integration
+                                Precision & Integration
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                The project demanded seamless integration across multiple software layers - from low-level actuator control 
-                                to high-level research scheduling systems. Each layer required different programming approaches and 
-                                communication protocols while maintaining real-time performance for laboratory applications.
+                                Achieved 5&micro;L accuracy through position-controlled linear actuators with force feedback, while integrating 
+                                multiple software layers from low-level Arduino control to high-level ROS2 research scheduling systems.
                             </p>
                         </div>
                     </div>
@@ -282,12 +258,12 @@
                                 Microcontroller Code
                             </h3>
                             <p style="color: var(--text-secondary); margin-bottom: var(--space-sm);">
-                                Low-level firmware receiving position commands via RS485 from the robot system, then controlling linear actuators through digital outputs to actuator control boards for reliable pipette actuation.
+                                Firmware receives RS485 commands from robot and controls linear actuators via digital outputs.
                             </p>
                             <div style="display: flex; flex-wrap: wrap; gap: var(--space-xs);">
                                 <span class="tech-tag">C++</span>
                                 <span class="tech-tag">Arduino</span>
-                                <span class="tech-tag">Stepper Control</span>
+                                <span class="tech-tag">Motor Control</span>
                                 <span class="tech-tag">RS485</span>
                             </div>
                         </div>
@@ -298,7 +274,7 @@
                                 Driver Software
                             </h3>
                             <p style="color: var(--text-secondary); margin-bottom: var(--space-sm);">
-                                Python service node bridging MoveIt motion planning with hardware control. Translates high-level research commands into precise serial instructions for the robot system.
+                                Python service bridging MoveIt motion planning with hardware control via serial communication.
                             </p>
                             <div style="display: flex; flex-wrap: wrap; gap: var(--space-xs);">
                                 <span class="tech-tag">Python</span>
@@ -314,7 +290,7 @@
                                 ROS2 Integration
                             </h3>
                             <p style="color: var(--text-secondary); margin-bottom: var(--space-sm);">
-                                High-level wrapper integrating with erobs scheduling and Bluesky research protocols. Enables seamless automation of complex laboratory workflows and experiment coordination.
+                                High-level integration with erobs scheduling and Bluesky protocols for automated laboratory workflows.
                             </p>
                             <div style="display: flex; flex-wrap: wrap; gap: var(--space-xs);">
                                 <span class="tech-tag">ROS2</span>
@@ -370,11 +346,11 @@
                             <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-md); margin-bottom: var(--space-md);">
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm);">
                                     <span style="color: var(--text-secondary);">Accuracy Target</span>
-                                    <span style="color: var(--accent-primary); font-weight: var(--font-weight-bold);">50μL</span>
+                                    <span style="color: var(--accent-primary); font-weight: var(--font-weight-bold);">50&micro;L</span>
                                 </div>
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm);">
                                     <span style="color: var(--text-secondary);">Achieved Accuracy</span>
-                                    <span style="color: var(--accent-primary); font-weight: var(--font-weight-bold);">✓ 50μL ±2μL</span>
+                                    <span style="color: var(--accent-primary); font-weight: var(--font-weight-bold);">✓ 5&micro;L &plusmn;0.5&micro;L</span>
                                 </div>
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
                                     <span style="color: var(--text-secondary);">Integration Success</span>
@@ -384,8 +360,7 @@
                             
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Project Status</h3>
                             <p style="color: var(--text-secondary);">
-                                Completed design and testing at Brookhaven National Laboratory. The system has been validated for 
-                                precision liquid handling and is ready for integration into research workflows requiring automated dispensing.
+                                System completed and validated at Brookhaven National Laboratory for precision liquid handling applications.
                             </p>
                         </div>
                         
@@ -396,7 +371,7 @@
                                     <i class="fas fa-check-circle" style="color: var(--accent-primary); margin-top: 4px;"></i>
                                     <div>
                                         <p style="color: var(--text-primary); font-weight: var(--font-weight-medium);">Precision Target Met</p>
-                                        <p style="color: var(--text-secondary); font-size: 0.875rem;">Achieved 50μL accuracy requirement for scientific protocols</p>
+                                        <p style="color: var(--text-secondary); font-size: 0.875rem;">Achieved 5&micro;L accuracy requirement for scientific protocols</p>
                                     </div>
                                 </div>
                                 
@@ -436,19 +411,26 @@
                     </h2>
                     
                     <div style="text-align: center;">
-                        <div style="background: var(--bg-secondary); border: 2px dashed var(--border-color); border-radius: var(--radius-lg); padding: var(--space-3xl); margin-bottom: var(--space-lg);">
-                            <i class="fas fa-image" style="font-size: 4rem; color: var(--text-muted); margin-bottom: var(--space-md);"></i>
-                            <h3 style="color: var(--text-secondary); margin-bottom: var(--space-sm);">Research Poster</h3>
-                            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: var(--space-md);">
-                                Poster presentation featuring this project with QR code linking to this page
-                            </p>
-                            <div style="display: inline-block; background: var(--card-bg); padding: var(--space-md); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-                                <i class="fas fa-qrcode" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: var(--space-xs);"></i>
-                                <p style="color: var(--text-secondary); font-size: 0.75rem; margin: 0;">Scan to view project</p>
+                        <div style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--radius-lg); margin-bottom: var(--space-lg);">
+                            <div style="max-width: 800px; margin: 0 auto;">
+                                <embed 
+                                    src="../images/mechanical/RoboticPipette/Xiao_Y_poster_final.pdf" 
+                                    type="application/pdf" 
+                                    width="100%" 
+                                    height="600px"
+                                    style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
                             </div>
                         </div>
-                        <p style="color: var(--text-secondary); font-style: italic;">
-                            Poster image will be added here once available - visitors can scan the QR code to access this detailed project page
+                        <div style="display: flex; justify-content: center; margin-bottom: var(--space-lg);">
+                            <a href="../images/mechanical/RoboticPipette/Xiao_Y_poster_final.pdf" 
+                               target="_blank" 
+                               style="display: inline-flex; align-items: center; gap: var(--space-xs); background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); text-decoration: none; font-weight: var(--font-weight-medium);">
+                                <i class="fas fa-download"></i>
+                                Download Full Poster
+                            </a>
+                        </div>
+                        <p style="color: var(--text-secondary); font-style: italic; font-size: 0.875rem; text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.5;">
+                            Research poster presented at Brookhaven National Laboratory showcasing the robotic pipette end effector project.
                         </p>
                     </div>
                 </div>
@@ -467,10 +449,10 @@
                                 Mechanical Design
                             </h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Precision mechanism design</li>
-                                <li>Actuator system engineering</li>
-                                <li>3D printing and rapid prototyping</li>
-                                <li>Integration with existing systems</li>
+                                <li>Precision mechanisms</li>
+                                <li>Actuator systems</li>
+                                <li>3D printing</li>
+                                <li>System integration</li>
                             </ul>
                         </div>
                         
@@ -480,10 +462,10 @@
                                 Software Development
                             </h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Embedded C++ programming</li>
-                                <li>Python driver development</li>
+                                <li>Embedded C++</li>
+                                <li>Python drivers</li>
                                 <li>ROS2 integration</li>
-                                <li>API design and documentation</li>
+                                <li>API design</li>
                             </ul>
                         </div>
                         
@@ -493,9 +475,9 @@
                                 Robotics Integration
                             </h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>UR5e end effector design</li>
-                                <li>ROS2 ecosystem integration</li>
-                                <li>Research workflow automation</li>
+                                <li>MoveIt motion planning</li>
+                                <li>ROS2 integration</li>
+                                <li>Workflow automation</li>
                                 <li>System testing and validation</li>
                             </ul>
                         </div>
@@ -509,16 +491,14 @@
                         Project Impact
                     </h2>
                     <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
-                        This project successfully bridged the gap between industrial robotics and laboratory precision, enabling 
-                        <strong>automated scientific protocols</strong> that were previously impossible with standard robotic systems. 
-                        The solution demonstrates the power of <strong>interdisciplinary engineering</strong> - combining mechanical precision, 
-                        embedded programming, and modern robotics frameworks to solve real-world research challenges.
+                        Successfully bridged industrial robotics and laboratory precision, enabling <strong>automated scientific protocols</strong> 
+                        through <strong>interdisciplinary engineering</strong> combining mechanical design, embedded programming, and modern robotics frameworks.
                     </p>
                 </div>
 
                 <!-- Navigation -->
                 <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
-                    <a href="PIDTurntable.html" class="btn btn-primary">
+                    <a href="RocketTeam.html" class="btn btn-primary">
                         <i class="fas fa-arrow-right"></i>
                         Next Project
                     </a>
@@ -543,7 +523,10 @@
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <div class="lightbox-content" onclick="event.stopPropagation()">
             <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <img id="lightbox-image" class="lightbox-image" src="" alt="" style="display: none;">
+            <video id="lightbox-video" class="lightbox-video" controls style="display: none; max-width: 90vw; max-height: 90vh;">
+                <source id="lightbox-video-source" src="" type="video/mp4">
+            </video>
             <div id="lightbox-caption" class="lightbox-caption"></div>
         </div>
     </div>
@@ -579,10 +562,38 @@
 
     <!-- Additional Mobile Responsive CSS -->
     <style>
+        /* Video lightbox trigger styling */
+        .video-lightbox-trigger:hover div {
+            background: rgba(0,0,0,0.9) !important;
+            transform: translate(-50%, -50%) scale(1.1) !important;
+        }
+        
+        /* Lightbox video styling */
+        .lightbox-video {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Desktop hero video styling - smaller and more compact */
+        @media (min-width: 769px) {
+            .hero-video {
+                max-height: 300px !important;
+                max-width: 500px !important;
+                margin: 0 auto !important;
+                display: block !important;
+            }
+        }
+        
         @media (max-width: 768px) {
             .responsive-grid-2, .responsive-grid-3, .responsive-grid-2-1 {
                 grid-template-columns: 1fr !important;
                 gap: var(--space-lg) !important;
+            }
+            
+            /* Hero video on mobile - allow full width */
+            .hero-video {
+                max-height: none !important;
+                max-width: 100% !important;
             }
             
             /* Make video container more mobile friendly */
@@ -591,12 +602,17 @@
             }
             
             /* Adjust lightbox triggers for touch devices */
-            .lightbox-trigger {
+            .lightbox-trigger, .video-lightbox-trigger {
                 transition: none !important;
             }
             
-            .lightbox-trigger:hover {
+            .lightbox-trigger:hover, .video-lightbox-trigger:hover {
                 transform: none !important;
+            }
+            
+            .video-lightbox-trigger:hover div {
+                transform: translate(-50%, -50%) !important;
+                background: rgba(0,0,0,0.7) !important;
             }
         }
         
@@ -634,11 +650,17 @@
             }
         });
 
-        // Lightbox functionality
+        // Lightbox functionality for images
         function openLightbox(img) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxVideo = document.getElementById('lightbox-video');
             const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            // Hide video, show image
+            lightboxVideo.style.display = 'none';
+            lightboxVideo.pause();
+            lightboxImage.style.display = 'block';
             
             lightbox.style.display = 'block';
             lightboxImage.src = img.src;
@@ -649,8 +671,34 @@
             document.body.style.overflow = 'hidden';
         }
 
+        // Lightbox functionality for videos
+        function openVideoLightbox(videoSrc, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            const lightboxVideoSource = document.getElementById('lightbox-video-source');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            // Hide image, show video
+            lightboxImage.style.display = 'none';
+            lightboxVideo.style.display = 'block';
+            
+            lightbox.style.display = 'block';
+            lightboxVideoSource.src = videoSrc;
+            lightboxVideo.load(); // Reload video with new source
+            lightboxCaption.innerHTML = caption; // Use innerHTML to support HTML entities
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            
+            // Pause video if playing
+            lightboxVideo.pause();
+            
             lightbox.style.display = 'none';
             
             // Restore body scroll

@@ -57,7 +57,7 @@
 
             <!-- Main Project Image -->
             <div style="margin-bottom: var(--space-3xl);">
-                <img src="../images/software/ChefBuddy/banner.png" alt="ChefBuddy Application Interface" 
+                <img src="../images/software/ChefBuddy/chefbuddy_app_interface.png" alt="ChefBuddy Application Interface" 
                      class="lightbox-trigger"
                      style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
                      onclick="openLightbox(this)">
@@ -72,13 +72,9 @@
                         Problem Statement
                     </h2>
                     <p style="color: var(--text-secondary);">
-                        Existing recipe management apps, like Paprika V3, often misclassify web-scraped information and lack 
-                        AI-powered features for meal planning and pantry tracking. Users must manually adjust recipes, plan 
-                        meals, and track ingredients, making meal preparation tedious and error-prone.
-                    </p>
-                    <p style="color: var(--text-secondary);">
-                        The manual nature of these tasks creates friction in the cooking process, leading to poor meal planning, 
-                        food waste from expired ingredients, and frustration with inconsistent recipe data quality.
+                        Existing recipe apps like Paprika V3 misclassify web-scraped data and lack AI features for meal planning 
+                        and pantry tracking. Manual recipe adjustment, meal planning, and ingredient tracking creates friction, 
+                        leading to poor planning, food waste, and frustration with inconsistent data quality.
                     </p>
                 </div>
 
@@ -89,25 +85,23 @@
                         AI-Powered Solution
                     </h2>
                     <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
-                        ChefBuddy enhances recipe management with <strong>AI-driven automation</strong>, combining the best of 
-                        traditional recipe apps with intelligent features that eliminate manual tasks.
+                        ChefBuddy combines traditional recipe management with <strong>AI automation</strong> to eliminate manual tasks.
                     </p>
                     
                     <div style="display: grid; gap: var(--space-lg);">
                         <div>
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 Core AI Features</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li><strong>Accurate recipe scraping & summarization</strong> using AI to extract key details</li>
-                                <li><strong>AI-powered meal planning</strong> to suggest and adjust meals based on preferences</li>
-                                <li><strong>Pantry tracking with receipt scanning</strong>, leveraging OCR and AI to update inventory</li>
-                                <li><strong>Automated ingredient tracking</strong>, reminding users about missing or mismarked items</li>
+                                <li><strong>AI recipe scraping & summarization</strong> for accurate data extraction</li>
+                                <li><strong>Intelligent meal planning</strong> with preference-based suggestions</li>
+                                <li><strong>OCR receipt scanning</strong> for automated pantry tracking</li>
+                                <li><strong>Smart ingredient reminders</strong> for missing or expired items</li>
                             </ul>
                         </div>
                         <div>
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">📊 Data Architecture</h3>
                             <p style="color: var(--text-secondary);">
-                                The app maintains a <strong>structured, future-proof JSON schema</strong> with versioning to prevent 
-                                data loss and ensure flexibility for future updates and AI model improvements.
+                                <strong>Versioned JSON schema</strong> ensures data integrity and flexibility for future AI improvements.
                             </p>
                         </div>
                     </div>
@@ -132,30 +126,30 @@
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Backend Architecture</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Backend</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Express.js REST API server</li>
-                                <li>OpenAI integration for recipe processing</li>
-                                <li>Cheerio for intelligent web scraping</li>
-                                <li>Structured JSON data management</li>
+                                <li>Express.js REST API</li>
+                                <li>OpenAI recipe processing</li>
+                                <li>Cheerio web scraping</li>
+                                <li>JSON data management</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Frontend Experience</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Frontend</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Vue.js reactive user interface</li>
-                                <li>Real-time recipe data visualization</li>
+                                <li>Vue.js reactive interface</li>
+                                <li>Real-time data visualization</li>
                                 <li>Mobile-responsive design</li>
-                                <li>Intuitive meal planning interface</li>
+                                <li>Meal planning interface</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">AI Integration</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">AI Features</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>OpenAI GPT for content analysis</li>
-                                <li>OCR for receipt processing</li>
-                                <li>Natural language meal suggestions</li>
-                                <li>Smart ingredient categorization</li>
+                                <li>OpenAI content analysis</li>
+                                <li>OCR receipt processing</li>
+                                <li>Natural language suggestions</li>
+                                <li>Smart categorization</li>
                             </ul>
                         </div>
                     </div>
@@ -174,9 +168,8 @@
                                 Scalable Data Architecture
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                Designed a <strong>flexible JSON schema</strong> that supports AI interactions and future expansions. 
-                                Learned the importance of versioning and forward compatibility in data structures for long-term 
-                                application sustainability.
+                                Designed <strong>flexible JSON schema</strong> supporting AI interactions and future expansions. 
+                                Learned importance of versioning and forward compatibility for long-term sustainability.
                             </p>
                         </div>
                         
@@ -186,8 +179,7 @@
                                 Full-Stack Integration
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                Mastered <strong>frontend-backend interactions</strong> and learned to plan for future integrations. 
-                                Gained experience in designing APIs that can accommodate evolving AI capabilities and user requirements.
+                                Mastered <strong>frontend-backend interactions</strong> and API design for evolving AI capabilities and user requirements.
                             </p>
                         </div>
                         
@@ -197,8 +189,7 @@
                                 Intelligent Web Scraping
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                Developed expertise in using <strong>web scraping tools</strong> effectively for structured data extraction. 
-                                Learned to handle inconsistencies in scraped data and implement AI-powered validation and correction.
+                                Developed expertise in <strong>web scraping</strong> for structured data extraction with AI-powered validation and correction.
                             </p>
                         </div>
                         
@@ -208,8 +199,7 @@
                                 Modular System Design
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                Understood the critical importance of <strong>planning ahead</strong> to ensure modular and scalable design. 
-                                Learned to architect systems that can evolve with changing requirements and new AI capabilities.
+                                Learned importance of <strong>modular architecture</strong> that evolves with changing requirements and AI capabilities.
                             </p>
                         </div>
                     </div>
@@ -225,22 +215,19 @@
                         <div>
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🏗️ Schema Design Complexity</h3>
                             <p style="color: var(--text-secondary);">
-                                Structuring a <strong>flexible JSON schema</strong> that supports AI interactions and future expansions 
-                                while maintaining data integrity and performance across different AI model versions.
+                                Structuring <strong>flexible JSON schema</strong> supporting AI interactions while maintaining data integrity across model versions.
                             </p>
                         </div>
                         <div>
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔍 Data Quality Assurance</h3>
                             <p style="color: var(--text-secondary);">
-                                Ensuring <strong>accurate web scraping</strong> while handling inconsistencies in extracted data from 
-                                various recipe websites with different structures and formatting standards.
+                                Ensuring <strong>accurate web scraping</strong> while handling inconsistencies across different recipe website structures.
                             </p>
                         </div>
                         <div>
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 AI Model Integration</h3>
                             <p style="color: var(--text-secondary);">
-                                Balancing AI processing costs with accuracy requirements while ensuring responsive user experience 
-                                and reliable recipe classification across diverse content sources.
+                                Balancing AI processing costs with accuracy while ensuring responsive performance and reliable classification.
                             </p>
                         </div>
                     </div>
@@ -287,10 +274,8 @@
                         Project Vision
                     </h2>
                     <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
-                        ChefBuddy represents the future of <strong>intelligent cooking assistance</strong>, combining traditional 
-                        recipe management with cutting-edge AI technology. The project demonstrates practical application of 
-                        <strong>modern web development</strong>, <strong>AI integration</strong>, and <strong>user-centered design</strong> 
-                        to solve real-world problems in meal planning and kitchen management.
+                        ChefBuddy combines traditional recipe management with <strong>AI automation</strong>, demonstrating practical 
+                        application of <strong>modern web development</strong> and <strong>user-centered design</strong> for meal planning solutions.
                     </p>
                 </div>
 
@@ -311,7 +296,7 @@
 
                 <!-- Navigation -->
                 <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
-                    <a href="CarbonShare.html" class="btn btn-primary">
+                    <a href="BMICodeCamp.html" class="btn btn-primary">
                         <i class="fas fa-arrow-right"></i>
                         Next Project
                     </a>
