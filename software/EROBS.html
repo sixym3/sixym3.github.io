@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Xiao | ChefBuddy</title>
+    <title>Eric Xiao | Extensible Robotic Beamline Scientist</title>
     <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
     
     <!-- Google Fonts -->
@@ -45,19 +45,19 @@
             <!-- Project Header -->
             <div class="section-header">
                 <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
-                    <h1 class="section-title" style="margin-bottom: 0;">ChefBuddy</h1>
-                    <span style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
-                        <i class="fas fa-clock"></i> In Development
+                    <h1 class="section-title" style="margin-bottom: 0;">Extensible Robotic Beamline Scientist</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> In service
                     </span>
                 </div>
                 <p class="section-subtitle">
-                    AI-powered recipe manager inspired by Paprika V3 - Smart meal planning with automated pantry tracking
+                    Adaptive motion planning stack for novel scientific experiments at National Synchrotron Light Source II
                 </p>
             </div>
 
             <!-- Main Project Image -->
             <div style="margin-bottom: var(--space-3xl);">
-                <img src="../images/software/ChefBuddy/chefbuddy_app_interface.png" alt="ChefBuddy Application Interface" 
+                <img src="../images/software/EROBS/architecture.png" alt="EROBS System Architecture"
                      class="lightbox-trigger"
                      style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
                      onclick="openLightbox(this)">
@@ -65,45 +65,62 @@
 
             <!-- Project Content -->
             <div style="max-width: 900px; margin: 0 auto;">
-                <!-- Problem Statement -->
+                <!-- Project Overview -->
                 <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
                     <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        Problem Statement
+                        <i class="fas fa-rocket"></i>
+                        Project Overview
                     </h2>
                     <p style="color: var(--text-secondary);">
-                        Existing recipe apps like Paprika V3 misclassify web-scraped data and lack AI features for meal planning 
-                        and pantry tracking. Manual recipe adjustment, meal planning, and ingredient tracking creates friction, 
-                        leading to poor planning, food waste, and frustration with inconsistent data quality.
+                        EROBS integrates Bluesky, the control software at many national laboratories, to enable control of Universal Robots at NSLS-II.
+                        Many research groups and scientists are acquiring robots but lack the expertise to control them with existing staff. EROBS provides
+                        a hardware-agnostic solution that saves time and resources for the facility while enabling advanced experimental automation.
                     </p>
                 </div>
 
-                <!-- Solution Overview -->
+                <!-- Technical Challenges -->
                 <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
                     <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
-                        <i class="fas fa-lightbulb"></i>
-                        AI-Powered Solution
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Technical Challenges
                     </h2>
-                    <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
-                        ChefBuddy combines traditional recipe management with <strong>AI automation</strong> to eliminate manual tasks.
-                    </p>
-                    
                     <div style="display: grid; gap: var(--space-lg);">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Core AI Features</h3>
-                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>AI recipe scraping and summarization for accurate data extraction</li>
-                                <li>Intelligent meal planning with preference-based suggestions</li>
-                                <li>OCR receipt scanning for automated pantry tracking</li>
-                                <li>Ingredient reminders for missing or expired items</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Data Architecture</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Safety and Modularity</h3>
                             <p style="color: var(--text-secondary);">
-                                Versioned JSON schema ensures data integrity and flexibility for future AI improvements.
+                                Ensuring compliance with beamline safety protocols while maintaining system security. Beamlines operate on isolated networks without unpatched systems,
+                                requiring Docker containerization for the EROBS stack and carefully managed cross-VM communication.
                             </p>
                         </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Dynamic Tool Changing</h3>
+                            <p style="color: var(--text-secondary);">
+                                Enabling versatile end-effector capabilities for diverse experimental needs. Since beamline scans can take up to 40 minutes, EROBS supports
+                                one multipurpose robot with user-defined end effectors that can be automatically selected and loaded for specific tasks.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Results</h3>
+                            <p style="color: var(--text-secondary);">
+                                Successfully deployed at CMS beamline with pilot program underway at FMX beamline. Proof-of-concept demonstrated automated hot plate
+                                X-ray scattering experiments, where the robot drops material samples onto pre-heated hot plates and immediately initiates data collection—capturing
+                                critical initial reaction phases impossible with manual handling while eliminating human exposure to active X-ray environments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Demonstration -->
+                <div style="margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg); text-align: center;">
+                        <i class="fas fa-video"></i>
+                        Demonstration
+                    </h2>
+                    <div style="text-align: center; margin-bottom: var(--space-2xl);">
+                        <video controls style="width: 100%; max-width: 800px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                            <source src="../images/software/EROBS/demonstration.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
 
@@ -114,42 +131,49 @@
                         Technology Stack
                     </h2>
                     <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
-                        <span class="tech-tag">Express.js</span>
-                        <span class="tech-tag">Vue.js</span>
-                        <span class="tech-tag">OpenAI API</span>
-                        <span class="tech-tag">Cheerio</span>
-                        <span class="tech-tag">Axios</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">OCR</span>
-                        <span class="tech-tag">JSON Schema</span>
+                        <span class="tech-tag">ROS 2 Humble</span>
+                        <span class="tech-tag">MoveIt</span>
+                        <span class="tech-tag">URDF</span>
+                        <span class="tech-tag">OMPL</span>
+                        <span class="tech-tag">Bluesky</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Forward Kinematics</span>
+                        <span class="tech-tag">Inverse Kinematics</span>
+                        <span class="tech-tag">Universal Robots</span>
+                        <span class="tech-tag">Motion Planning</span>
                     </div>
-                    
+
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Backend</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">ROS 2 Control Layer</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Express.js REST API</li>
-                                <li>OpenAI recipe processing</li>
-                                <li>Cheerio web scraping</li>
-                                <li>JSON data management</li>
+                                <li>ROS 2 Humble containerized in Docker</li>
+                                <li>MoveIt motion planning pipeline</li>
+                                <li>OMPL path planning algorithms</li>
+                                <li>Dynamic URDF configuration loading</li>
+                                <li>Collision detection with environment obstacles</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Frontend</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Integration Layer</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Vue.js reactive interface</li>
-                                <li>Real-time data visualization</li>
-                                <li>Mobile-responsive design</li>
-                                <li>Meal planning interface</li>
+                                <li>Custom master node orchestration</li>
+                                <li>Bluesky RunEngine integration</li>
+                                <li>Python service bridging</li>
+                                <li>RESTful API for plan execution</li>
+                                <li>Dynamic end-effector management</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">AI Features</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Infrastructure</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>OpenAI content analysis</li>
-                                <li>OCR receipt processing</li>
-                                <li>Natural language suggestions</li>
-                                <li>Smart categorization</li>
+                                <li>Docker containerization for isolation</li>
+                                <li>VM-based deployment architecture</li>
+                                <li>Cross-VM communication protocols</li>
+                                <li>Beamline safety compliance</li>
+                                <li>Secure network configuration</li>
                             </ul>
                         </div>
                     </div>
@@ -161,130 +185,69 @@
                         <i class="fas fa-project-diagram"></i>
                         System Architecture
                     </h2>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                        EROBS operates through a layered architecture that bridges Bluesky experimental control with ROS 2 robotic motion planning:
+                    </p>
+
                     <div style="display: grid; gap: var(--space-lg);">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
-                                <i class="fas fa-database" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                Data Layer
-                            </h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Master Node Orchestration</h3>
                             <p style="color: var(--text-secondary);">
-                                Flexible JSON schema with versioning supports AI interactions and future expansions. Forward compatibility ensures long-term data integrity across model updates.
+                                The custom master node dynamically instantiates different MoveIt configurations based on the selected end-effector.
+                                Pre-defined beamline environments are loaded as collision obstacles, ensuring safe motion planning around sensitive equipment.
                             </p>
                         </div>
-
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
-                                <i class="fas fa-exchange-alt" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                API Design
-                            </h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Bluesky Integration</h3>
                             <p style="color: var(--text-secondary);">
-                                Express.js REST API handles frontend-backend interactions, enabling modular integration of AI capabilities and evolving user requirements.
+                                Bluesky RunEngine sends execution requests to the master server, which translates experimental plans into robot movements.
+                                Supported operations include Cartesian positioning, predefined waypoints, and automated gripper swaps with stack reconfiguration.
                             </p>
                         </div>
-
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
-                                <i class="fas fa-spider" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                AI Processing Pipeline
-                            </h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Dynamic Tool Management</h3>
                             <p style="color: var(--text-secondary);">
-                                Cheerio web scraping extracts structured data from recipe websites. OpenAI API validates and corrects scraped content, improving classification accuracy over traditional parsing methods.
+                                When Bluesky requests a gripper change, the system automatically swaps the end-effector and restarts the MoveIt stack
+                                with the correct URDF configuration, maintaining accurate kinematic models throughout experiments.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Development Challenges -->
+                <!-- Limitations -->
                 <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
                     <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
-                        <i class="fas fa-mountain"></i>
-                        Technical Challenges
+                        <i class="fas fa-exclamation-circle"></i>
+                        Limitations
                     </h2>
                     <div style="display: grid; gap: var(--space-lg);">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Schema Design Complexity</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">URDF Reconfiguration Overhead</h3>
                             <p style="color: var(--text-secondary);">
-                                Structuring flexible JSON schema supporting AI interactions while maintaining data integrity across model versions.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Data Quality Assurance</h3>
-                            <p style="color: var(--text-secondary);">
-                                Ensuring accurate web scraping while handling inconsistencies across different recipe website structures.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">AI Model Integration</h3>
-                            <p style="color: var(--text-secondary);">
-                                Balancing AI processing costs with accuracy while ensuring responsive performance and reliable classification.
+                                The MoveIt stack loads the URDF (Unified Robot Description Format) as an immutable object at initialization. When changing end effectors,
+                                the robot description becomes inaccurate unless the URDF is updated. This requires restarting the entire MoveIt stack, which takes approximately
+                                20 seconds and introduces significant delays in experimental workflows. This architectural constraint limits the practical frequency of tool changes
+                                during active experiments.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Future Development -->
-                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
-                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
-                        <i class="fas fa-rocket"></i>
-                        Future Development Plans
-                    </h2>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
-                        <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">User Features</h3>
-                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Multi-user authentication for shared meal planning</li>
-                                <li>Mobile support for on-the-go accessibility</li>
-                                <li>Voice recognition integration for hands-free recipe management</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Deployment</h3>
-                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Small-scale test deployment to gather user feedback</li>
-                                <li>Performance optimization for production</li>
-                                <li>Scalable cloud infrastructure setup</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">AI Enhancements</h3>
-                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Advanced nutritional analysis</li>
-                                <li>Dietary restriction recommendations</li>
-                                <li>Seasonal ingredient suggestions</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Impact -->
+                <!-- Final Note -->
                 <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
                     <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
-                        <i class="fas fa-trophy"></i>
-                        Project Vision
+                        <i class="fas fa-flag-checkered"></i>
+                        Project Impact
                     </h2>
                     <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
-                        AI-powered recipe manager combining OpenAI-enhanced web scraping with automated pantry tracking and intelligent meal planning through Express.js backend and Vue.js frontend.
+                        Successfully engineered an automated experimental workflow pipeline for hardware-agnostic Universal Robot control through Bluesky and ROS2,
+                        enabling advanced scientific automation at national laboratory beamlines.
                     </p>
-                </div>
-
-                <!-- Action Buttons -->
-                <div style="background: var(--card-bg); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl); text-align: center;">
-                    <h3 style="color: var(--text-primary); margin-bottom: var(--space-lg);">Explore ChefBuddy</h3>
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-eye"></i>
-                            Live Demo (Coming Soon)
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fab fa-github"></i>
-                            View Repository
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Navigation -->
                 <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
-                    <a href="BMICodeCamp.html" class="btn btn-primary">
+                    <a href="ChefBuddy.html" class="btn btn-primary">
                         <i class="fas fa-arrow-right"></i>
                         Next Project
                     </a>

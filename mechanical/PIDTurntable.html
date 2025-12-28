@@ -104,20 +104,20 @@
                     </h2>
                     <div style="display: grid; gap: var(--space-lg);">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🎯 Control Objectives</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Control Objectives</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Achieve precise angular position tracking for complex waveforms</li>
-                                <li>Minimize steady-state error and transient response time</li>
-                                <li>Maintain system stability across varying operating conditions</li>
-                                <li>Compare analog vs. digital control implementation performance</li>
+                                <li>Precise angular position tracking for complex waveforms</li>
+                                <li>Minimized steady-state error and transient response time</li>
+                                <li>System stability across varying operating conditions</li>
+                                <li>Analog vs. digital control implementation comparison</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">⚡ System Requirements</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">System Requirements</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
                                 <li>Fast response to step inputs with minimal overshoot</li>
                                 <li>Accurate tracking of sinusoidal and triangular reference signals</li>
-                                <li>Robust performance despite system parameter variations</li>
+                                <li>Performance consistency despite system parameter variations</li>
                                 <li>Smooth operation without excessive control effort</li>
                             </ul>
                         </div>
@@ -167,70 +167,40 @@
                     </div>
                 </div>
 
-                <!-- Key Learnings -->
+                <!-- Implementation Details -->
                 <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
                     <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
-                        <i class="fas fa-graduation-cap"></i>
-                        Key Technical Learnings
+                        <i class="fas fa-microchip"></i>
+                        Implementation Comparison
                     </h2>
-                    <div style="display: grid; gap: var(--space-xl);">
-                        <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
-                                <i class="fas fa-microchip" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                PID Control Theory & Implementation
-                            </h3>
-                            <p style="color: var(--text-secondary);">
-                                Gained deep understanding of PID control principles, including the effects of proportional, integral, 
-                                and derivative gains on system response. Learned systematic approaches to PID tuning for optimal 
-                                performance while maintaining stability margins.
-                            </p>
-                        </div>
-                        
+                    <div style="display: grid; gap: var(--space-lg);">
                         <div>
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
                                 <i class="fas fa-wave-square" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                Analog Circuit Design & Analysis
+                                Analog PID Controller
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                Developed skills in designing analog circuits using operational amplifiers for signal conditioning, 
-                                amplification, and mathematical operations. Learned to implement analog PID controllers with precise 
-                                component selection and noise considerations.
+                                Operational amplifier-based implementation providing continuous operation and faster response times without digital sampling delays. Smoother control action avoids quantization errors, ideal for high-speed applications requiring immediate response.
                             </p>
                         </div>
-                        
+
                         <div>
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
                                 <i class="fas fa-laptop-code" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                Digital Control & LabVIEW Programming
+                                Digital PID Controller
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                Gained experience using LabVIEW for real-time control applications and data acquisition. 
-                                Learned to implement digital control algorithms and interface with hardware through DAQ systems 
-                                for hybrid control solutions.
+                                LabVIEW implementation with real-time control and data acquisition through DAQ systems. Digital approach enables advanced control algorithms and parameter adjustment through software.
                             </p>
                         </div>
-                        
+
                         <div>
                             <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
                                 <i class="fas fa-balance-scale" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                Analog vs. Digital Control Trade-offs
+                                Performance Trade-offs
                             </h3>
                             <p style="color: var(--text-secondary);">
-                                <strong>Analog Advantages:</strong> The analog PID implementation offers simplicity, continuous operation, 
-                                and faster response times without digital sampling delays. It provides smoother control action and 
-                                avoids quantization errors, making it ideal for high-speed applications requiring immediate response.
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">
-                                <i class="fas fa-puzzle-piece" style="color: var(--accent-primary); margin-right: var(--space-xs);"></i>
-                                System Integration & Troubleshooting
-                            </h3>
-                            <p style="color: var(--text-secondary);">
-                                Learned to integrate various hardware and software components into a complete control system. 
-                                Developed troubleshooting skills for identifying and resolving issues in complex electromechanical systems, 
-                                including signal integrity and grounding considerations.
+                                Analog implementation offers simplicity and continuous operation with no sampling delays. Digital implementation provides flexibility for complex algorithms and easier parameter tuning. Both approaches achieved comparable position tracking accuracy for the turntable system.
                             </p>
                         </div>
                     </div>
@@ -244,23 +214,23 @@
                     </h2>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🎛️ Advanced Control</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Advanced Control</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
-                                <li>Implement feed-forward control for disturbance rejection</li>
-                                <li>Explore adaptive control algorithms</li>
-                                <li>Add velocity and acceleration feedforward</li>
+                                <li>Feed-forward control for disturbance rejection</li>
+                                <li>Adaptive control algorithms</li>
+                                <li>Velocity and acceleration feedforward</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🔧 Hardware Optimization</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Hardware Optimization</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
                                 <li>Higher resolution encoder for improved accuracy</li>
-                                <li>Better motor with reduced backlash</li>
+                                <li>Motor with reduced backlash</li>
                                 <li>Improved analog circuit board design</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">🤖 Microcontroller Implementation</h3>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Microcontroller Implementation</h3>
                             <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
                                 <li>Embedded system for standalone operation</li>
                                 <li>Real-time parameter tuning interface</li>
@@ -277,10 +247,7 @@
                         Project Impact
                     </h2>
                     <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
-                        This project successfully demonstrated both <strong>analog and digital PID control implementations</strong>, 
-                        providing hands-on experience with classical control theory, circuit design, and modern control software. 
-                        The analog implementation showcased the benefits of <strong>continuous control</strong> with faster response 
-                        and smoother operation, making it ideal for precision motion control applications.
+                        Demonstrated both analog and digital PID control implementations for precise turntable positioning, comparing operational amplifier-based continuous control against LabVIEW digital implementation for classical control system applications.
                     </p>
                 </div>
 
@@ -317,7 +284,7 @@
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
-                <p>I like to game 🎮, walk my dog Mochi 🦮, and cook in my spare time 🍳.</p>
+                <p>I like to game, walk my dog Mochi, and cook in my spare time.</p>
             </div>
             
             <!-- Social Links -->
