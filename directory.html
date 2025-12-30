@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao - Project Directory</title>
+    <meta name="description" content="Complete directory of mechanical and software engineering projects">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="assets/css/modern.css">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Eric Xiao</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="aboutme.html" class="nav-link">About</a></li>
+                <li><a href="mechanical.html" class="nav-link">Mechanical</a></li>
+                <li><a href="software.html" class="nav-link">Software</a></li>
+                <li><a href="message.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <h1 class="section-title">Project Directory</h1>
+                <p class="section-subtitle">Complete list of all projects</p>
+            </div>
+
+            <!-- Software Projects -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">Software Projects</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: var(--space-sm);"><a href="software/EROBS.html" style="color: var(--accent-primary);">Extensible Robotic Beamline Scientist</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="software/UAVNavigation.html" style="color: var(--accent-primary);">Autonomous UAV Navigation & SLAM</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="software/CobotPlanning.html" style="color: var(--accent-primary);">Cobot Trajectory Planning</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="software/ChefBuddy.html" style="color: var(--accent-primary);">ChefBuddy - AI Recipe Manager</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="software/BMICodeCamp.html" style="color: var(--accent-primary);">Biomedical ML Bootcamp</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="software/CarbonShare.html" style="color: var(--accent-primary);">CarbonShare - Blockchain Carbon Tracking</a></li>
+                </ul>
+            </div>
+
+            <!-- Mechanical Projects -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">Mechanical Projects</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: var(--space-sm);"><a href="mechanical/RoboticPipette.html" style="color: var(--accent-primary);">Robotic Pipette End Effector</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="mechanical/RocketTeam.html" style="color: var(--accent-primary);">SBU Rocket Team for NASA SLI</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="mechanical/PIDTurntable.html" style="color: var(--accent-primary);">PID Turntable Control System</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="mechanical/RCArduinoCar.html" style="color: var(--accent-primary);">RC Arduino Car</a></li>
+                    <li style="margin-bottom: var(--space-sm);"><a href="mechanical/HardDriveHolder.html" style="color: var(--accent-primary);">Custom Hard Drive Holder</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game, walk my dog Mochi, and cook in my spare time.</p>
+                <p style="margin-top: var(--space-md);"><a href="directory.html" style="color: var(--accent-primary);">Project Directory</a></p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

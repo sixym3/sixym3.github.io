@@ -63,7 +63,7 @@
                             deployed in production at CMS beamline.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">ROS2 Humble</span>
+                            <span class="tech-tag">ROS2</span>
                             <span class="tech-tag">MoveIt</span>
                             <span class="tech-tag">Bluesky</span>
                             <span class="tech-tag">Python</span>
@@ -74,6 +74,62 @@
                             <span style="color: var(--text-secondary); font-weight: var(--font-weight-medium);">
                                 <i class="fas fa-check-circle"></i>
                                 In Service at NSLS-II
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Autonomous UAV Navigation & SLAM -->
+                <div class="project-card" onclick="window.location.href='software/UAVNavigation.html'">
+                    <img src="images/software/UAVNavigation/simulation_navigation.png" alt="UAV Navigation SLAM" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Autonomous UAV Navigation & SLAM</h3>
+                        <p class="project-description">
+                            Lightweight SLAM pipeline for resource-constrained Crazyflie 2.1 UAV, fusing IMU and 4-point LiDAR
+                            for real-time obstacle mapping. Implemented D* Lite path planner achieving 20% faster replanning
+                            than A*, with Minimum Snap trajectory generation for smooth cascaded control. Developed ROS2 bag-based
+                            offline validation pipeline enabling deterministic algorithm refinement through flight data replay.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">ROS2</span>
+                            <span class="tech-tag">SLAM</span>
+                            <span class="tech-tag">Path Planning</span>
+                            <span class="tech-tag">Control Theory</span>
+                            <span class="tech-tag">LiDAR</span>
+                        </div>
+                        <div style="margin-top: var(--space-md);">
+                            <span style="color: var(--text-secondary); font-weight: var(--font-weight-medium);">
+                                <i class="fas fa-check-circle"></i>
+                                Completed Fall 2025
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cobot Trajectory Planning -->
+                <div class="project-card" onclick="window.location.href='software/CobotPlanning.html'">
+                    <img src="images/software/CobotPlanning/cover.png" alt="Cobot Trajectory Planning" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Cobot Trajectory Planning</h3>
+                        <p class="project-description">
+                            Advanced kinematics and motion planning for AUBO i5 collaborative robot. Implemented forward and inverse
+                            kinematics from URDF model, developed Jacobian-based velocity control for smooth end-effector trajectories,
+                            and performed Monte Carlo workspace analysis identifying kinematic singularities. Designed time-parameterized
+                            trajectories with polynomial interpolation ensuring C2 continuity for stable, dynamically feasible motion.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Kinematics</span>
+                            <span class="tech-tag">Motion Planning</span>
+                            <span class="tech-tag">URDF</span>
+                            <span class="tech-tag">Jacobian Control</span>
+                            <span class="tech-tag">Trajectory Optimization</span>
+                        </div>
+                        <div style="margin-top: var(--space-md);">
+                            <span style="color: var(--text-secondary); font-weight: var(--font-weight-medium);">
+                                <i class="fas fa-check-circle"></i>
+                                Completed Fall 2025
                             </span>
                         </div>
                     </div>
@@ -118,7 +174,7 @@
                             pantry stock by scanning receipts.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">Express</span>
                             <span class="tech-tag">Vue.js</span>
                             <span class="tech-tag">OpenAI</span>
                             <span class="tech-tag">AI/ML</span>
@@ -290,8 +346,9 @@
             <div class="footer-content">
                 <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
                 <p>I like to game, walk my dog Mochi, and cook in my spare time.</p>
+                <p style="margin-top: var(--space-md);"><a href="directory.html" style="color: var(--accent-primary);">Project Directory</a></p>
             </div>
-            
+
             <!-- Social Links -->
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">

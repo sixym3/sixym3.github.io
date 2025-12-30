@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | Autonomous UAV Navigation & SLAM</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link active">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">Autonomous UAV Navigation & SLAM</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> Completed Fall 2025
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    MEC 569 Aerial Robotics - Resource-constrained path planning and obstacle avoidance on Crazyflie 2.1
+                </p>
+            </div>
+
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/software/UAVNavigation/simulation_navigation.png" alt="UAV Navigation Simulation"
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
+
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Project Overview -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Project Overview
+                    </h2>
+                    <p style="color: var(--text-secondary);">
+                        This project, completed for MEC 569 Aerial Robotics in Fall 2025, implements autonomous navigation on the resource-constrained
+                        Crazyflie 2.1 UAV platform equipped with a 4-point LiDAR deck. The system integrates a lightweight SLAM pipeline, optimized
+                        D* Lite path planning, and Minimum Snap trajectory generation with cascaded control to achieve stable autonomous flight through
+                        obstacle-dense environments. The platform's limited onboard computation necessitated an offboard architecture where sensor data
+                        is streamed to a ground station for processing, with computed commands transmitted back to the vehicle.
+                    </p>
+                </div>
+
+                <!-- Technical Challenges -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Technical Challenges
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Resource Constraints</h3>
+                            <p style="color: var(--text-secondary);">
+                                The Crazyflie 2.1 platform has severely limited onboard computation capability, making traditional embedded SLAM and path
+                                planning infeasible. This necessitated designing an offboard architecture where raw sensor data is transmitted to a ground
+                                station computer for SLAM processing, path planning, and trajectory generation, with computed control commands sent back
+                                to the UAV. This approach requires careful management of communication latency and bandwidth constraints.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Sensor Fusion Complexity</h3>
+                            <p style="color: var(--text-secondary);">
+                                Building a reliable obstacle map from the limited 4-point LiDAR deck presents significant challenges. The sparse range
+                                measurements must be fused with noisy IMU odometry to construct a coherent occupancy grid. The SLAM pipeline must handle
+                                sensor drift, measurement outliers, and maintain map consistency while operating at control loop frequency to support
+                                real-time navigation decisions.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Development and Validation Workflow</h3>
+                            <p style="color: var(--text-secondary);">
+                                Limited physical flight time and battery constraints required an efficient debugging methodology. Implemented comprehensive
+                                telemetry acquisition pipeline using ROS2 bag recording to capture full-fidelity flight data including sensor measurements,
+                                state estimates, control commands, and planned trajectories. Developed offline validation framework enabling deterministic
+                                replay-based algorithm refinement without repeated physical flights, significantly accelerating the development cycle.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Real-Time Performance Requirements</h3>
+                            <p style="color: var(--text-secondary);">
+                                The SLAM pipeline must process sensor data and update the occupancy map at control loop frequency to maintain situational
+                                awareness. Path planning algorithms must execute replanning operations fast enough to respond to dynamic obstacles while
+                                trajectory generation continuously produces smooth setpoints for the cascaded controller. Any computational delays directly
+                                impact flight stability and obstacle avoidance capability.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Dynamic Replanning and Flight Stability</h3>
+                            <p style="color: var(--text-secondary);">
+                                Environment changes require path updates mid-flight while maintaining stable vehicle dynamics. Standard A* algorithm does
+                                not consider the drone's current trajectory during replanning, potentially commanding abrupt reversals that destabilize
+                                flight. Selected D* Lite for its incremental replanning capability that considers the current path, achieving 20% faster
+                                replanning than A* while maintaining flight stability by avoiding backwards commands that would require aggressive maneuvers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Architecture -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-project-diagram"></i>
+                        System Architecture
+                    </h2>
+
+                    <div style="text-align: center; margin-bottom: var(--space-xl);">
+                        <img src="../images/software/UAVNavigation/architecture.png" alt="UAV System Architecture Diagram"
+                             class="lightbox-trigger"
+                             style="width: 100%; max-width: 700px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);"
+                             onclick="openLightbox(this)">
+                    </div>
+
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                        The system operates through a layered architecture bridging sensor inputs through SLAM, planning, and control to motor commands:
+                    </p>
+
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Sensor Layer</h3>
+                            <p style="color: var(--text-secondary);">
+                                IMU provides inertial measurements for odometry while the 4-point LiDAR deck generates sparse range measurements. Raw
+                                sensor data is transmitted to the ground station where initial transform frames are broadcasted in the ROS ecosystem,
+                                forming the foundation for SLAM processing.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">SLAM Pipeline</h3>
+                            <p style="color: var(--text-secondary);">
+                                Lightweight SLAM implementation fuses IMU odometry with LiDAR measurements to build a real-time 2D occupancy grid map.
+                                The pipeline incrementally updates the map as the drone explores the environment, publishing corrected transform frames
+                                that account for sensor drift and maintain global consistency.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Path Planner</h3>
+                            <p style="color: var(--text-secondary);">
+                                D* Lite algorithm processes the SLAM-built occupancy grid to compute optimal collision-free paths from current position
+                                to goal. The incremental replanning capability enables efficient path updates when obstacles are detected, maintaining
+                                computational efficiency critical for real-time operation.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Trajectory Generator</h3>
+                            <p style="color: var(--text-secondary);">
+                                Minimum Snap trajectory generation converts discrete waypoints from the path planner into continuous smooth trajectories
+                                using 7th-degree polynomials. This produces position, velocity, acceleration, and jerk profiles that ensure dynamically
+                                feasible flight while minimizing aggressive maneuvers that could destabilize the platform.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Cascaded Controller</h3>
+                            <p style="color: var(--text-secondary);">
+                                Two-layer control architecture with inner loop handling attitude stabilization (roll, pitch, yaw) and outer loop tracking
+                                velocity setpoints from the trajectory generator. Control gains were tuned specifically for Crazyflie 2.1 dynamics using
+                                the offline validation framework, enabling stable autonomous flight.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Telemetry Layer</h3>
+                            <p style="color: var(--text-secondary);">
+                                Comprehensive ROS2 bag-based recording system captures all sensor measurements, state estimates, planned paths, control
+                                commands, and timing information. This telemetry acquisition pipeline enables post-flight deterministic replay for offline
+                                validation, algorithm debugging, and controller tuning without consuming flight battery time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Demonstration -->
+                <div style="margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg); text-align: center;">
+                        <i class="fas fa-video"></i>
+                        Demonstration
+                    </h2>
+                    <div style="text-align: center; margin-bottom: var(--space-2xl);">
+                        <video controls style="width: 100%; max-width: 800px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                            <source src="../images/software/UAVNavigation/demonstration.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Technology Stack -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Technology Stack
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">ROS2</span>
+                        <span class="tech-tag">ROS2 Bags</span>
+                        <span class="tech-tag">Gazebo</span>
+                        <span class="tech-tag">SLAM</span>
+                        <span class="tech-tag">Path Planning</span>
+                        <span class="tech-tag">Control Theory</span>
+                        <span class="tech-tag">LiDAR</span>
+                        <span class="tech-tag">IMU</span>
+                        <span class="tech-tag">UAV</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">SciPy</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Software Framework</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Python for all algorithm implementations</li>
+                                <li>ROS2 ecosystem for distributed computation</li>
+                                <li>Gazebo simulation environment for testing</li>
+                                <li>ROS2 bag recording for telemetry capture</li>
+                                <li>NumPy/SciPy for numerical computation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Algorithms & Control</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Lightweight SLAM with sensor fusion</li>
+                                <li>D* Lite incremental path planning</li>
+                                <li>Minimum Snap trajectory optimization</li>
+                                <li>Cascaded PID control architecture</li>
+                                <li>Occupancy grid mapping</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Hardware Platform</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Crazyflie 2.1 nano quadcopter</li>
+                                <li>4-Point LiDAR deck for ranging</li>
+                                <li>Onboard IMU for odometry</li>
+                                <li>Radio communication to ground station</li>
+                                <li>Offboard computation architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Results & Demonstration -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-chart-line"></i>
+                        Results & Demonstration
+                    </h2>
+
+                    <div style="display: grid; gap: var(--space-lg); margin-bottom: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Key Achievements</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Successfully achieved autonomous navigation through complex obstacle courses</li>
+                                <li>Real-time map construction using lightweight SLAM pipeline with sparse sensor fusion</li>
+                                <li>Dynamic obstacle avoidance with D* Lite replanner maintaining flight stability</li>
+                                <li>Smooth trajectory following achieved through Minimum Snap generation and cascaded control</li>
+                                <li>Offline validation pipeline reduced development iteration time through deterministic replay testing</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Performance Metrics</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>D* Lite achieved 20% faster replanning compared to A* algorithm during dynamic scenarios</li>
+                                <li>SLAM pipeline maintained real-time map updates at control loop frequency</li>
+                                <li>Stable autonomous flight with cascaded controller tuned through offline validation</li>
+                                <li>Full-fidelity telemetry recording enabled deterministic algorithm verification</li>
+                                <li>Replay-based testing framework eliminated need for repeated physical flight validation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: var(--space-xl);">
+                        <p style="color: var(--text-secondary); font-style: italic;">
+                            Simulation screenshots, ROS computational graph visualization, and SLAM map demonstrations available in project repository.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Future Enhancements -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-lightbulb"></i>
+                        Future Enhancements
+                    </h2>
+                    <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                        <li>Extend SLAM pipeline to 3D obstacle mapping (current implementation is 2D occupancy grid)</li>
+                        <li>Multi-drone coordination with distributed SLAM and cooperative path planning</li>
+                        <li>Vision-based SLAM to complement sparse LiDAR measurements with visual odometry</li>
+                        <li>Time-optimal trajectory generation to minimize flight duration while maintaining dynamic feasibility</li>
+                    </ul>
+                </div>
+
+                <!-- Final Note -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-flag-checkered"></i>
+                        Project Impact
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        Successfully demonstrated practical integration of SLAM, path planning, and control theory on a resource-constrained
+                        embedded platform. Optimized algorithms achieved measurable performance improvements (20% replanning speedup) while
+                        developing sophisticated telemetry acquisition and offline validation infrastructure that accelerated the development workflow.
+                    </p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="https://github.com/sixym3/crazyflies" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View on GitHub
+                    </a>
+                    <a href="../software.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game, walk my dog Mochi, and cook in my spare time.</p>
+                <p style="margin-top: var(--space-md);"><a href="../directory.html" style="color: var(--accent-primary);">Project Directory</a></p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

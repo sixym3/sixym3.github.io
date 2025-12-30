@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | Cobot Trajectory Planning</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/modern.css">
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Eric Xiao</a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../aboutme.html" class="nav-link">About</a></li>
+                <li><a href="../mechanical.html" class="nav-link">Mechanical</a></li>
+                <li><a href="../software.html" class="nav-link active">Software</a></li>
+                <li><a href="../message.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">Cobot Trajectory Planning</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> Completed Fall 2025
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    Advanced kinematics, motion planning, and trajectory optimization for AUBO i5 collaborative robot
+                </p>
+            </div>
+
+            <!-- Main Project Image -->
+            <div style="margin-bottom: var(--space-3xl);">
+                <img src="../images/software/CobotPlanning/cover.png" alt="Verification of forward kinematics calculated end-effector position (large frame marker) with URDF visualization"
+                     class="lightbox-trigger"
+                     style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+                     onclick="openLightbox(this)">
+            </div>
+
+            <!-- Project Content -->
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Project Overview -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-rocket"></i>
+                        Project Overview
+                    </h2>
+                    <p style="color: var(--text-secondary);">
+                        Kinematics and motion planning study for the AUBO i5 collaborative robot. Implemented forward and inverse kinematics to
+                        calculate robot positions, mapped the reachable workspace using Monte Carlo simulation, identified singularities where
+                        control becomes challenging, and generated smooth trajectories for robot motion. All implementations done in Python using
+                        the robot's URDF model.
+                    </p>
+                </div>
+
+                <!-- Technical Challenges -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Technical Challenges
+                    </h2>
+                    <div style="display: grid; gap: var(--space-lg);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Forward and Inverse Kinematics</h3>
+                            <p style="color: var(--text-secondary);">
+                                Computing the relationship between joint angles and end-effector position for a 6-joint robot. Forward kinematics
+                                calculates where the robot's hand ends up given specific joint angles. Inverse kinematics solves the opposite problem:
+                                finding joint angles needed to reach a desired position. Multiple solutions often exist for the same target position,
+                                requiring careful selection based on joint limits and desired configuration.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Workspace Mapping</h3>
+                            <p style="color: var(--text-secondary);">
+                                Determining all positions the robot can physically reach. Used Monte Carlo simulation to sample thousands of random
+                                joint configurations and map out the reachable workspace. Identified singular configurations where the robot loses
+                                mobility in certain directions, which must be avoided during motion planning.
+                            </p>
+                            <div style="text-align: center; margin-top: var(--space-lg);">
+                                <img src="../images/software/CobotPlanning/workspacevisualization.png" alt="Robot workspace visualization"
+                                     class="lightbox-trigger"
+                                     style="width: 100%; max-width: 600px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);"
+                                     onclick="openLightbox(this)">
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Velocity Control</h3>
+                            <p style="color: var(--text-secondary);">
+                                Converting desired end-effector velocities into appropriate joint velocities. Near singular configurations, this
+                                becomes numerically challenging and requires specialized techniques to maintain smooth control without commanding
+                                excessive joint speeds.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Smooth Trajectory Generation</h3>
+                            <p style="color: var(--text-secondary);">
+                                Creating robot motion that is smooth and respects physical limits. Trajectories must have continuous position, velocity,
+                                and acceleration to avoid jerky motion or exceeding motor capabilities. Implemented polynomial interpolation methods
+                                to generate feasible paths between waypoints while staying within joint limits and velocity constraints.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Demonstration -->
+                <div style="margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg); text-align: center;">
+                        <i class="fas fa-video"></i>
+                        Demonstration
+                    </h2>
+                    <div style="text-align: center; margin-bottom: var(--space-xl);">
+                        <video controls style="width: 100%; max-width: 800px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                            <source src="../images/software/CobotPlanning/cartesianplanningsimulationfourpoints.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="../images/software/CobotPlanning/cartesianplanningsimpositionvelocityaccelerationplots.png" alt="Position, velocity, and acceleration profiles for smooth trajectory with continuous velocity"
+                             class="lightbox-trigger"
+                             style="width: 100%; max-width: 700px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);"
+                             onclick="openLightbox(this)">
+                    </div>
+                </div>
+
+                <!-- Technology Stack -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-tools"></i>
+                        Technology Stack
+                    </h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">SciPy</span>
+                        <span class="tech-tag">Matplotlib</span>
+                        <span class="tech-tag">URDF</span>
+                        <span class="tech-tag">Kinematics</span>
+                        <span class="tech-tag">Motion Planning</span>
+                        <span class="tech-tag">Jacobian Control</span>
+                        <span class="tech-tag">Trajectory Optimization</span>
+                        <span class="tech-tag">Robotics</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Core Framework</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Python for all algorithm implementations</li>
+                                <li>NumPy for efficient matrix operations</li>
+                                <li>SciPy for optimization and numerical methods</li>
+                                <li>Matplotlib for workspace and trajectory visualization</li>
+                                <li>URDF parsing for robot model extraction</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Kinematics & Analysis</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Forward kinematics with DH parameters</li>
+                                <li>Analytical and numerical inverse kinematics</li>
+                                <li>Manipulator Jacobian computation</li>
+                                <li>Monte Carlo workspace simulation</li>
+                                <li>Singularity analysis and condition number</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-md);">Motion Planning</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Resolved-rate velocity control</li>
+                                <li>Polynomial trajectory generation</li>
+                                <li>Minimum jerk/snap optimization</li>
+                                <li>Joint and Cartesian space planning</li>
+                                <li>Velocity and acceleration constraints</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Results & Demonstration -->
+                <div style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-chart-line"></i>
+                        Results & Demonstration
+                    </h2>
+
+                    <div style="display: grid; gap: var(--space-lg); margin-bottom: var(--space-xl);">
+                        <div>
+                            <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Key Achievements</h3>
+                            <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                                <li>Implemented forward and inverse kinematics for 6-joint AUBO i5 robot</li>
+                                <li>Mapped reachable workspace using 100,000 random configuration samples</li>
+                                <li>Identified and visualized singular configurations throughout workspace</li>
+                                <li>Generated smooth trajectories respecting robot physical limits</li>
+                                <li>Validated kinematics accuracy through round-trip testing</li>
+                                <li>Implemented velocity-level control for smooth end-effector paths</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: var(--space-xl);">
+                        <p style="color: var(--text-secondary); font-style: italic;">
+                            Workspace visualization, singularity analysis, and trajectory planning demonstrate practical robot kinematics implementation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Future Enhancements -->
+                <div style="background: var(--card-bg); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: var(--space-2xl);">
+                    <h2 style="color: var(--accent-primary); margin-bottom: var(--space-lg);">
+                        <i class="fas fa-lightbulb"></i>
+                        Future Enhancements
+                    </h2>
+                    <ul style="color: var(--text-secondary); margin-left: var(--space-lg);">
+                        <li>Add collision avoidance with obstacles for safer motion planning</li>
+                        <li>Optimize trajectories to minimize execution time or energy use</li>
+                        <li>Implement real-time control on physical AUBO i5 hardware</li>
+                        <li>Develop task planning for complex pick-and-place operations</li>
+                        <li>Integrate force sensing for contact-based tasks</li>
+                    </ul>
+                </div>
+
+                <!-- Final Note -->
+                <div style="background: var(--accent-primary); color: var(--bg-primary); padding: var(--space-2xl); border-radius: var(--radius-lg); margin-bottom: var(--space-2xl); text-align: center;">
+                    <h2 style="margin-bottom: var(--space-lg); color: var(--bg-primary);">
+                        <i class="fas fa-flag-checkered"></i>
+                        Project Impact
+                    </h2>
+                    <p style="margin: 0; font-size: 1.125rem; color: var(--bg-primary);">
+                        Demonstrated practical understanding of robot kinematics and motion planning fundamentals. Implemented key algorithms
+                        for position calculation, workspace mapping, and trajectory generation. This foundation provides the necessary skills
+                        for developing robot control systems in industrial automation and collaborative robotics applications.
+                    </p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="btn-group" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <a href="../software.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="../index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
+                <p>I like to game, walk my dog Mochi, and cook in my spare time.</p>
+                <p style="margin-top: var(--space-md);"><a href="../directory.html" style="color: var(--accent-primary);">Project Directory</a></p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
+                    <i class="fas fa-paw"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            lightbox.style.display = 'block';
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
