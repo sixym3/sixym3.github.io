@@ -21,16 +21,21 @@
     <!-- Navigation -->
     <nav class="nav" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Eric Xiao</a>
-            
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">Eric Xiao</a>
+                <a href="resume.html" class="nav-resume">
+                    <span class="resume-text">Resume</span>
+                </a>
+            </div>
+
             <ul class="nav-menu" id="nav-menu">
+                <li><a href="resume.html" class="nav-link nav-link-mobile-only">Resume</a></li>
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="aboutme.html" class="nav-link">About</a></li>
                 <li><a href="mechanical.html" class="nav-link">Mechanical</a></li>
                 <li><a href="software.html" class="nav-link active">Software</a></li>
                 <li><a href="message.html" class="nav-link">Contact</a></li>
             </ul>
-            
+
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
                 <span></span>
@@ -218,7 +223,7 @@
 
                 <!-- CarbonShare -->
                 <div class="project-card" onclick="window.location.href='software/CarbonShare.html'">
-                    <img src="images/software/CarbonShare/cover.webp" alt="CarbonShare" class="project-image">
+                    <img src="images/software/CarbonShare/IMG_1365.JPG" alt="CarbonShare" class="project-image">
                     <div class="project-content">
                         <h3 class="project-title">CarbonShare - Blockchain Carbon Tracking</h3>
                         <p class="project-description">
@@ -246,91 +251,10 @@
 
             </div>
             
-            <!-- Skills Section -->
-            <div style="margin-top: var(--space-3xl);">
-                <div class="section-header">
-                    <h2 class="section-title" style="font-size: 2rem;">Technical Skills</h2>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); margin-top: var(--space-xl);">
-                    <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                        <h3 style="color: var(--accent-primary); margin-bottom: var(--space-md);">
-                            <i class="fas fa-robot"></i>
-                            AI/ML & Data Science
-                        </h3>
-                        <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
-                            <li style="margin-bottom: var(--space-xs);">• Python (PyTorch, Scikit-learn, Pandas)</li>
-                            <li style="margin-bottom: var(--space-xs);">• OpenAI API & Prompt Engineering</li>
-                            <li style="margin-bottom: var(--space-xs);">• Machine Learning & Neural Networks</li>
-                            <li style="margin-bottom: var(--space-xs);">• Computer Vision (OpenCV)</li>
-                            <li style="margin-bottom: var(--space-xs);">• Hyperparameter Optimization (Optuna)</li>
-                        </ul>
-                    </div>
-                    
-                    <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                        <h3 style="color: var(--accent-primary); margin-bottom: var(--space-md);">
-                            <i class="fas fa-code"></i>
-                            Web Development
-                        </h3>
-                        <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
-                            <li style="margin-bottom: var(--space-xs);">• Frontend: Vue.js, Angular, HTML/CSS/JS</li>
-                            <li style="margin-bottom: var(--space-xs);">• Backend: Express.js, Node.js, Python Flask</li>
-                            <li style="margin-bottom: var(--space-xs);">• Database: MongoDB, SQL</li>
-                            <li style="margin-bottom: var(--space-xs);">• API Development & Integration</li>
-                            <li style="margin-bottom: var(--space-xs);">• Responsive Design & UX</li>
-                        </ul>
-                    </div>
-                    
-                    <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                        <h3 style="color: var(--accent-primary); margin-bottom: var(--space-md);">
-                            <i class="fas fa-link"></i>
-                            Blockchain & Web3
-                        </h3>
-                        <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
-                            <li style="margin-bottom: var(--space-xs);">• Solidity Smart Contract Development</li>
-                            <li style="margin-bottom: var(--space-xs);">• ERC-20 Token Implementation</li>
-                            <li style="margin-bottom: var(--space-xs);">• Ethereum & Testnet Deployment</li>
-                            <li style="margin-bottom: var(--space-xs);">• Web3 Python Library</li>
-                            <li style="margin-bottom: var(--space-xs);">• DeFi & Decentralized Applications</li>
-                        </ul>
-                    </div>
-                    
-                    <div style="background: var(--card-bg); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                        <h3 style="color: var(--accent-primary); margin-bottom: var(--space-md);">
-                            <i class="fas fa-chart-line"></i>
-                            Data Analytics & Visualization
-                        </h3>
-                        <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
-                            <li style="margin-bottom: var(--space-xs);">• Python Dash & Plotly</li>
-                            <li style="margin-bottom: var(--space-xs);">• Data Processing & Analysis</li>
-                            <li style="margin-bottom: var(--space-xs);">• Statistical Analysis & Modeling</li>
-                            <li style="margin-bottom: var(--space-xs);">• Business Intelligence Dashboards</li>
-                            <li style="margin-bottom: var(--space-xs);">• Real-time Data Monitoring</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Current Focus -->
-            <div style="margin-top: var(--space-3xl);">
-                <div style="background: var(--bg-secondary); padding: var(--space-xl); border-radius: var(--radius-lg); text-align: center;">
-                    <h3 style="color: var(--accent-primary); margin-bottom: var(--space-md);">Current Focus</h3>
-                    <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-                        I'm currently focused on advancing my expertise in <strong>AI/ML applications for engineering</strong>, 
-                        particularly in robotics and automation. My recent work involves prompt engineering, agentic AI systems, 
-                        and integrating machine learning with traditional engineering workflows.
-                    </p>
-                </div>
-            </div>
-            
             <div class="btn-group" style="justify-content: center; margin-top: var(--space-3xl);">
                 <a href="mechanical.html" class="btn btn-primary">
                     <i class="fas fa-cog"></i>
                     View Mechanical Projects
-                </a>
-                <a href="aboutme.html" class="btn btn-secondary">
-                    <i class="fas fa-user"></i>
-                    Learn More About Me
                 </a>
                 <a href="index.html" class="btn btn-secondary">
                     <i class="fas fa-home"></i>

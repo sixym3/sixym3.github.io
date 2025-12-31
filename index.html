@@ -21,16 +21,21 @@
     <!-- Navigation -->
     <nav class="nav" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">Eric Xiao</a>
-            
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">Eric Xiao</a>
+                <a href="resume.html" class="nav-resume">
+                    <span class="resume-text">Resume</span>
+                </a>
+            </div>
+
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="resume.html" class="nav-link nav-link-mobile-only">Resume</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="mechanical.html" class="nav-link">Mechanical</a></li>
                 <li><a href="software.html" class="nav-link">Software</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            
+
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
                 <span></span>
@@ -40,11 +45,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="section hero">
+    <section id="home" class="section hero hero-with-banner">
         <div class="container">
             <div class="hero-content">
                 <p class="hero-greeting">👋 Hi, I'm</p>
-                <h1 class="hero-name">Eric Xiao</h1>
+                <h1 class="hero-name">Eric Xiao <small style="font-size: 0.4em; color: inherit; font-weight: inherit;">EIT</small></h1>
                 <p class="hero-title">Robotics Engineer passionate about control systems and intelligent automation</p>
                 <p class="hero-description">
                     Lifelong curiosity in robotics, SLAM, and computer vision for autonomous systems.
@@ -55,9 +60,9 @@
                         <i class="fas fa-user"></i>
                         About Me
                     </a>
-                    <a href="#mechanical" class="btn btn-secondary">
-                        <i class="fas fa-cog"></i>
-                        View Projects
+                    <a href="#featured" class="btn btn-secondary">
+                        <i class="fas fa-star"></i>
+                        Featured Work
                     </a>
                 </div>
             </div>
@@ -75,6 +80,9 @@
             </div>
             
             <div class="about-content">
+                <div class="about-headshot">
+                    <img src="images/index/headshot.jpg" alt="Eric Xiao Headshot">
+                </div>
                 <div class="about-text">
                     <p>
                         I am a robotics engineer passionate about control systems and intelligent automation.
@@ -88,10 +96,10 @@
                         creating robots that can perceive, navigate, and adapt to dynamic environments without human intervention.
                     </p>
                     <p>
-                        With a strong foundation in design, analysis, and manufacturing, I'm proficient in SolidWorks with 
+                        With a strong foundation in design, analysis, and manufacturing, I'm proficient in SolidWorks with
                         FEA optimization experience. I have hands-on experience with 3D printing, laser cutting, and CNC machining.
                     </p>
-                    
+
                     <div class="recent-updates">
                         <h3>Recent Updates</h3>
                         <ul>
@@ -105,153 +113,418 @@
         </div>
     </section>
 
-    <!-- Mechanical Projects Section -->
-    <section id="mechanical" class="section">
+    <!-- Featured Projects Carousel -->
+    <section id="featured" class="section" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Mechanical Engineering</h2>
-                <p class="section-subtitle">
-                    Here are some of my favorite mechanical engineering related projects.
-                </p>
+                <h2 class="section-title">Featured Work</h2>
             </div>
-            
-            <div class="projects-grid">
-                <!-- Robotic Pipette End Effector -->
-                <div class="project-card" onclick="window.location.href='mechanical/RoboticPipette.html'">
-                    <img src="images/mechanical/RoboticPipette/pipettor_on_ur5e_close_up.png" alt="Robotic Pipette End Effector" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Robotic Pipette End Effector</h3>
-                        <p class="project-description">
-                            High-precision robotic liquid handling system with 50&micro;L target achieving 5&micro;L accuracy for UR5e integration at 
-                            Brookhaven National Lab. Features quick swap functionality and full ROS2 integration.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">3D Printing</span>
-                            <span class="tech-tag">Quick Swap System</span>
-                            <span class="tech-tag">ROS2</span>
-                            <span class="tech-tag">Motor Control</span>
+
+            <div style="position: relative; max-width: 900px; margin: var(--space-2xl) auto 0;">
+                <!-- Carousel Container -->
+                <div id="featured-carousel" style="position: relative; overflow: hidden; border-radius: var(--radius-lg);">
+                    <!-- Carousel Inner -->
+                    <div id="carousel-inner" style="display: flex; transition: transform 0.5s ease-in-out;">
+
+                        <!-- Slide 1: EROBS System -->
+                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
+                            <a href="software/EROBS.html" style="display: block; cursor: pointer;">
+                                <video muted autoplay loop poster="images/software/EROBS/architecture.png" style="pointer-events: none;">
+                                    <source src="images/software/EROBS/demonstration.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                            <div class="carousel-item-content">
+                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">Extensible Robotic Beamline Scientist</h3>
+                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
+                                    ROS2-based adaptive motion planning for scientific experiments at NSLS-II
+                                </p>
+                                <a href="software/EROBS.html" class="btn btn-primary">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Project
+                                </a>
+                            </div>
                         </div>
+
+                        <!-- Slide 2: Robotic Pipette -->
+                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
+                            <a href="mechanical/RoboticPipette.html" style="display: block; cursor: pointer;">
+                                <video muted autoplay loop poster="images/mechanical/RoboticPipette/pipettor_on_ur5e_close_up.png" style="pointer-events: none;">
+                                    <source src="images/mechanical/RoboticPipette/pipettor_demo.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                            <div class="carousel-item-content">
+                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">Robotic Pipette End Effector</h3>
+                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
+                                    High-precision liquid handling system achieving 5μL ±0.5μL accuracy, deployed at NSLS-II
+                                </p>
+                                <a href="mechanical/RoboticPipette.html" class="btn btn-primary">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: UAV Navigation -->
+                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
+                            <a href="software/UAVNavigation.html" style="display: block; cursor: pointer;">
+                                <video muted autoplay loop poster="images/software/UAVNavigation/simulation_navigation.png" style="pointer-events: none;">
+                                    <source src="images/software/UAVNavigation/demonstration.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                            <div class="carousel-item-content">
+                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">Autonomous UAV Navigation & SLAM</h3>
+                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
+                                    Real-time obstacle mapping and path planning for resource-constrained Crazyflie platform
+                                </p>
+                                <a href="software/UAVNavigation.html" class="btn btn-primary">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Cobot Trajectory Planning -->
+                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
+                            <a href="software/CobotPlanning.html" style="display: block; cursor: pointer;">
+                                <video muted autoplay loop poster="images/software/CobotPlanning/cover.png" style="pointer-events: none;">
+                                    <source src="images/software/CobotPlanning/cartesianplanningsimulationfourpoints.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                            <div class="carousel-item-content">
+                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">Cobot Trajectory Planning</h3>
+                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
+                                    Smooth trajectory generation with Jacobian control for AUBO i5 collaborative robot
+                                </p>
+                                <a href="software/CobotPlanning.html" class="btn btn-primary">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: Rocket Team -->
+                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
+                            <a href="mechanical/RocketTeam.html" style="display: block; cursor: pointer;">
+                                <img src="images/mechanical/RocketTeam/cover.png" alt="SBU Rocket Team NASA SLI" style="pointer-events: none;">
+                            </a>
+                            <div class="carousel-item-content">
+                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">SBU Rocket Team for NASA SLI</h3>
+                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
+                                    105-inch rocket achieving 4,700 feet altitude, ranked 24th/53 teams with full payload recovery
+                                </p>
+                                <a href="mechanical/RocketTeam.html" class="btn btn-primary">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Rocket Team Project -->
-                <div class="project-card" onclick="window.location.href='mechanical/RocketTeam.html'">
-                    <img src="images/mechanical/RocketTeam/cover.png" alt="Rocket Team Project" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">SBU Rocket Team</h3>
-                        <p class="project-description">
-                            Successfully completed NASA SLI on May 1st, 2025, achieving 4,700 feet with our full-scale rocket. 
-                            Ranked 24th/53 teams with complete payload recovery and cross-team leadership experience.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">RockSim</span>
-                            <span class="tech-tag">3D Printing</span>
-                            <span class="tech-tag">SolidWorks</span>
-                        </div>
-                    </div>
+                <!-- Carousel Indicators -->
+                <div style="display: flex; justify-content: center; gap: var(--space-md); margin-top: var(--space-xl);">
+                    <button class="carousel-indicator" data-slide="0" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: var(--accent-primary); cursor: pointer; transition: all 0.3s ease;"></button>
+                    <button class="carousel-indicator" data-slide="1" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: transparent; cursor: pointer; transition: all 0.3s ease;"></button>
+                    <button class="carousel-indicator" data-slide="2" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: transparent; cursor: pointer; transition: all 0.3s ease;"></button>
+                    <button class="carousel-indicator" data-slide="3" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: transparent; cursor: pointer; transition: all 0.3s ease;"></button>
+                    <button class="carousel-indicator" data-slide="4" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: transparent; cursor: pointer; transition: all 0.3s ease;"></button>
                 </div>
-
-                <!-- PID Turntable -->
-                <div class="project-card" onclick="window.location.href='mechanical/PIDTurntable.html'">
-                    <img src="images/mechanical/PIDTurntable/cover.jpg" alt="PID Turntable" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">PID Turntable</h3>
-                        <p class="project-description">
-                            PID-controlled turntable system designed to accurately follow user-defined waveforms, 
-                            exploring analog vs digital control approaches.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">PID Control</span>
-                            <span class="tech-tag">LabVIEW</span>
-                            <span class="tech-tag">Analog Circuits</span>
-                            <span class="tech-tag">DAQ</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="text-center mt-lg">
-                <a href="mechanical.html" class="btn btn-secondary">
-                    <i class="fas fa-arrow-right"></i>
-                    View All Mechanical Projects
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Software Projects Section -->
-    <section id="software" class="section">
-        <div class="container">
+    <style>
+        /* Hero with Banner Background */
+        .hero-with-banner {
+            position: relative;
+            background-image: url('images/index/hero-banner.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: var(--space-3xl) !important;
+        }
+
+        .hero-with-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 0.7));
+            z-index: 0;
+        }
+
+        .hero-with-banner .container {
+            position: sticky;
+            bottom: var(--space-3xl);
+            z-index: 1;
+        }
+
+        /* Lighter text colors for hero section */
+        .hero-with-banner .hero-title {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-with-banner .hero-description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* About Me Layout with Headshot */
+        .about-content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: var(--space-3xl);
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-headshot {
+            position: sticky;
+            top: 120px;
+        }
+
+        .about-headshot img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Reduce section padding */
+        .section {
+            padding: 3rem 0;
+        }
+
+        /* Hero section padding - override for non-banner hero */
+        .hero:not(.hero-with-banner) {
+            min-height: auto !important;
+            padding: 6rem 0 3rem 0 !important;
+        }
+
+        .carousel-indicator:hover {
+            transform: scale(1.3);
+            background: var(--text-primary) !important;
+        }
+
+        .carousel-item-content {
+            padding: var(--space-xl);
+        }
+
+        .carousel-item video,
+        .carousel-item img {
+            width: 100%;
+            display: block;
+            max-height: 500px;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-2xl);
+            margin-top: var(--space-3xl);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .skill-icon {
+            margin-bottom: var(--space-lg);
+        }
+
+        .skill-card h3 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-md);
+        }
+
+        .skill-keywords {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-xl);
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Hero Banner - adjust for mobile */
+            .hero-with-banner {
+                min-height: 100vh;
+                padding-bottom: var(--space-2xl) !important;
+            }
+
+            .hero-with-banner .container {
+                bottom: var(--space-2xl);
+            }
+
+            /* About Me - headshot wraps on mobile */
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+
+            .about-headshot {
+                position: static;
+                max-width: 200px;
+                margin: 0 auto;
+            }
+
+            /* Hide carousel text content on mobile */
+            .carousel-item-content {
+                display: none !important;
+            }
+
+            /* Make video/image fill screen better on mobile */
+            .carousel-item {
+                border: none !important;
+                background: transparent !important;
+            }
+
+            .carousel-item video,
+            .carousel-item img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: var(--radius-lg);
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-lg);
+            }
+
+            .skill-card {
+                padding: var(--space-xl);
+            }
+
+            .skill-icon img {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            .skill-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .skill-keywords {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container" style="max-width: 1200px;">
             <div class="section-header">
-                <h2 class="section-title">Software Engineering</h2>
+                <h2 class="section-title">Technical Skills</h2>
                 <p class="section-subtitle">
-                    Here are some of my favorite software engineering related projects.
+                    Core expertise in robotics, autonomous systems, and intelligent automation
                 </p>
             </div>
-            
-            <div class="projects-grid">
-                <!-- EROBS -->
-                <div class="project-card" onclick="window.location.href='software/EROBS.html'">
-                    <img src="images/software/EROBS/architecture.png" alt="EROBS System Architecture" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Extensible Robotic Beamline Scientist</h3>
-                        <p class="project-description">
-                            Adaptive motion planning stack for scientific experiments at National Synchrotron Light Source II.
-                            Integrates Bluesky with ROS 2 and MoveIt for hardware-agnostic robot control at beamlines.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">ROS2</span>
-                            <span class="tech-tag">MoveIt</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
+
+            <div class="skills-grid">
+                <!-- ROS2 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg" alt="ROS2" style="width: 80px; height: 80px; object-fit: contain;">
                     </div>
+                    <h3>ROS2</h3>
+                    <p class="skill-keywords">Motion Planning • Navigation</p>
                 </div>
 
-                <!-- Autonomous UAV Navigation -->
-                <div class="project-card" onclick="window.location.href='software/UAVNavigation.html'">
-                    <img src="images/software/UAVNavigation/simulation_navigation.png" alt="UAV Navigation SLAM" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Autonomous UAV Navigation & SLAM</h3>
-                        <p class="project-description">
-                            Lightweight SLAM pipeline for resource-constrained Crazyflie UAV, fusing IMU and LiDAR for real-time
-                            obstacle mapping. D* Lite path planner with Minimum Snap trajectory generation for autonomous flight.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">ROS2</span>
-                            <span class="tech-tag">SLAM</span>
-                            <span class="tech-tag">Path Planning</span>
-                        </div>
+                <!-- Python -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width: 80px; height: 80px; object-fit: contain;">
                     </div>
+                    <h3>Python</h3>
+                    <p class="skill-keywords">PyTorch • OpenCV • NumPy</p>
                 </div>
 
-                <!-- Cobot Trajectory Planning -->
-                <div class="project-card" onclick="window.location.href='software/CobotPlanning.html'">
-                    <img src="images/software/CobotPlanning/cover.png" alt="Cobot Trajectory Planning" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Cobot Trajectory Planning</h3>
-                        <p class="project-description">
-                            Advanced kinematics and motion planning for AUBO i5 collaborative robot. Implemented forward/inverse kinematics,
-                            Jacobian velocity control, and smooth trajectory generation with polynomial interpolation.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Kinematics</span>
-                            <span class="tech-tag">Motion Planning</span>
-                            <span class="tech-tag">URDF</span>
-                        </div>
+                <!-- C++ -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" style="width: 80px; height: 80px; object-fit: contain;">
                     </div>
+                    <h3>C++</h3>
+                    <p class="skill-keywords">Embedded Systems • Arduino</p>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p class="skill-keywords">Vue.js • Node.js • Express</p>
+                </div>
+
+                <!-- SolidWorks -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/SolidWorks_Logo.svg" alt="SolidWorks" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3>SolidWorks</h3>
+                    <p class="skill-keywords">CAD • FEA • Design</p>
+                </div>
+
+                <!-- Linux -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3>Linux</h3>
+                    <p class="skill-keywords">Ubuntu • Shell • Docker</p>
+                </div>
+
+                <!-- Git -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3>Git</h3>
+                    <p class="skill-keywords">Version Control • GitHub</p>
+                </div>
+
+                <!-- MATLAB -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3>MATLAB</h3>
+                    <p class="skill-keywords">Simulation • Analysis</p>
                 </div>
             </div>
-            
-            <div class="text-center mt-lg">
-                <a href="software.html" class="btn btn-secondary">
-                    <i class="fas fa-arrow-right"></i>
-                    View All Software Projects
-                </a>
-            </div>
+
         </div>
     </section>
 
@@ -380,27 +653,6 @@
             });
         });
 
-        // Active navigation link highlighting
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('.section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
         // Navbar background on scroll
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -409,6 +661,79 @@
             } else {
                 navbar.style.background = 'rgba(10, 10, 10, 0.95)';
             }
+        });
+
+        // Featured Projects Carousel
+        const carouselInner = document.getElementById('carousel-inner');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const carouselIndicators = document.querySelectorAll('.carousel-indicator');
+
+        let currentSlide = 0;
+        const totalSlides = carouselItems.length;
+        let autoScrollInterval;
+
+        function updateCarousel() {
+            // Move carousel
+            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update indicators
+            carouselIndicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.style.background = 'var(--accent-primary)';
+                } else {
+                    indicator.style.background = 'transparent';
+                }
+            });
+
+            // Handle video playback - pause all except current
+            carouselItems.forEach((item, index) => {
+                const video = item.querySelector('video');
+                if (video) {
+                    if (index === currentSlide) {
+                        video.play().catch(err => console.log('Video autoplay prevented:', err));
+                    } else {
+                        video.pause();
+                        video.currentTime = 0; // Reset to beginning
+                    }
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+            resetAutoScroll();
+        }
+
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(nextSlide, 5000); // Auto-scroll every 5 seconds
+        }
+
+        // Event listeners for indicator dots
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+
+        // Initialize carousel and start auto-scroll
+        updateCarousel(); // Start first video
+        resetAutoScroll();
+
+        // Pause auto-scroll when user hovers over carousel
+        const featuredCarousel = document.getElementById('featured-carousel');
+        featuredCarousel.addEventListener('mouseenter', () => {
+            clearInterval(autoScrollInterval);
+        });
+
+        featuredCarousel.addEventListener('mouseleave', () => {
+            resetAutoScroll();
         });
     </script>
 </body>

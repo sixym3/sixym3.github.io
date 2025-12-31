@@ -150,6 +150,44 @@ a:hover {
     color: var(--text-primary);
 }
 
+/* Resume Link - Left side of navbar */
+.nav-left {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+}
+
+.nav-resume {
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.nav-resume:hover,
+.nav-resume.active {
+    color: var(--accent-primary);
+}
+
+.nav-resume.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-primary);
+}
+
+.nav-resume i {
+    margin-right: var(--space-xs);
+}
+
+/* Hide Resume from hamburger menu on desktop */
+.nav-link-mobile-only {
+    display: none;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -213,6 +251,26 @@ a:hover {
     
     .nav-menu.active {
         transform: translateY(0);
+    }
+
+    /* Resume Link - Mobile Styles */
+    .nav-left {
+        gap: var(--space-sm);
+    }
+
+    /* Hide text on mobile, show icon only */
+    .nav-resume .resume-text {
+        display: none;
+    }
+
+    /* Show Resume in hamburger menu */
+    .nav-link-mobile-only {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: var(--space-sm);
+        margin-bottom: var(--space-sm);
     }
 }
 

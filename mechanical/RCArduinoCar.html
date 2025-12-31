@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Xiao | RC Arduino Car</title>
+    <title>Eric Xiao | Remote Controlled Ackermann Arduino Car</title>
     <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
     
     <!-- Google Fonts -->
@@ -21,16 +21,21 @@
     <!-- Navigation -->
     <nav class="nav" id="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">Eric Xiao</a>
-            
+            <div class="nav-left">
+                <a href="../index.html" class="nav-logo">Eric Xiao</a>
+                <a href="../resume.html" class="nav-resume">
+                    <span class="resume-text">Resume</span>
+                </a>
+            </div>
+
             <ul class="nav-menu" id="nav-menu">
+                <li><a href="../resume.html" class="nav-link nav-link-mobile-only">Resume</a></li>
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../aboutme.html" class="nav-link">About</a></li>
                 <li><a href="../mechanical.html" class="nav-link active">Mechanical</a></li>
                 <li><a href="../software.html" class="nav-link">Software</a></li>
                 <li><a href="../message.html" class="nav-link">Contact</a></li>
             </ul>
-            
+
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
                 <span></span>
@@ -45,19 +50,19 @@
             <!-- Project Header -->
             <div class="section-header">
                 <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
-                    <h1 class="section-title" style="margin-bottom: 0;">RC Arduino Car</h1>
+                    <h1 class="section-title" style="margin-bottom: 0;">Remote Controlled Ackermann Arduino Car</h1>
                     <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
                         <i class="fas fa-check-circle"></i> Completed Fall 2021
                     </span>
                 </div>
                 <p class="section-subtitle">
-                    MEC 101: Freshman Design Innovation - Bluetooth-controlled car with custom four-bar steering mechanism
+                    MEC 101: Freshman Design Innovation - Bluetooth-controlled car with custom Ackermann steering mechanism
                 </p>
             </div>
 
             <!-- Main Project Image -->
             <div style="margin-bottom: var(--space-3xl);">
-                <img src="../images/mechanical/RCArduinoCar/banner.png" alt="RC Arduino Car Banner" 
+                <img src="../images/mechanical/RCArduinoCar/banner.png" alt="Remote Controlled Ackermann Arduino Car Banner" 
                      class="lightbox-trigger"
                      style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
                      onclick="openLightbox(this)">
