@@ -4,7 +4,7 @@ Personal portfolio website showcasing my work as a Software Developer and Mechan
 
 I specialize in machine learning, data science, and robotics programming, with projects spanning both software and mechanical engineering disciplines.
 
-**Visit my portfolio:** [sixym3.github.io](https://sixym3.github.io)
+**Visit my portfolio:** [ericxiao.me](https://ericxiao.me)
 
 ---
 

@@ -2,106 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Main pages -->
     <url>
-        <loc>https://sixym3.github.io/index.html</loc>
+        <loc>https://ericxiao.me/index.html</loc>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/directory.html</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://sixym3.github.io/resume.html</loc>
+        <loc>https://ericxiao.me/resume.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/mechanical.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://sixym3.github.io/software.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://sixym3.github.io/message.html</loc>
+        <loc>https://ericxiao.me/message.html</loc>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
 
     <!-- Software project pages -->
     <url>
-        <loc>https://sixym3.github.io/software/EROBS.html</loc>
+        <loc>https://ericxiao.me/projects/EROBS.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/software/UAVNavigation.html</loc>
+        <loc>https://ericxiao.me/projects/UAVNavigation.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/software/CobotPlanning.html</loc>
+        <loc>https://ericxiao.me/projects/CobotPlanning.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/software/ChefBuddy.html</loc>
+        <loc>https://ericxiao.me/projects/ChefBuddy.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/software/BMICodeCamp.html</loc>
+        <loc>https://ericxiao.me/projects/BMICodeCamp.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/software/CarbonShare.html</loc>
+        <loc>https://ericxiao.me/projects/CarbonShare.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <!-- Mechanical project pages -->
     <url>
-        <loc>https://sixym3.github.io/mechanical/RoboticPipette.html</loc>
+        <loc>https://ericxiao.me/projects/RoboticPipette.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/mechanical/RocketTeam.html</loc>
+        <loc>https://ericxiao.me/projects/RocketTeam.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/mechanical/PIDTurntable.html</loc>
+        <loc>https://ericxiao.me/projects/PIDTurntable.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/mechanical/RCArduinoCar.html</loc>
+        <loc>https://ericxiao.me/projects/RCArduinoCar.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://sixym3.github.io/mechanical/HardDriveHolder.html</loc>
+        <loc>https://ericxiao.me/projects/HardDriveHolder.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+    <url>
+        <loc>https://ericxiao.me/projects/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
 </urlset>

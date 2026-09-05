@@ -28,6 +28,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Stamp last-updated date and project pagers
+        # Bakes both into the HTML at deploy time, so a visitor's browser
+        # fetches nothing to render a complete page and neither can fail at
+        # view time. Run the same script locally with --check to preview.
+        run: python .github/scripts/build.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll

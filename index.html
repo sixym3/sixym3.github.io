@@ -1,740 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Xiao | Portfolio</title>
-    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Modern CSS -->
-    <link rel="stylesheet" href="assets/css/modern.css">
-    
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Xiao | Robotics Engineer</title>
+<meta name="description" content="Eric Xiao — robotics engineer working on motion planning, SLAM, and automated experimentation for scientific instruments.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="navbar">
-        <div class="nav-container">
-            <div class="nav-left">
-                <a href="index.html" class="nav-logo">Eric Xiao</a>
-                <a href="resume.html" class="nav-resume">
-                    <span class="resume-text">Resume</span>
-                </a>
-            </div>
 
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="resume.html" class="nav-link nav-link-mobile-only">Resume</a></li>
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="mechanical.html" class="nav-link">Mechanical</a></li>
-                <li><a href="software.html" class="nav-link">Software</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="#top" class="topnav-name">Eric Xiao</a>
+    <ul class="topnav-links">
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#research">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="resume.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
 
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<div class="wrap" id="top">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <div class="bio">
+      <div class="bio-photo">
+        <img src="images/index/headshot.jpg" alt="Eric Xiao">
+      </div>
+      <div>
+        <h1>Eric Xiao<span class="eit">EIT</span></h1>
+        <p class="role">
+          Robotics Engineer at <strong>Kathedra</strong> &middot; Charlotte, NC
+        </p>
+        <p class="role-sub">
+          M.S. Mechanical Engineering &middot; Stony Brook University
+        </p>
+        <p>
+          Hi, I bring ideas to life! I am a Mechanical Engineer specializing in developing and deploying
+          robotics prototypes &mdash; whether that means writing robotics control software, designing circuit
+          schematics for mechatronics, or programming firmware for real-time embedded systems. I use classical
+          control theory and modern ML policies to solve complex dynamic problems where software meets physical
+          reality, from vision-guided robotic manufacturing cells to GNC systems for rocketry and UAVs.
+        </p>
+        <div class="linkrow">
+          <a href="mailto:ericxiao.me@gmail.com" class="copy-email" data-email="ericxiao.me@gmail.com" title="Click to copy">Email</a>
+          <a href="resume.html">CV</a>
+          <a href="https://github.com/sixym3">GitHub</a>
+          <a href="https://www.linkedin.com/in/eric-xiaoy/">LinkedIn</a>
         </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ NEWS ============ -->
+  <section id="news">
+    <h2 class="sec">News</h2>
+    <ul class="news">
+      <li>
+        <time>Aug 2026</time>
+        <span>Our paper on multi-tool robotics for time-resolved synchrotron measurements is on
+          <a href="https://arxiv.org/abs/2608.19280">arXiv</a> and under review.</span>
+      </li>
+      <li>
+        <time>Jan 2026</time>
+        <span>Joined Kathedra as a Robotics Engineer.</span>
+      </li>
+      <li>
+        <time>Dec 2025</time>
+        <span>Completed my M.S. in Mechanical Engineering at Stony Brook University.</span>
+      </li>
+      <li>
+        <time>Jun 2025</time>
+        <span>Passed the FE exam &mdash; now certified Engineer-in-Training (NYS EIT).</span>
+      </li>
+      <li>
+        <time>Jun 2025</time>
+        <span>Started at Brookhaven National Laboratory (NSLS-II) through the DOE SULI
+          program, building the robotic beamline automation stack.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section id="publications">
+    <h2 class="sec">Publications</h2>
+
+    <!-- No thumbnail: the paper has no teaser figure of its own yet, and a
+         borrowed image would read as if it came from the paper. -->
+    <div class="entry entry-text">
+      <div>
+        <p class="entry-title">
+          <a href="https://arxiv.org/abs/2608.19280">Multi-Tool Robotics Enables In-Situ Sample Manipulation
+          for Time-Resolved Synchrotron Measurements</a>
+        </p>
+        <p class="authors">
+          Aditya Bondada, Elizabeth M. Wall, <span class="me">Eric Yuan Xiao</span>, Quinn C. Burlingame,
+          Yueh-Lin Loo, Esther H. R. Tsai, Ruipeng Li
+        </p>
+        <p class="venue">
+          Under review at <em>Digital Discovery</em> (Royal Society of Chemistry), 2026
+          <span class="tag">arXiv:2608.19280</span>
+          <span class="tag tag-plain">cs.RO</span>
+        </p>
+        <p class="blurb">
+          A modular multi-tool robot that handles and processes samples inside the experimental hutch during
+          continuous X-ray data collection, revealing transient in-situ dynamics in perovskite thin films that
+          radiation-safety protocols previously made inaccessible.
+        </p>
+        <div class="entry-links">
+          <a href="https://arxiv.org/abs/2608.19280">arXiv</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section id="research">
+    <h2 class="sec">Research &amp; Selected Projects</h2>
+
+    <div class="entry">
+      <div class="entry-thumb">
+        <video muted autoplay loop playsinline preload="metadata">
+          <source src="images/projects/EROBS/demonstration.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <p class="entry-title"><a href="projects/EROBS.html">Extensible Robotic Beamline Scientist (EROBS)</a></p>
+        <p class="venue">Brookhaven National Laboratory, NSLS-II &middot; deployed at CMS beamline</p>
+        <p class="blurb">
+          A hardware-agnostic ROS2 motion planning stack integrated with Bluesky, the control software used
+          across national laboratories. Orchestrates dynamic tool changing &mdash; vacuum, gripper, pipettor
+          &mdash; so a single robot can serve varied experiments under beamline safety constraints.
+        </p>
+        <div class="entry-links">
+          <a href="projects/EROBS.html">Project page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-thumb">
+        <video muted autoplay loop playsinline preload="metadata">
+          <source src="images/projects/RoboticPipette/pipettor_demo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <p class="entry-title"><a href="projects/RoboticPipette.html">Robotic Pipette End Effector</a></p>
+        <p class="venue">Brookhaven National Laboratory, NSLS-II</p>
+        <p class="blurb">
+          A microcontroller-driven precision liquid-handling end effector using RS485 communication,
+          achieving 5&thinsp;&micro;L &plusmn;0.5&thinsp;&micro;L accuracy on a UR5e with quick-swap tooling.
+        </p>
+        <div class="entry-links">
+          <a href="projects/RoboticPipette.html">Project page</a>
+          <a href="images/projects/RoboticPipette/Xiao_Y_poster_final.pdf">Poster</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-thumb">
+        <video muted autoplay loop playsinline preload="metadata">
+          <source src="images/projects/UAVNavigation/demonstration.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <p class="entry-title"><a href="projects/UAVNavigation.html">Autonomous UAV Navigation &amp; SLAM</a></p>
+        <p class="venue">Stony Brook University &middot; 2025</p>
+        <p class="blurb">
+          A lightweight SLAM pipeline for a resource-constrained UAV, fusing IMU with sparse four-point
+          LiDAR for real-time obstacle mapping. D* Lite planning cut re-planning time 20% against A*, with
+          minimum-snap trajectories feeding a cascaded controller.
+        </p>
+        <div class="entry-links">
+          <a href="projects/UAVNavigation.html">Project page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-thumb">
+        <video muted autoplay loop playsinline preload="metadata">
+          <source src="images/projects/CobotPlanning/cartesianplanningsimulationfourpoints.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <p class="entry-title"><a href="projects/CobotPlanning.html">Cobot Trajectory Planning</a></p>
+        <p class="venue">Stony Brook University &middot; 2025</p>
+        <p class="blurb">
+          Forward and inverse kinematics for an AUBO i5 from its URDF, with Jacobian-based velocity control
+          and Monte Carlo workspace estimation to characterize kinematic singularities.
+        </p>
+        <div class="entry-links">
+          <a href="projects/CobotPlanning.html">Project page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OTHER PROJECTS ============ -->
+  <section id="projects">
+    <h2 class="sec">Other Projects</h2>
+    <ul class="mini">
+      <li>
+        <span class="mini-main"><a href="projects/RocketTeam.html">SBU Rocket Team for NASA SLI</a></span>
+        <span class="mini-meta">2025</span>
+      </li>
+      <li>
+        <span class="mini-main"><a href="projects/PIDTurntable.html">PID Turntable Control System</a></span>
+        <span class="mini-meta">2024</span>
+      </li>
+      <li>
+        <span class="mini-main"><a href="projects/ChefBuddy.html">ChefBuddy &mdash; AI Recipe Manager</a></span>
+        <span class="mini-meta">2025</span>
+      </li>
+    </ul>
+    <p style="margin-top:1.1rem"><a href="projects/index.html">See all projects &rarr;</a></p>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <h2 class="sec">Experience &amp; Education</h2>
+    <div class="xp">
+
+      <div class="xp-item">
+        <div class="xp-when">Jan 2026 &mdash;<br>Present</div>
+        <div>
+          <p class="xp-role">Robotics Engineer</p>
+          <p class="xp-org">Kathedra</p>
+        </div>
+      </div>
+
+      <div class="xp-item">
+        <div class="xp-when">Sep 2025 &mdash;<br>Dec 2025</div>
+        <div>
+          <p class="xp-role">Experimental Systems Research Assistant</p>
+          <p class="xp-org">Interacting Robotic Systems Laboratory, Stony Brook University</p>
+          <p class="xp-body">
+            Sim-to-real PyTorch framework correlating FEA-simulated deformation maps with visual tactile sensor
+            data for real-time shear and normal force estimation without discrete force sensors.
+          </p>
+        </div>
+      </div>
+
+      <div class="xp-item">
+        <div class="xp-when">Jun 2025 &mdash;<br>Dec 2025</div>
+        <div>
+          <p class="xp-role">Mechanical Engineer Intern &middot; DOE SULI &amp; SURP</p>
+          <p class="xp-org">Brookhaven National Laboratory &middot; National Synchrotron Light Source II</p>
+          <p class="xp-body">
+            Built the UR-agnostic motion planning stack and robotic pipettor behind the NSLS-II beamline
+            automation platform, plus a teleoperation bridge mapping a Standard Open arm to a UR5e for
+            imitation-learning data collection.
+          </p>
+        </div>
+      </div>
+
+      <div class="xp-item">
+        <div class="xp-when">Jun 2024 &mdash;<br>May 2025</div>
+        <div>
+          <p class="xp-role">Embedded Systems &amp; Controls Engineer</p>
+          <p class="xp-org">Stony Brook Rocket Team &middot; NASA Student Launch Initiative</p>
+          <p class="xp-body">
+            Led avionics and embedded software through all NASA design reviews; multi-threaded C++ telemetry
+            encoding flight data into APRS packets for reliable real-time downlink.
+          </p>
+        </div>
+      </div>
+
+      <div class="xp-item">
+        <div class="xp-when">2020 &mdash; 2025</div>
+        <div>
+          <p class="xp-role">M.S. Mechanical Engineering, Focus in Robotics &middot; B.S. Mechanical Engineering</p>
+          <p class="xp-org">Stony Brook University &middot; Accelerated BS/MS &middot; M.S. conferred December 2025</p>
+          <p class="xp-body">
+            Dean's List. Student Choice Award, Stony Brook College of Engineering &amp; Applied Sciences, 2025.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <h2 class="sec">Technical Skills</h2>
+    <dl class="skills">
+      <div><dt>Robotics</dt><dd>ROS2, MoveIt, motion planning, URDF, RViz, SLAM, UAV control, Data collection</dd></div>
+      <div><dt>Controls</dt><dd>Cascaded control, sensor fusion, Kalman filters, PID, LQR, Reinforcement Learning</dd></div>
+      <div><dt>Programming</dt><dd>Python, C++, Java, SQL, MATLAB &middot; TCP/IP, UART, I2C, RS485</dd></div>
+      <div><dt>Data &amp; ML</dt><dd>PyTorch, OpenCV, NumPy, Pandas, scikit-learn, Matplotlib</dd></div>
+      <div><dt>Design</dt><dd>SolidWorks, NX, AutoCAD, FEA, 3D printing, laser cutting, CNC machining</dd></div>
+      <div><dt>Tools</dt><dd>Linux, Docker, Git, Bash, LabVIEW</dd></div>
+    </dl>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="projects/index.html">All Projects</a>
+      <a href="resume.html">CV</a>
+      <a href="message.html">Contact</a>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="section hero hero-with-banner">
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-greeting">👋 Hi, I'm</p>
-                <h1 class="hero-name">Eric Xiao <small style="font-size: 0.4em; color: inherit; font-weight: inherit;">EIT</small></h1>
-                <p class="hero-title">Robotics Engineer passionate about control systems and intelligent automation</p>
-                <p class="hero-description">
-                    Lifelong curiosity in robotics, SLAM, and computer vision for autonomous systems.
-                    M.S. in Mechanical Engineering, specialization in Robotics from Stony Brook University.
-                </p>
-                <div class="btn-group">
-                    <a href="#about" class="btn btn-primary">
-                        <i class="fas fa-user"></i>
-                        About Me
-                    </a>
-                    <a href="#featured" class="btn btn-secondary">
-                        <i class="fas fa-star"></i>
-                        Featured Work
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">
-                    A robotics engineer with a lifelong passion for integrating mechanical systems and intelligent software.
-                </p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-headshot">
-                    <img src="images/index/headshot.jpg" alt="Eric Xiao Headshot">
-                </div>
-                <div class="about-text">
-                    <p>
-                        I am a robotics engineer passionate about control systems and intelligent automation.
-                        With a Master's in Mechanical Engineering, specialization in Robotics from Stony Brook University, I work at the
-                        intersection of mechanical systems and intelligent software to build precise, adaptive robotic systems
-                        for scientific and industrial applications.
-                    </p>
-                    <p>
-                        My focus is on autonomous mobile robotics, particularly in developing navigation and localization
-                        systems using SLAM (Simultaneous Localization and Mapping) and computer vision. I'm interested in
-                        creating robots that can perceive, navigate, and adapt to dynamic environments without human intervention.
-                    </p>
-                    <p>
-                        With a strong foundation in design, analysis, and manufacturing, I'm proficient in SolidWorks with
-                        FEA optimization experience. I have hands-on experience with 3D printing, laser cutting, and CNC machining.
-                    </p>
-
-                    <div class="recent-updates">
-                        <h3>Recent Updates</h3>
-                        <ul>
-                            <li>Building a quadruped robotics dog with SLAM navigation and computer vision</li>
-                            <li>Passed FE Exam (now EIT)</li>
-                            <li>Updating my portfolio with recent robotics projects</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects Carousel -->
-    <section id="featured" class="section" style="background: var(--bg-secondary);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Work</h2>
-            </div>
-
-            <div style="position: relative; max-width: 900px; margin: var(--space-2xl) auto 0;">
-                <!-- Carousel Container -->
-                <div id="featured-carousel" style="position: relative; overflow: hidden; border-radius: var(--radius-lg);">
-                    <!-- Carousel Inner -->
-                    <div id="carousel-inner" style="display: flex; transition: transform 0.5s ease-in-out;">
-
-                        <!-- Slide 1: EROBS System -->
-                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
-                            <a href="software/EROBS.html" style="display: block; cursor: pointer;">
-                                <video muted autoplay loop poster="images/software/EROBS/architecture.png" style="pointer-events: none;">
-                                    <source src="images/software/EROBS/demonstration.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                            <div class="carousel-item-content">
-                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">Extensible Robotic Beamline Scientist</h3>
-                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
-                                    ROS2-based adaptive motion planning for scientific experiments at NSLS-II
-                                </p>
-                                <a href="software/EROBS.html" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right"></i>
-                                    View Project
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2: Robotic Pipette -->
-                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
-                            <a href="mechanical/RoboticPipette.html" style="display: block; cursor: pointer;">
-                                <video muted autoplay loop poster="images/mechanical/RoboticPipette/pipettor_on_ur5e_close_up.png" style="pointer-events: none;">
-                                    <source src="images/mechanical/RoboticPipette/pipettor_demo.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                            <div class="carousel-item-content">
-                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">Robotic Pipette End Effector</h3>
-                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
-                                    High-precision liquid handling system achieving 5μL ±0.5μL accuracy, deployed at NSLS-II
-                                </p>
-                                <a href="mechanical/RoboticPipette.html" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right"></i>
-                                    View Project
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3: UAV Navigation -->
-                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
-                            <a href="software/UAVNavigation.html" style="display: block; cursor: pointer;">
-                                <video muted autoplay loop poster="images/software/UAVNavigation/simulation_navigation.png" style="pointer-events: none;">
-                                    <source src="images/software/UAVNavigation/demonstration.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                            <div class="carousel-item-content">
-                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">Autonomous UAV Navigation & SLAM</h3>
-                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
-                                    Real-time obstacle mapping and path planning for resource-constrained Crazyflie platform
-                                </p>
-                                <a href="software/UAVNavigation.html" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right"></i>
-                                    View Project
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4: Cobot Trajectory Planning -->
-                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
-                            <a href="software/CobotPlanning.html" style="display: block; cursor: pointer;">
-                                <video muted autoplay loop poster="images/software/CobotPlanning/cover.png" style="pointer-events: none;">
-                                    <source src="images/software/CobotPlanning/cartesianplanningsimulationfourpoints.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                            <div class="carousel-item-content">
-                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">Cobot Trajectory Planning</h3>
-                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
-                                    Smooth trajectory generation with Jacobian control for AUBO i5 collaborative robot
-                                </p>
-                                <a href="software/CobotPlanning.html" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right"></i>
-                                    View Project
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5: Rocket Team -->
-                        <div class="carousel-item" style="min-width: 100%; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
-                            <a href="mechanical/RocketTeam.html" style="display: block; cursor: pointer;">
-                                <img src="images/mechanical/RocketTeam/cover.png" alt="SBU Rocket Team NASA SLI" style="pointer-events: none;">
-                            </a>
-                            <div class="carousel-item-content">
-                                <h3 style="color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1.5rem;">SBU Rocket Team for NASA SLI</h3>
-                                <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--space-lg);">
-                                    105-inch rocket achieving 4,700 feet altitude, ranked 24th/53 teams with full payload recovery
-                                </p>
-                                <a href="mechanical/RocketTeam.html" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right"></i>
-                                    View Project
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Carousel Indicators -->
-                <div style="display: flex; justify-content: center; gap: var(--space-md); margin-top: var(--space-xl);">
-                    <button class="carousel-indicator" data-slide="0" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: var(--accent-primary); cursor: pointer; transition: all 0.3s ease;"></button>
-                    <button class="carousel-indicator" data-slide="1" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: transparent; cursor: pointer; transition: all 0.3s ease;"></button>
-                    <button class="carousel-indicator" data-slide="2" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: transparent; cursor: pointer; transition: all 0.3s ease;"></button>
-                    <button class="carousel-indicator" data-slide="3" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: transparent; cursor: pointer; transition: all 0.3s ease;"></button>
-                    <button class="carousel-indicator" data-slide="4" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent-primary); background: transparent; cursor: pointer; transition: all 0.3s ease;"></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        /* Hero with Banner Background */
-        .hero-with-banner {
-            position: relative;
-            background-image: url('images/index/hero-banner.jpg');
-            background-size: cover;
-            background-position: center top;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            min-height: 100vh;
-            display: flex;
-            align-items: flex-end;
-            padding-bottom: var(--space-3xl) !important;
-        }
-
-        .hero-with-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 0.7));
-            z-index: 0;
-        }
-
-        .hero-with-banner .container {
-            position: sticky;
-            bottom: var(--space-3xl);
-            z-index: 1;
-        }
-
-        /* Lighter text colors for hero section */
-        .hero-with-banner .hero-title {
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        .hero-with-banner .hero-description {
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        /* About Me Layout with Headshot */
-        .about-content {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: var(--space-3xl);
-            align-items: start;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-headshot {
-            position: sticky;
-            top: 120px;
-        }
-
-        .about-headshot img {
-            width: 100%;
-            height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-        }
-
-        /* Reduce section padding */
-        .section {
-            padding: 3rem 0;
-        }
-
-        /* Hero section padding - override for non-banner hero */
-        .hero:not(.hero-with-banner) {
-            min-height: auto !important;
-            padding: 6rem 0 3rem 0 !important;
-        }
-
-        .carousel-indicator:hover {
-            transform: scale(1.3);
-            background: var(--text-primary) !important;
-        }
-
-        .carousel-item-content {
-            padding: var(--space-xl);
-        }
-
-        .carousel-item video,
-        .carousel-item img {
-            width: 100%;
-            display: block;
-            max-height: 500px;
-            object-fit: cover;
-            background: #000;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-2xl);
-            margin-top: var(--space-3xl);
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .skill-card {
-            background: var(--card-bg);
-            padding: var(--space-2xl);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .skill-icon {
-            margin-bottom: var(--space-lg);
-        }
-
-        .skill-card h3 {
-            color: var(--text-primary);
-            font-size: 1.25rem;
-            font-weight: var(--font-weight-semibold);
-            margin-bottom: var(--space-md);
-        }
-
-        .skill-keywords {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        @media (max-width: 1024px) {
-            .skills-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: var(--space-xl);
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* Hero Banner - adjust for mobile */
-            .hero-with-banner {
-                min-height: 100vh;
-                padding-bottom: var(--space-2xl) !important;
-            }
-
-            .hero-with-banner .container {
-                bottom: var(--space-2xl);
-            }
-
-            /* About Me - headshot wraps on mobile */
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: var(--space-xl);
-            }
-
-            .about-headshot {
-                position: static;
-                max-width: 200px;
-                margin: 0 auto;
-            }
-
-            /* Hide carousel text content on mobile */
-            .carousel-item-content {
-                display: none !important;
-            }
-
-            /* Make video/image fill screen better on mobile */
-            .carousel-item {
-                border: none !important;
-                background: transparent !important;
-            }
-
-            .carousel-item video,
-            .carousel-item img {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 1 / 1;
-                object-fit: cover;
-                border-radius: var(--radius-lg);
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-lg);
-            }
-
-            .skill-card {
-                padding: var(--space-xl);
-            }
-
-            .skill-icon img {
-                width: 60px !important;
-                height: 60px !important;
-            }
-
-            .skill-card h3 {
-                font-size: 1.1rem;
-            }
-
-            .skill-keywords {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container" style="max-width: 1200px;">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">
-                    Core expertise in robotics, autonomous systems, and intelligent automation
-                </p>
-            </div>
-
-            <div class="skills-grid">
-                <!-- ROS2 -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg" alt="ROS2" style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3>ROS2</h3>
-                    <p class="skill-keywords">Motion Planning • Navigation</p>
-                </div>
-
-                <!-- Python -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3>Python</h3>
-                    <p class="skill-keywords">PyTorch • OpenCV • NumPy</p>
-                </div>
-
-                <!-- C++ -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3>C++</h3>
-                    <p class="skill-keywords">Embedded Systems • Arduino</p>
-                </div>
-
-                <!-- JavaScript -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3>JavaScript</h3>
-                    <p class="skill-keywords">Vue.js • Node.js • Express</p>
-                </div>
-
-                <!-- SolidWorks -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/SolidWorks_Logo.svg" alt="SolidWorks" style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3>SolidWorks</h3>
-                    <p class="skill-keywords">CAD • FEA • Design</p>
-                </div>
-
-                <!-- Linux -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3>Linux</h3>
-                    <p class="skill-keywords">Ubuntu • Shell • Docker</p>
-                </div>
-
-                <!-- Git -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3>Git</h3>
-                    <p class="skill-keywords">Version Control • GitHub</p>
-                </div>
-
-                <!-- MATLAB -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3>MATLAB</h3>
-                    <p class="skill-keywords">Simulation • Analysis</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">
-                    I am always open to new opportunities and collaborations. 
-                    Feel free to reach out with any of my social media, or send me a message.
-                </p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <div>
-                            <strong>Email</strong>
-                            <p><a href="mailto:xiao.yuan0217@gmail.com">xiao.yuan0217@gmail.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt contact-icon"></i>
-                        <div>
-                            <strong>Location</strong>
-                            <p>Long Island, NY</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-briefcase contact-icon"></i>
-                        <div>
-                            <strong>Status</strong>
-                            <p>Open to full-time opportunities</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-paw contact-icon"></i>
-                        <div>
-                            <strong>Fun Fact</strong>
-                            <p>I have a white shiba named <a href="https://www.instagram.com/mochi_is_a_shiba_inu">Mochi</a> 🦮</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form-section">
-                    <h3>Send me a message</h3>
-                    <div class="text-center">
-                        <a href="message.html" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Contact Form
-                        </a>
-                        <p class="text-muted" style="margin-top: 1rem;">
-                            Or connect with me on social media
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Eric Xiao. All rights reserved.</p>
-                <p>I like to game, walk my dog Mochi, and cook in my spare time.</p>
-                <p style="margin-top: var(--space-md);"><a href="directory.html" style="color: var(--accent-primary);">Project Directory</a></p>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/eric-xiaoy/" class="social-link" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/sixym3" class="social-link" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.instagram.com/sixym3/" class="social-link" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://x.com/cyberbroker4729" class="social-link" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/mochi_is_a_shiba_inu" class="social-link" title="Mochi's Instagram">
-                    <i class="fas fa-paw"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Mobile Navigation Toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            }
-        });
-
-        // Featured Projects Carousel
-        const carouselInner = document.getElementById('carousel-inner');
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const carouselIndicators = document.querySelectorAll('.carousel-indicator');
-
-        let currentSlide = 0;
-        const totalSlides = carouselItems.length;
-        let autoScrollInterval;
-
-        function updateCarousel() {
-            // Move carousel
-            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            // Update indicators
-            carouselIndicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.style.background = 'var(--accent-primary)';
-                } else {
-                    indicator.style.background = 'transparent';
-                }
-            });
-
-            // Handle video playback - pause all except current
-            carouselItems.forEach((item, index) => {
-                const video = item.querySelector('video');
-                if (video) {
-                    if (index === currentSlide) {
-                        video.play().catch(err => console.log('Video autoplay prevented:', err));
-                    } else {
-                        video.pause();
-                        video.currentTime = 0; // Reset to beginning
-                    }
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }
-
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateCarousel();
-            resetAutoScroll();
-        }
-
-        function resetAutoScroll() {
-            clearInterval(autoScrollInterval);
-            autoScrollInterval = setInterval(nextSlide, 5000); // Auto-scroll every 5 seconds
-        }
-
-        // Event listeners for indicator dots
-        carouselIndicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                goToSlide(index);
-            });
-        });
-
-        // Initialize carousel and start auto-scroll
-        updateCarousel(); // Start first video
-        resetAutoScroll();
-
-        // Pause auto-scroll when user hovers over carousel
-        const featuredCarousel = document.getElementById('featured-carousel');
-        featuredCarousel.addEventListener('mouseenter', () => {
-            clearInterval(autoScrollInterval);
-        });
-
-        featuredCarousel.addEventListener('mouseleave', () => {
-            resetAutoScroll();
-        });
-    </script>
+    <p class="copyright">&copy; 2026 Eric Xiao<span class="sep">&middot;</span><time class="last-updated" datetime="2026-09-05T01:05:10+00:00">Last updated September 2026</time></p>
+    <div class="footer-end">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/eric-xiaoy/">LinkedIn</a>
+        <a href="https://github.com/sixym3">GitHub</a>
+        <a href="mailto:ericxiao.me@gmail.com" class="copy-email" data-email="ericxiao.me@gmail.com" title="Click to copy">Email</a>
+        <a href="https://www.instagram.com/sixym3/">Instagram</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>

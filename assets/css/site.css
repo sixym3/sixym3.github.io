@@ -1,0 +1,586 @@
+/* ==========================================================================
+   Eric Xiao — site design system
+   One stylesheet for every page. The homepage and the project pages share
+   the same tokens, the same column, the same section rhythm, and the same
+   typographic scale, so moving between them should feel like one document.
+   ========================================================================== */
+
+:root{
+  /* Ink & ground */
+  --ink:#16181d;
+  --ink-soft:#4a4f57;
+  --ink-mute:#878d97;
+  --rule:#e4e6ea;
+  --rule-soft:#eef0f3;
+  --paper:#ffffff;
+  --paper-tint:#f7f8fa;
+
+  /* Accent */
+  --link:#0b5fbf;
+  --link-hover:#0847a1;
+  --accent-tag:#eaf1fb;
+
+  /* Type */
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --mono:'JetBrains Mono','SF Mono',Consolas,monospace;
+
+  /* Measure */
+  --col:800px;
+
+  /* Space */
+  --s-xs:.5rem;
+  --s-sm:1rem;
+  --s-md:1.5rem;
+  --s-lg:2rem;
+  --s-xl:2.75rem;
+
+  /* Chrome that differs between themes */
+  --nav-bg:rgba(255,255,255,.88);
+  --tag-border:#cfe0f5;
+  --tooltip-bg:#16181d;
+  --tooltip-fg:#ffffff;
+  --on-accent:#ffffff;
+  --shadow-tint:22,24,29;
+
+  /* Aliases for the older token names still used by inline styles on the
+     project pages. Pointing them at the palette keeps that markup working
+     and makes it follow the theme for free. */
+  --bg-primary:var(--paper);
+  --bg-secondary:var(--paper-tint);
+  --bg-tertiary:var(--rule-soft);
+  --card-bg:var(--paper);
+  --card-hover:var(--paper-tint);
+  --border-color:var(--rule);
+  --text-primary:var(--ink);
+  --text-secondary:var(--ink-soft);
+  --text-muted:var(--ink-mute);
+  --accent-primary:var(--link);
+  --accent-secondary:var(--link-hover);
+  --accent-hover:var(--link-hover);
+
+  --space-xs:.5rem;
+  --space-sm:1rem;
+  --space-md:1.5rem;
+  --space-lg:2rem;
+  --space-xl:2.75rem;
+  --space-2xl:3.5rem;
+  --space-3xl:5rem;
+
+  --radius-sm:4px;
+  --radius-md:6px;
+  --radius-lg:8px;
+  --radius-xl:12px;
+
+  --font-weight-light:300;
+  --font-weight-normal:400;
+  --font-weight-medium:500;
+  --font-weight-semibold:600;
+  --font-weight-bold:700;
+
+  --transition-fast:.15s ease;
+  --transition-normal:.3s ease;
+  --transition-slow:.5s ease;
+
+  --shadow-sm:0 1px 2px rgba(var(--shadow-tint),.05);
+  --shadow-md:0 2px 6px rgba(var(--shadow-tint),.07);
+  --shadow-lg:0 4px 14px rgba(var(--shadow-tint),.08);
+  --shadow-xl:0 8px 28px rgba(var(--shadow-tint),.10);
+}
+
+/* ---------- Dark theme ----------
+   Only the palette is redefined; every rule below reads through the tokens.
+   Applied on an explicit choice, and by system preference unless the reader
+   has explicitly chosen light. */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#e6e8ec;
+    --ink-soft:#b0b6c0;
+    --ink-mute:#868d99;
+    --rule:#2b3038;
+    --rule-soft:#23272e;
+    --paper:#15171b;
+    --paper-tint:#1c1f25;
+    --link:#74b4ff;
+    --link-hover:#9ac9ff;
+    --accent-tag:#182a3f;
+    --nav-bg:rgba(21,23,27,.88);
+    --tag-border:#2b4463;
+    --tooltip-bg:#e6e8ec;
+    --tooltip-fg:#15171b;
+    --on-accent:#0d1117;
+    --shadow-tint:0,0,0;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+    --shadow-md:0 2px 6px rgba(0,0,0,.35);
+    --shadow-lg:0 4px 14px rgba(0,0,0,.4);
+    --shadow-xl:0 8px 28px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e6e8ec;
+  --ink-soft:#b0b6c0;
+  --ink-mute:#868d99;
+  --rule:#2b3038;
+  --rule-soft:#23272e;
+  --paper:#15171b;
+  --paper-tint:#1c1f25;
+  --link:#74b4ff;
+  --link-hover:#9ac9ff;
+  --accent-tag:#182a3f;
+  --nav-bg:rgba(21,23,27,.88);
+  --tag-border:#2b4463;
+  --tooltip-bg:#e6e8ec;
+  --tooltip-fg:#15171b;
+  --on-accent:#0d1117;
+  --shadow-tint:0,0,0;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  --shadow-md:0 2px 6px rgba(0,0,0,.35);
+  --shadow-lg:0 4px 14px rgba(0,0,0,.4);
+  --shadow-xl:0 8px 28px rgba(0,0,0,.45);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+img,video{max-width:100%}
+
+/* ---------- Nav ---------- */
+.topnav{
+  position:sticky;top:0;z-index:50;
+  background:var(--nav-bg);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--rule-soft);
+}
+.topnav-inner{
+  max-width:var(--col);margin:0 auto;padding:.85rem 1.5rem;
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+}
+.topnav-name{font-weight:600;color:var(--ink);font-size:.95rem;letter-spacing:-.01em}
+.topnav-name:hover{text-decoration:none}
+.topnav-links{display:flex;gap:1.25rem;list-style:none;flex-wrap:wrap}
+.topnav-links a{color:var(--ink-soft);font-size:.875rem;font-weight:500}
+.topnav-links a:hover{color:var(--link);text-decoration:none}
+.topnav-links a.active{color:var(--ink);font-weight:600}
+
+/* Theme toggle. Lives quietly in the footer, next to the social links —
+   discoverable when you look for it, not competing with the nav. */
+.footer-end{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;margin-top:.85rem;
+}
+.theme-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;padding:0;flex:none;
+  background:none;border:none;border-radius:5px;
+  color:var(--ink-mute);cursor:pointer;opacity:.7;
+  transition:color .15s,opacity .15s;
+}
+.theme-toggle:hover{color:var(--link);opacity:1}
+.theme-toggle svg{width:14px;height:14px;display:block}
+/* Show the icon for the theme you would switch TO */
+.theme-toggle .icon-moon{display:block}
+.theme-toggle .icon-sun{display:none}
+:root[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+:root[data-theme="dark"] .theme-toggle .icon-sun{display:block}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:var(--col);margin:0 auto;padding:0 1.5rem}
+section{padding:var(--s-xl) 0;border-top:1px solid var(--rule-soft)}
+section.plain{border-top:none}
+
+/* Small-caps section label — the page's primary structural marker */
+h2.sec{
+  font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-mute);margin-bottom:1.5rem;
+}
+
+/* ---------- Body typography ---------- */
+h1{font-size:2.1rem;font-weight:700;letter-spacing:-.025em;line-height:1.15;margin-bottom:.3rem}
+h3{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:.3rem;line-height:1.4}
+p{color:var(--ink-soft);font-size:.95rem;margin-bottom:.9rem}
+p:last-child{margin-bottom:0}
+ul,ol{color:var(--ink-soft);font-size:.95rem;margin:0 0 .9rem 1.15rem}
+li{margin-bottom:.3rem}
+strong{color:var(--ink);font-weight:600}
+em{font-style:italic}
+
+/* A stack of labelled sub-topics inside a section */
+.stack{display:grid;gap:var(--s-md)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s-md)}
+
+/* ---------- Homepage: bio ---------- */
+.masthead{padding:3.25rem 0 2.5rem;border-top:none}
+.bio{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start}
+.bio-photo img{
+  width:148px;height:148px;object-fit:cover;border-radius:50%;
+  border:1px solid var(--rule);display:block;
+}
+h1 .eit{font-size:.9rem;font-weight:500;color:var(--ink-mute);letter-spacing:0;vertical-align:middle;margin-left:.4rem}
+.role{color:var(--ink-soft);font-size:1rem;margin-bottom:.15rem}
+.role strong{color:var(--ink);font-weight:600}
+/* Degree line, sits under the job title */
+.role-sub{color:var(--ink-mute);font-size:.9rem;margin-bottom:.9rem}
+.bio p{font-size:.97rem;margin-bottom:.75rem}
+.linkrow{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.linkrow a{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.85rem;font-weight:500;color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:6px;padding:.32rem .7rem;
+  transition:border-color .15s,color .15s;
+}
+.linkrow a:hover{color:var(--link);border-color:var(--link);text-decoration:none}
+
+/* ---------- Homepage: news ---------- */
+.news{list-style:none;display:grid;gap:.65rem;margin:0}
+.news li{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;font-size:.93rem;margin:0}
+.news time{color:var(--ink-mute);font-family:var(--mono);font-size:.8rem;padding-top:.16rem}
+.news span{color:var(--ink-soft)}
+
+/* ---------- Entry rows (publications + projects) ---------- */
+.entry{display:grid;grid-template-columns:210px 1fr;gap:1.5rem;align-items:start;margin-bottom:2.25rem}
+/* An entry with no teaser figure runs the full column width rather than
+   leaving a gap where a thumbnail would have been. */
+.entry-text{grid-template-columns:1fr}
+.entry:last-child{margin-bottom:0}
+.entry-thumb{border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--paper-tint)}
+.entry-thumb img,.entry-thumb video{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.entry-title{font-size:1.03rem;font-weight:600;letter-spacing:-.01em;line-height:1.4;margin-bottom:.3rem}
+.entry-title a{color:var(--ink)}
+.entry-title a:hover{color:var(--link)}
+.authors{font-size:.89rem;color:var(--ink-soft);margin-bottom:.25rem}
+.authors .me{font-weight:700;color:var(--ink)}
+.venue{font-size:.87rem;color:var(--ink-mute);font-style:italic;margin-bottom:.5rem}
+.blurb{font-size:.91rem;color:var(--ink-soft);margin-bottom:.6rem}
+.entry-links{display:flex;flex-wrap:wrap;gap:.9rem;font-size:.85rem;font-weight:500}
+
+/* ---------- Tags & badges ---------- */
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:.7rem;font-weight:500;
+  background:var(--accent-tag);color:var(--link);border-radius:4px;
+  padding:.15rem .45rem;vertical-align:middle;margin-left:.35rem;letter-spacing:.02em;
+  font-style:normal;
+}
+.tag-plain{background:var(--paper-tint);color:var(--ink-mute)}
+
+/* Technology chips on project pages */
+.tech-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:var(--s-md)}
+.tech-tag{
+  display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:500;
+  background:var(--paper-tint);color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:4px;padding:.2rem .5rem;letter-spacing:.02em;
+}
+
+/* Status pill in a project header */
+.status{
+  display:inline-block;font-family:var(--mono);font-size:.7rem;font-weight:500;
+  background:var(--accent-tag);color:var(--link);border:1px solid var(--tag-border);
+  border-radius:4px;padding:.2rem .5rem;letter-spacing:.03em;text-transform:uppercase;
+  vertical-align:middle;
+}
+
+/* ---------- Homepage: experience ---------- */
+.xp{display:grid;gap:1.6rem}
+.xp-item{display:grid;grid-template-columns:9.5rem 1fr;gap:1.25rem}
+.xp-when{font-family:var(--mono);font-size:.78rem;color:var(--ink-mute);padding-top:.2rem;line-height:1.5}
+.xp-role{font-size:.97rem;font-weight:600;margin-bottom:.1rem;color:var(--ink)}
+.xp-org{font-size:.89rem;color:var(--ink-soft);margin-bottom:.4rem}
+.xp-body{font-size:.91rem;color:var(--ink-soft)}
+
+/* ---------- Homepage: compact project list ---------- */
+.mini{list-style:none;display:grid;gap:.6rem;margin:0}
+.mini li{
+  font-size:.92rem;color:var(--ink-soft);
+  display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:baseline;
+  padding-bottom:.6rem;border-bottom:1px solid var(--rule-soft);margin:0;
+}
+.mini li:last-child{border-bottom:none;padding-bottom:0}
+.mini .mini-meta{
+  font-family:var(--mono);font-size:.7rem;color:var(--ink-mute);
+  text-align:right;white-space:nowrap;letter-spacing:.04em;text-transform:uppercase;
+}
+
+/* ---------- Skills ---------- */
+.skills{display:grid;gap:.7rem}
+.skills div{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;font-size:.91rem}
+.skills dt{font-weight:600;color:var(--ink)}
+.skills dd{color:var(--ink-soft)}
+
+/* ==========================================================================
+   Project pages
+   Same column, same rules, same labels as the homepage. No cards.
+   ========================================================================== */
+
+.page-head{padding:3.25rem 0 1.75rem;border-top:none}
+.page-head .eyebrow{
+  font-family:var(--mono);font-size:.75rem;color:var(--ink-mute);
+  letter-spacing:.06em;margin-bottom:.6rem;
+}
+.page-head .eyebrow a{color:var(--ink-mute)}
+.page-head .eyebrow a:hover{color:var(--link)}
+.page-head h1{margin-bottom:.5rem}
+.page-head .lede{font-size:1rem;color:var(--ink-soft);margin-bottom:0;max-width:62ch}
+.page-head .meta{
+  display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;
+  margin-top:.9rem;font-size:.85rem;color:var(--ink-mute);
+}
+
+/* Figures — the one place project pages carry weight */
+.figure{margin:0 0 var(--s-md)}
+.figure img,.figure video{
+  display:block;width:100%;border:1px solid var(--rule);
+  border-radius:8px;background:var(--paper-tint);
+}
+.figure figcaption{
+  font-size:.82rem;color:var(--ink-mute);margin-top:.5rem;line-height:1.5;
+}
+/* Gallery grid. Tiles are cropped to a common height so rows line up, the way
+   the Rocket Team gallery does — a ragged grid of natural aspect ratios reads
+   as a mistake. Click through to the lightbox for the uncropped image. */
+.figure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s-md)}
+.figure-grid .figure{margin:0}
+.figure-grid .figure img,
+.figure-grid .figure video{
+  height:200px;width:100%;object-fit:cover;
+}
+.figure-grid .figure figcaption{margin-top:.45rem}
+
+/* A quiet pull-out for a result or takeaway */
+.callout{
+  background:var(--paper-tint);border:1px solid var(--rule);
+  border-left:3px solid var(--link);border-radius:6px;
+  padding:var(--s-md);margin-bottom:var(--s-md);
+}
+.callout p{margin-bottom:0}
+.callout p:first-child{color:var(--ink)}
+
+/* Embedded PDF (the CV page) */
+.pdf-viewer{
+  border:1px solid var(--rule);border-radius:8px;overflow:hidden;
+  background:var(--paper-tint);margin-bottom:var(--s-md);
+}
+.pdf-viewer object{display:block;width:100%;height:800px;border:0}
+.pdf-fallback{padding:var(--s-lg);text-align:center;margin:0}
+@media (max-width:680px){
+  .pdf-viewer object{height:60vh}
+}
+
+/* Prev/next + back navigation at the foot of a project page */
+.pager{
+  display:flex;flex-wrap:wrap;gap:1.25rem;
+  padding-top:var(--s-md);font-size:.88rem;font-weight:500;
+}
+
+/* ---------- Buttons (kept minimal) ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.87rem;font-weight:500;
+  border:1px solid var(--rule);border-radius:6px;padding:.4rem .85rem;
+  color:var(--ink-soft);background:var(--paper);
+  transition:border-color .15s,color .15s;
+}
+.btn:hover{color:var(--link);border-color:var(--link);text-decoration:none}
+.btn-primary{background:var(--link);border-color:var(--link);color:var(--on-accent)}
+.btn-primary:hover{background:var(--link-hover);border-color:var(--link-hover);color:var(--on-accent)}
+.btn-group{display:flex;flex-wrap:wrap;gap:.6rem}
+
+/* ---------- Footer ---------- */
+.footer,footer{
+  border-top:1px solid var(--rule-soft);padding:2rem 0 3rem;margin-top:1rem;
+  font-size:.85rem;color:var(--ink-mute);
+}
+footer p{margin-bottom:.3rem;color:var(--ink-mute);font-size:.85rem}
+.copyright{display:flex;flex-wrap:wrap;gap:.15rem .75rem;align-items:baseline}
+/* Filled in from the repo's latest commit; empty until it resolves */
+.last-updated:empty{display:none}
+/* hide the separator too while the date is still unresolved */
+.last-updated:empty + .sep,.sep:has(+ .last-updated:empty){display:none}
+.sep{color:var(--ink-mute);font-size:.8rem}
+.last-updated{color:var(--ink-mute);font-size:.8rem}
+
+/* Footer nav — carries Contact, which is deliberately not in the top bar */
+.footer-nav{
+  display:flex;flex-wrap:wrap;gap:1.25rem;
+  padding-bottom:.9rem;margin-bottom:.9rem;
+  border-bottom:1px solid var(--rule-soft);
+}
+.footer-nav a{font-size:.875rem;font-weight:500;color:var(--ink-soft)}
+.footer-nav a:hover{color:var(--link);text-decoration:none}
+
+.social-links{display:flex;flex-wrap:wrap;gap:1rem;margin:0}
+.social-links a{font-size:.8rem;color:var(--ink-mute)}
+.social-links a:hover{color:var(--link);text-decoration:none}
+
+/* Click-to-copy email. The confirmation is an absolutely positioned
+   pseudo-element, so it neither reserves width nor shifts its neighbours. */
+.copy-email{cursor:copy;position:relative}
+.copy-email.is-copied{color:var(--link)}
+.copy-email.is-copied::after{
+  content:'Copied \2713';
+  position:absolute;left:50%;bottom:calc(100% + .4rem);
+  transform:translateX(-50%);
+  background:var(--tooltip-bg);color:var(--tooltip-fg);
+  font-size:.7rem;line-height:1;white-space:nowrap;
+  padding:.3rem .45rem;border-radius:4px;
+  pointer-events:none;
+}
+
+/* ---------- Lightbox (project image zoom) ---------- */
+.lightbox-trigger{cursor:zoom-in}
+.lightbox{
+  position:fixed;inset:0;z-index:200;
+  display:none;
+  background:rgba(22,24,29,.9);
+  padding:2rem;
+}
+/* Centred both ways; the JS toggles .open rather than an inline display */
+.lightbox.open{display:flex;align-items:center;justify-content:center}
+.lightbox-content{
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;gap:.75rem;
+  max-width:min(1100px,92vw);max-height:90vh;
+}
+.lightbox-image,.lightbox-video{
+  display:block;
+  max-width:100%;max-height:80vh;
+  width:auto;height:auto;
+  object-fit:contain;
+  border-radius:8px;background:var(--paper);
+}
+.lightbox-caption{
+  color:rgba(255,255,255,.85);font-size:.85rem;text-align:center;
+  max-width:60ch;
+}
+.lightbox-close{
+  position:absolute;top:-2.25rem;right:-.25rem;
+  color:#fff;font-size:1.9rem;line-height:1;cursor:pointer;
+  opacity:.75;user-select:none;
+}
+.lightbox-close:hover{opacity:1}
+
+/* ==========================================================================
+   Compatibility layer
+   The project / listing pages were authored against the older markup
+   (.container, .section-header, .project-card). These rules pull that
+   structure onto the same column and rhythm as the homepage, so the two
+   read as one site without rewriting every page's HTML.
+   ========================================================================== */
+
+.container{max-width:var(--col);margin:0 auto;padding:0 1.5rem}
+.section{padding:var(--s-xl) 0;border-top:none}
+
+/* Project page header block */
+.section-header{margin-bottom:var(--s-lg);text-align:left}
+.section-title{
+  font-size:2.1rem;font-weight:700;letter-spacing:-.025em;line-height:1.15;
+  color:var(--ink);margin-bottom:.5rem;
+}
+.section-subtitle{font-size:1rem;color:var(--ink-soft);margin-bottom:0;max-width:62ch}
+
+/* The title + status-pill row was authored centred with a large gap.
+   Pull it left and tighten it so it reads like the homepage masthead. */
+.section-header > div[style]{
+  justify-content:flex-start !important;
+  gap:.7rem !important;
+  margin-bottom:.5rem !important;
+}
+/* Restyle the inline status pill into the site's quiet badge */
+.section-header > div[style] > span[style]{
+  background:var(--accent-tag) !important;
+  color:var(--link) !important;
+  border:1px solid var(--tag-border);
+  border-radius:4px !important;
+  padding:.2rem .5rem !important;
+  font-family:var(--mono);
+  font-size:.7rem !important;
+  font-weight:500 !important;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  align-self:center;
+}
+.section-header > div[style] > span[style] i{display:none}
+
+/* Banner: the one piece of media at the top of a project page.
+   A demo video where the project has one, otherwise a still. Videos carry no
+   poster so the browser shows their own first frame — a hand-picked poster
+   can disagree with the footage behind it. */
+.banner{margin-bottom:var(--s-lg)}
+.banner img,.banner video{
+  display:block;width:100%;
+  max-height:420px;object-fit:cover;
+  border:1px solid var(--rule);border-radius:8px;
+  background:var(--paper-tint);
+}
+
+/* Flatten the old card boxes into plain sections divided by hairlines.
+   The inline background/border/padding on those divs is overridden here. */
+.project-body > div[style]{
+  background:transparent !important;
+  border:none !important;
+  border-top:1px solid var(--rule-soft) !important;
+  border-radius:0 !important;
+  padding:var(--s-xl) 0 0 !important;
+  margin-bottom:var(--s-xl) !important;
+}
+.project-body > div[style]:first-child{border-top:none !important;padding-top:0 !important}
+
+/* Rewritten project bodies use plain <section> children instead of styled divs */
+.project-body > section{
+  border-top:1px solid var(--rule-soft);
+  padding:var(--s-xl) 0 0;
+  margin-bottom:var(--s-xl);
+}
+.project-body > section:first-child{border-top:none;padding-top:0}
+
+/* Section headings inside project bodies match the homepage's small-caps label */
+.project-body h2{
+  font-size:.78rem !important;font-weight:700 !important;
+  letter-spacing:.13em !important;text-transform:uppercase !important;
+  color:var(--ink-mute) !important;margin-bottom:1.25rem !important;
+}
+.project-body h2 i{display:none}
+.project-body h3{
+  font-size:1rem !important;font-weight:600 !important;
+  color:var(--ink) !important;margin-bottom:.3rem !important;
+}
+.project-body p,.project-body li{color:var(--ink-soft) !important;font-size:.95rem}
+.project-body img,.project-body video{border-radius:8px}
+
+/* Listing pages (mechanical.html / software.html) */
+.projects-grid{display:grid;gap:.6rem;margin-top:var(--s-md)}
+.project-card{
+  background:transparent !important;border:none !important;
+  border-bottom:1px solid var(--rule-soft) !important;border-radius:0 !important;
+  padding:0 0 .85rem !important;cursor:pointer;
+}
+.project-card:hover{background:transparent !important}
+.project-card:hover h3{color:var(--link)}
+.project-card img,.project-card video{display:none}
+.project-card h3{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+.project-card p{font-size:.9rem;color:var(--ink-soft);margin-bottom:.4rem}
+
+/* ---------- Mobile ---------- */
+@media (max-width:680px){
+  .topnav-inner{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .topnav-links{gap:1rem}
+  .bio{grid-template-columns:1fr;gap:1.25rem}
+  .bio-photo img{width:112px;height:112px}
+  h1{font-size:1.75rem}
+  .entry{grid-template-columns:1fr;gap:.85rem}
+  .entry-thumb img,.entry-thumb video{aspect-ratio:16/9}
+  .news li,.xp-item,.skills div{grid-template-columns:1fr;gap:.15rem}
+  .mini li{grid-template-columns:1fr;gap:.2rem}
+  .mini .mini-meta{text-align:left}
+  .cols,.figure-grid{grid-template-columns:1fr}
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | Robotic Pipette End Effector</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/site.css">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../index.html" class="topnav-name">Eric Xiao</a>
+    <ul class="topnav-links">
+      <li><a href="../index.html#news">News</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#research">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../resume.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">Robotic Pipette End Effector</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-check-circle"></i> In Service
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    High-precision robotic liquid handling system achieving 5μL accuracy for scientific research applications - Developed Summer 2025 at Brookhaven National Laboratory
+                </p>
+            </div>
+
+            <!-- Banner -->
+            <div class="banner">
+                <video controls muted autoplay loop playsinline preload="metadata">
+                    <source src="../images/projects/RoboticPipette/pipettor_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-body">
+
+                <section>
+                    <h2>Overview</h2>
+                    <p>
+                        Industrial arms move precisely but cannot handle liquids. This end effector gives a UR5e microliter pipetting: two 3D-printed actuators driven over RS485, with a ROS2 driver on top. It hits 5&thinsp;&micro;L &plusmn;0.5&thinsp;&micro;L, takes standard laboratory pipettes, and mounts on the arm&rsquo;s existing tool exchanger. Built at NSLS-II so a robot could run liquid-handling steps inside an active beamline hutch.
+                    </p>
+                </section>
+
+
+                <section>
+                    <h2>Design</h2>
+                    <div class="stack">
+                        <div>
+                            <h3>Dual actuators</h3>
+                            <p>
+                                One actuator drives the plunger with position feedback, a second ejects the tip with a force limit. Stepper motors give repeatable travel, which is what the volume accuracy actually depends on.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>Quick-swap holder</h3>
+                            <p>
+                                Pipettes change without stopping the workflow. The holder locks the tool during motion and repeats its alignment on re-seating, so accuracy survives a swap.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>Integration</h3>
+                            <p>
+                                RS485 to the microcontroller, exposed to ROS2 as an end effector the motion stack can call. It shares the UR5e tool exchanger with the gripper and vacuum tools.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Gallery</h2>
+                    <div class="figure-grid">
+                        <figure class="figure">
+                            <img src="../images/projects/RoboticPipette/pipettor_on_ur5e.png" alt="Pipettor mounted on the UR5e" class="lightbox-trigger" onclick="openLightbox(this)">
+                            <figcaption>Mounted on the UR5e</figcaption>
+                        </figure>
+                        <figure class="figure">
+                            <img src="../images/projects/RoboticPipette/pipettor_on_ur5e_close_up.png" alt="Close-up of the end effector" class="lightbox-trigger" onclick="openLightbox(this)">
+                            <figcaption>End effector close-up</figcaption>
+                        </figure>
+                        <figure class="figure">
+                            <img src="../images/projects/RoboticPipette/end_effectors_on_quick_swap_holder.png" alt="End effectors on the quick-swap holder" class="lightbox-trigger" onclick="openLightbox(this)">
+                            <figcaption>Tools on the quick-swap holder</figcaption>
+                        </figure>
+                        <figure class="figure">
+                            <img src="../images/projects/RoboticPipette/pipette_end_effector_cad.jpg" alt="CAD model of the pipette end effector" class="lightbox-trigger" onclick="openLightbox(this)">
+                            <figcaption>CAD model</figcaption>
+                        </figure>
+                        <figure class="figure">
+                            <img src="../images/projects/RoboticPipette/wingmantoolchange.png" alt="Wingman tool changer" class="lightbox-trigger" onclick="openLightbox(this)">
+                            <figcaption>Tool changer</figcaption>
+                        </figure>
+                        <figure class="figure">
+                            <img src="../images/projects/RoboticPipette/holder_design.jpg" alt="Holder design" class="lightbox-trigger" onclick="openLightbox(this)">
+                            <figcaption>Holder design</figcaption>
+                        </figure>
+                        <figure class="figure">
+                            <video muted loop playsinline controls preload="metadata">
+                                <source src="../images/projects/RoboticPipette/actuate_close_up.mp4" type="video/mp4">
+                            </video>
+                            <figcaption>Plunger actuation, close up</figcaption>
+                        </figure>
+                        <figure class="figure">
+                            <video muted loop playsinline controls preload="metadata">
+                                <source src="../images/projects/RoboticPipette/actuate_close_up_cad.mp4" type="video/mp4">
+                            </video>
+                            <figcaption>The same motion in CAD</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Poster</h2>
+                    <p>
+                        <a href="../images/projects/RoboticPipette/Xiao_Y_poster_final.pdf">Research poster (PDF)</a> on the pipettor and its beamline integration.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Built with</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SolidWorks</span>
+                        <span class="tech-tag">3D Printing</span>
+                        <span class="tech-tag">RS485</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">ROS2</span>
+                        <span class="tech-tag">Stepper Control</span>
+                        <span class="tech-tag">UR5e</span>
+                    </div>
+                </section>
+
+                <nav class="pager"><a href="EROBS.html">&larr; Extensible Robotic Beamline Scientist</a><a href="index.html">All projects</a><a href="UAVNavigation.html">Autonomous UAV Navigation &amp; SLAM &rarr;</a></nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="" style="display: none;">
+            <video id="lightbox-video" class="lightbox-video" controls style="display: none; max-width: 90vw; max-height: 90vh;">
+                <source id="lightbox-video-source" src="" type="video/mp4">
+            </video>
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>    <!-- Footer -->
+    <footer>
+  <div class="wrap">
+    <nav class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="index.html">All Projects</a>
+      <a href="../resume.html">CV</a>
+      <a href="../message.html">Contact</a>
+    </nav>
+    <p class="copyright">&copy; 2026 Eric Xiao<span class="sep">&middot;</span><time class="last-updated" datetime="2026-09-05T01:05:10+00:00">Last updated September 2026</time></p>
+    <div class="footer-end">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/eric-xiaoy/">LinkedIn</a>
+        <a href="https://github.com/sixym3">GitHub</a>
+        <a href="mailto:ericxiao.me@gmail.com" class="copy-email" data-email="ericxiao.me@gmail.com" title="Click to copy">Email</a>
+        <a href="https://www.instagram.com/sixym3/">Instagram</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+    <!-- Additional Mobile Responsive CSS -->
+    <style>
+        /* Video lightbox trigger styling */
+        .video-lightbox-trigger:hover div {
+            background: rgba(0,0,0,0.9) !important;
+            transform: translate(-50%, -50%) scale(1.1) !important;
+        }
+        
+        /* Lightbox video styling */
+        .lightbox-video {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Desktop hero video styling - smaller and more compact */
+        @media (min-width: 769px) {
+            .hero-video {
+                max-height: 300px !important;
+                max-width: 500px !important;
+                margin: 0 auto !important;
+                display: block !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .responsive-grid-2, .responsive-grid-3, .responsive-grid-2-1 {
+                grid-template-columns: 1fr !important;
+                gap: var(--space-lg) !important;
+            }
+            
+            /* Hero video on mobile - allow full width */
+            .hero-video {
+                max-height: none !important;
+                max-width: 100% !important;
+            }
+            
+            /* Make video container more mobile friendly */
+            .video-container {
+                padding: var(--space-md) !important;
+            }
+            
+            /* Adjust lightbox triggers for touch devices */
+            .lightbox-trigger, .video-lightbox-trigger {
+                transition: none !important;
+            }
+            
+            .lightbox-trigger:hover, .video-lightbox-trigger:hover {
+                transform: none !important;
+            }
+            
+            .video-lightbox-trigger:hover div {
+                transform: translate(-50%, -50%) !important;
+                background: rgba(0,0,0,0.7) !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-sm) !important;
+            }
+        }
+    </style>
+
+    <!-- JavaScript -->
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>
