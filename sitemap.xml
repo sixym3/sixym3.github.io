@@ -21,6 +21,12 @@
 
     <!-- Software project pages -->
     <url>
+        <loc>https://ericxiao.me/projects/BalanceBot.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
         <loc>https://ericxiao.me/projects/EROBS.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

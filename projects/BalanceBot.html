@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Xiao | Balance Bot Control</title>
+    <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="../assets/css/site.css">
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- KaTeX — this page carries the control-law derivations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false})"></script>
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../index.html" class="topnav-name">Eric Xiao</a>
+    <ul class="topnav-links">
+      <li><a href="../index.html#news">News</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#research">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../resume.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- Project Details Section -->
+    <section class="section" style="min-height: auto; padding-top: 120px;">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="section-header">
+                <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
+                    <h1 class="section-title" style="margin-bottom: 0;">Balance Bot Control</h1>
+                    <span style="background: var(--text-secondary); color: var(--bg-primary); padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm); font-weight: var(--font-weight-medium); font-size: 0.875rem;">
+                        <i class="fas fa-flask"></i> Ongoing 2026
+                    </span>
+                </div>
+                <p class="section-subtitle">
+                    Control strategies for an underactuated two-wheeled robot in MuJoCo &mdash; PID balancing and full-state LQR
+                </p>
+            </div>
+
+            <!-- Banner -->
+            <div class="banner">
+                <video controls muted autoplay loop playsinline preload="metadata">
+                    <source src="../images/projects/BalanceBot/lqr_keyboard.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-body">
+
+                <section>
+                    <h2>Overview</h2>
+                    <p>
+                        Implementation and exploration of different control strategies for an underactuated system. The robot is a chassis on two wheels. Adapted from Shawn Hymel&rsquo;s <a href="https://github.com/ShawnHymel/reinforcement-learning-for-robotics/">reinforcement learning for robotics</a> course.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Pitch estimation</h2>
+                    <p>Accelerometer:</p>
+                    $$\theta_{\text{acc}} = \operatorname{atan2}\!\left(a_x,\; a_z\right)$$
+                    <p>Gyroscope:</p>
+                    $$\theta_{\text{gyro},k} = \hat{\theta}_{k-1} + \dot{\theta}_k \, \Delta t$$
+                    <p>Complementary filter, \(\alpha = 0.99\) at \(200\,\text{Hz}\):</p>
+                    $$\hat{\theta}_k = \alpha\left(\hat{\theta}_{k-1} + \dot{\theta}_k\,\Delta t\right) + (1-\alpha)\,\theta_{\text{acc},k}$$
+
+                    <div class="diagram">
+                    <svg viewBox="0 0 820 250" role="img" aria-label="Complementary filter block diagram fusing accelerometer and gyroscope into a pitch estimate">
+                      <defs>
+                        <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                          <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-mute)"/>
+                        </marker>
+                      </defs>
+                      <g class="dg-box">
+                        <rect x="8"   y="34"  width="146" height="46" rx="6"/>
+                        <rect x="196" y="34"  width="146" height="46" rx="6"/>
+                        <rect x="384" y="34"  width="146" height="46" rx="6"/>
+                        <rect x="8"   y="156" width="146" height="46" rx="6"/>
+                        <rect x="196" y="156" width="146" height="46" rx="6"/>
+                        <rect x="384" y="156" width="146" height="46" rx="6"/>
+                        <rect x="676" y="95"  width="136" height="46" rx="6"/>
+                        <circle cx="602" cy="118" r="21"/>
+                      </g>
+                      <g class="dg-t">
+                        <text x="81"  y="53">Accelerometer</text>
+                        <text x="269" y="53">Resolve gravity</text>
+                        <text x="457" y="53">Low-pass</text>
+                        <text x="81"  y="175">Gyroscope</text>
+                        <text x="269" y="175">Integrate rate</text>
+                        <text x="457" y="175">High-pass</text>
+                        <text x="744" y="124">Pitch estimate</text>
+                        <text x="602" y="124">+</text>
+                      </g>
+                      <g class="dg-s">
+                        <text x="81"  y="70">x and z axes</text>
+                        <text x="269" y="70">atan2 of x, z</text>
+                        <text x="457" y="70">weight 1 &#8722; &#945;</text>
+                        <text x="81"  y="192">&#952;&#775;</text>
+                        <text x="269" y="192">&#952;&#775; &#183; &#916;t</text>
+                        <text x="457" y="192">weight &#945; = 0.99</text>
+                        <text x="744" y="141">&#952;&#770;</text>
+                        <text x="81"  y="112">absolute, but noisy</text>
+                        <text x="81"  y="234">smooth, but drifts</text>
+                      </g>
+                      <g class="dg-l">
+                        <path d="M154,57 H188"   marker-end="url(#ar1)"/>
+                        <path d="M342,57 H376"   marker-end="url(#ar1)"/>
+                        <path d="M530,57 H602 V95" marker-end="url(#ar1)"/>
+                        <path d="M154,179 H188" marker-end="url(#ar1)"/>
+                        <path d="M342,179 H376" marker-end="url(#ar1)"/>
+                        <path d="M530,179 H602 V141" marker-end="url(#ar1)"/>
+                        <path d="M623,118 H668" marker-end="url(#ar1)"/>
+                      </g>
+                    </svg>
+                    <p class="diagram-cap">Complementary filter fusing accelerometer and gyroscope.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>PID, standing</h2>
+                    <p>
+                        PD on pitch alone, with the lean offset held at zero:
+                    </p>
+                    $$u = K_p\left(\hat{\theta} - \theta_{\text{ref}}\right) + K_d\,\dot{\hat{\theta}}, \qquad u \in [-1,\,1]$$
+                    <p>
+                        Holds vertical on flat ground. It never reads the wheel encoders, so it cannot resist drift, reject a push, or return to where it started.
+                    </p>
+                    <figure class="figure">
+                        <video muted loop playsinline controls preload="metadata">
+                            <source src="../images/projects/BalanceBot/pid_standing.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>Pitch-only PD holding vertical.</figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h2>PID, teleoperated</h2>
+                    <p>
+                        Tried driving the same pitch loop from the keyboard: a differential offset on the two motor commands for yaw, a pitch setpoint bias for forward and back but failed. Changing the yaw setpoint clips a motor and the robot goes over. Since I never passed position or velocity into the controller, so nothing in the controller could control that.
+                    </p>
+                    <figure class="figure">
+                        <video muted loop playsinline controls preload="metadata">
+                            <source src="../images/projects/BalanceBot/pid_keyboard_tipover.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>Changing the yaw setpoint clips one motor and the balance loop loses authority.</figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h2>Full-state LQR</h2>
+                    <p>
+                        Linearizing the planar Euler&ndash;Lagrange equations about vertical gives a four-state model that couples position to lean:
+                    </p>
+                    $$\mathbf{x} = \begin{bmatrix} p & \dot{p} & \theta & \dot{\theta}\end{bmatrix}^{\!\top}, \qquad \dot{\mathbf{x}} = A\mathbf{x} + Bu$$
+
+                    <div class="diagram">
+                    <svg viewBox="0 0 800 185" role="img" aria-label="Full-state feedback loop: reference, gain vector, plant, estimator, and the four-state feedback path">
+                      <defs>
+                        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                          <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-mute)"/>
+                        </marker>
+                      </defs>
+                      <g class="dg-box">
+                        <rect x="110" y="46" width="176" height="50" rx="6"/>
+                        <rect x="336" y="46" width="150" height="50" rx="6"/>
+                        <rect x="536" y="46" width="196" height="50" rx="6"/>
+                        <circle cx="66" cy="71" r="18"/>
+                      </g>
+                      <g class="dg-t">
+                        <text x="198" y="66">Optimal gain</text>
+                        <text x="411" y="66">Plant</text>
+                        <text x="634" y="66">Estimator</text>
+                        <text x="66"  y="77">+</text>
+                      </g>
+                      <g class="dg-s">
+                        <text x="198" y="84">u = &#8722;K x</text>
+                        <text x="411" y="84">MuJoCo</text>
+                        <text x="634" y="84">filter and encoders</text>
+                        <text x="26"  y="60">p*, v*</text>
+                        <text x="307" y="38">&#964;</text>
+                        <text x="400" y="148">x = [ p,  p&#775;,  &#952;&#770;,  &#952;&#775; ]</text>
+                      </g>
+                      <g class="dg-l">
+                        <path d="M6,71 H44"     marker-end="url(#ar2)"/>
+                        <path d="M84,71 H102"   marker-end="url(#ar2)"/>
+                        <path d="M286,71 H328"  marker-end="url(#ar2)"/>
+                        <path d="M486,71 H528"  marker-end="url(#ar2)"/>
+                        <path d="M732,71 H756 V162 H66 V93" marker-end="url(#ar2)"/>
+                      </g>
+                    </svg>
+                    <p class="diagram-cap">Full-state feedback. Position and velocity feed back alongside pitch.</p>
+                    </div>
+
+                    <div class="diagram">
+                    <svg viewBox="0 0 836 100" role="img" aria-label="Pipeline from the Euler-Lagrange model through linearization and discretization to the Riccati solution and the feedback gain">
+                      <defs>
+                        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                          <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-mute)"/>
+                        </marker>
+                      </defs>
+                      <g class="dg-box">
+                        <rect x="8"   y="30" width="144" height="52" rx="6"/>
+                        <rect x="177" y="30" width="144" height="52" rx="6"/>
+                        <rect x="346" y="30" width="144" height="52" rx="6"/>
+                        <rect x="515" y="30" width="144" height="52" rx="6"/>
+                        <rect x="684" y="30" width="144" height="52" rx="6"/>
+                      </g>
+                      <g class="dg-t">
+                        <text x="80"  y="52">Model</text>
+                        <text x="249" y="52">Linearize</text>
+                        <text x="418" y="52">Discretize</text>
+                        <text x="587" y="52">Solve DARE</text>
+                        <text x="756" y="52">Gain vector</text>
+                      </g>
+                      <g class="dg-s">
+                        <text x="80"  y="70">Euler&#8211;Lagrange</text>
+                        <text x="249" y="70">about vertical</text>
+                        <text x="418" y="70">ZOH at 200 Hz</text>
+                        <text x="587" y="70">given Q and R</text>
+                        <text x="756" y="70">four numbers</text>
+                      </g>
+                      <g class="dg-l">
+                        <path d="M152,56 H173" marker-end="url(#ar3)"/>
+                        <path d="M321,56 H342" marker-end="url(#ar3)"/>
+                        <path d="M490,56 H511" marker-end="url(#ar3)"/>
+                        <path d="M659,56 H680" marker-end="url(#ar3)"/>
+                      </g>
+                    </svg>
+                    <p class="diagram-cap">From the model to the gain vector.</p>
+                    </div>
+
+                    <p>
+                        Discretized at \(200\,\text{Hz}\), the gain is the one minimizing
+                    </p>
+                    $$J = \sum_{k=0}^{\infty} \left(\mathbf{x}_k^{\top} Q\, \mathbf{x}_k + u_k^{\top} R\, u_k\right)$$
+                    <p>
+                        That gives four gains, one per state. Each multiplies its own error and they sum into a single motor command, with the keyboard supplying the targets:
+                    </p>
+                    $$u = K_\theta\,\hat{\theta} + K_{\dot\theta}\,\dot{\theta} + K_v\left(v - v^{*}\right) + K_p\left(p - p^{*}\right)$$
+                    <figure class="figure">
+                        <video muted loop playsinline controls preload="metadata">
+                            <source src="../images/projects/BalanceBot/lqr_keyboard.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>Full-state LQR: translation, yaw, and position hold on release.</figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h2>Also tried</h2>
+                    <div class="stack">
+                        <div>
+                            <h3>Open-loop manual control</h3>
+                            <p>
+                                Arrow keys mapped straight to motor torque, no feedback of any kind. A baseline to confirm the pendulum cannot be caught by hand.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>Cascaded PID</h3>
+                            <p>
+                                An outer loop on encoder odometry producing a lean target clamped to \(\pm 3.5^\circ\), with an inner balance PD tracking it and closed-loop yaw steering alongside. Four coupled gains to tune by hand, and not yet working under teleoperation.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>Cascaded LQR</h3>
+                            <p>
+                                The same two loops, with the gains taken from the LQR solution instead of tuned. Factoring \(K_\theta\) out of the position terms turns one flat gain vector into an outer loop that can be clamped:
+                            </p>
+                            $$\theta_{\text{target}} = -\frac{K_p}{K_\theta}\,p \;-\; \frac{K_v}{K_\theta}\,\dot{p}$$
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Comparison</h2>
+                    <div class="table-wrap">
+                    <table class="kpi">
+                        <thead>
+                            <tr>
+                                <th>Controller</th>
+                                <th>States fed back</th>
+                                <th>Gains from</th>
+                                <th>Balances</th>
+                                <th>Drives</th>
+                                <th>Holds position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pitch PD</td>
+                                <td>\(\hat{\theta},\ \dot{\theta}\)</td>
+                                <td>Hand tuning</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>Pitch PD, teleoperated</td>
+                                <td>\(\hat{\theta},\ \dot{\theta}\)</td>
+                                <td>Hand tuning</td>
+                                <td>Until steered</td>
+                                <td>No</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>Full-state LQR</td>
+                                <td>\(p,\ \dot{p},\ \hat{\theta},\ \dot{\theta}\)</td>
+                                <td>Riccati solution, given \(Q\) and \(R\)</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <p>
+                        Both balance. Only the one with position in its state vector can be driven.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Built with</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MuJoCo</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Complementary Filter</span>
+                        <span class="tech-tag">PID Control</span>
+                        <span class="tech-tag">State-Space Modelling</span>
+                        <span class="tech-tag">LQR</span>
+                        <span class="tech-tag">Riccati / DARE</span>
+                    </div>
+                </section>
+
+                <nav class="pager"><a href="CobotPlanning.html">&larr; Cobot Trajectory Planning</a><a href="index.html">All projects</a><a href="RocketTeam.html">SBU Rocket Team for NASA SLI &rarr;</a></nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>    <!-- Footer -->
+    <footer>
+  <div class="wrap">
+    <nav class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="index.html">All Projects</a>
+      <a href="../resume.html">CV</a>
+      <a href="../message.html">Contact</a>
+    </nav>
+    <p class="copyright">&copy; 2026 Eric Xiao<span class="sep">&middot;</span><time class="last-updated" datetime="2026-09-09T00:00:00+00:00">Last updated September 2026</time></p>
+    <div class="footer-end">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/eric-xiaoy/">LinkedIn</a>
+        <a href="https://github.com/sixym3">GitHub</a>
+        <a href="mailto:ericxiao.me@gmail.com" class="copy-email" data-email="ericxiao.me@gmail.com" title="Click to copy">Email</a>
+        <a href="https://www.instagram.com/sixym3/">Instagram</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+    <!-- JavaScript -->
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>
