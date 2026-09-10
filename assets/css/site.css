@@ -337,6 +337,7 @@ h1 .eit{font-size:.9rem;font-weight:500;color:var(--ink-mute);letter-spacing:0;v
 
 /* Figures — the one place project pages carry weight */
 .figure{margin:0 0 var(--s-md)}
+.autoplay-in-view{background:var(--paper-tint)}
 .figure img,.figure video{
   display:block;width:100%;border:1px solid var(--rule);
   border-radius:8px;background:var(--paper-tint);

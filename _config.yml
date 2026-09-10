@@ -1,0 +1,11 @@
+# The site is plain HTML; Jekyll only copies it through. This file exists to
+# be explicit about what must NOT be published.
+#
+# _media holds the full-resolution originals that images/ is generated from.
+# Jekyll already skips underscore-prefixed folders, but publishing ~140 MB of
+# masters by accident is expensive enough to state outright.
+exclude:
+  - _media
+  - tools
+  - README.md
+  - LICENSE.txt

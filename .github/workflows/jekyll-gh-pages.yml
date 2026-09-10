@@ -1,39 +1,62 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+# Build and deploy the site to GitHub Pages.
+#
+# Media pipeline: originals live in _media/ and are never published. The
+# optimise step regenerates the web-ready copies in images/ from them, skipping
+# anything whose source has not changed, and commits the results back so the
+# repo always has everything needed to serve the site (and to preview it
+# locally without running the encoder).
+name: Deploy to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write      # the optimise step commits regenerated media back
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Stamp last-updated date and project pagers
-        # Bakes both into the HTML at deploy time, so a visitor's browser
+      # ffmpeg is not preinstalled on the runner; ImageMagick is, but apt
+      # pulls both in a few seconds, which beats building a container here.
+      # The pinned image in tools/Dockerfile is for local runs.
+      - name: Install ffmpeg and ImageMagick
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends ffmpeg imagemagick
+
+      - name: Generate web-ready media from _media/
+        id: media
+        run: python3 tools/optimize.py
+
+      - name: Commit regenerated media
+        run: |
+          if [ -z "$(git status --porcelain -- images tools/.media-manifest.json)" ]; then
+            echo "images/ already up to date"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images tools/.media-manifest.json
+          git commit -m "Regenerate web media from _media/ [skip ci]"
+          git push
+
+      - name: Stamp dates, pagers, project list and asset versions
+        # Bakes them into the HTML at deploy time, so a visitor's browser
         # fetches nothing to render a complete page and neither can fail at
         # view time. Run the same script locally with --check to preview.
-        run: python .github/scripts/build.py
+        run: python3 .github/scripts/build.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -45,7 +68,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
