@@ -310,12 +310,6 @@ h1 .eit{font-size:.9rem;font-weight:500;color:var(--ink-mute);letter-spacing:0;v
   text-align:right;white-space:nowrap;letter-spacing:.04em;text-transform:uppercase;
 }
 
-/* ---------- Skills ---------- */
-.skills{display:grid;gap:.7rem}
-.skills div{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;font-size:.91rem}
-.skills dt{font-weight:600;color:var(--ink)}
-.skills dd{color:var(--ink-soft)}
-
 /* ==========================================================================
    Project pages
    Same column, same rules, same labels as the homepage. No cards.
@@ -618,7 +612,7 @@ footer p{margin-bottom:.3rem;color:var(--ink-mute);font-size:.85rem}
   h1{font-size:1.75rem}
   .entry{grid-template-columns:1fr;gap:.85rem}
   .entry-thumb img,.entry-thumb video{aspect-ratio:16/9}
-  .news li,.xp-item,.skills div{grid-template-columns:1fr;gap:.15rem}
+  .news li,.xp-item{grid-template-columns:1fr;gap:.15rem}
   .mini li{grid-template-columns:1fr;gap:.2rem}
   .mini .mini-meta{text-align:left}
   .cols,.figure-grid{grid-template-columns:1fr}

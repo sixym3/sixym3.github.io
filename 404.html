@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found | Eric Xiao</title>
+<meta name="description" content="That page moved or does not exist.">
+<meta name="robots" content="noindex">
+<!-- Served by GitHub Pages for any missing path, at any depth, so every URL
+     in this file is site-absolute. A relative one would resolve against the
+     broken path the visitor typed. -->
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=9dee8310">
+<style>
+  .lost{text-align:center;padding:3.5rem 0 1rem;border-top:none}
+  .lost h1{margin-bottom:.6rem}
+  .lost .lede{margin:0 auto 1.6rem;max-width:46ch}
+  .lost .btn-group{justify-content:center}
+  .lost-code{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-mute);margin-bottom:1.25rem;
+  }
+  .robot{width:190px;height:auto;margin:0 auto 1.75rem;display:block}
+  .robot .shell{fill:var(--paper-tint);stroke:var(--ink);stroke-width:5}
+  .robot .screen{fill:var(--ink);stroke:none}
+  .robot .line{stroke:var(--ink);stroke-width:5;stroke-linecap:round;fill:none}
+  .robot .face{stroke:var(--paper);stroke-width:5;stroke-linecap:round;fill:none}
+  .robot .mouth{stroke-width:4}
+  .robot .bulb{fill:var(--link)}
+  /* The head tilts, the antenna light pulses. Small enough to read as a
+     shrug rather than an animation. */
+  .robot .head{animation:tilt 4s ease-in-out infinite;transform-origin:100px 78px}
+  .robot .bulb{animation:blink 2.2s ease-in-out infinite}
+  .robot .arm{animation:wave 4s ease-in-out infinite;transform-origin:56px 120px}
+  @keyframes tilt{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  @keyframes wave{0%,100%{transform:rotate(0)}50%{transform:rotate(-18deg)}}
+  @media (prefers-reduced-motion:reduce){
+    .robot .head,.robot .bulb,.robot .arm{animation:none}
+  }
+  @media (max-width:680px){.robot{width:150px}}
+</style>
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="/index.html" class="topnav-name">Eric Xiao</a>
+    <ul class="topnav-links">
+      <li><a href="/index.html#news">News</a></li>
+      <li><a href="/index.html#publications">Publications</a></li>
+      <li><a href="/index.html#research">Projects</a></li>
+      <li><a href="/index.html#experience">Experience</a></li>
+      <li><a href="/resume.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="page-head lost">
+    <svg class="robot" viewBox="0 0 200 200" role="img" aria-label="A small robot with x-shaped eyes and a wobbly frown">
+      <!-- antenna -->
+      <path class="line" d="M100 40 V22"/>
+      <circle class="bulb" cx="100" cy="17" r="7"/>
+
+      <g class="head">
+        <rect class="shell" x="52" y="40" width="96" height="76" rx="18"/>
+        <rect class="screen" x="68" y="58" width="64" height="40" rx="10"/>
+        <!-- x_x eyes: the robot has given up looking for the page -->
+        <path class="face" d="M81 71 l10 10 M91 71 l-10 10"/>
+        <path class="face" d="M109 71 l10 10 M119 71 l-10 10"/>
+        <!-- small wobbly mouth -->
+        <path class="face mouth" d="M88 90 q6 -5 12 0 q6 5 12 0"/>
+        <!-- ears -->
+        <rect class="shell" x="40" y="62" width="12" height="26" rx="6"/>
+        <rect class="shell" x="148" y="62" width="12" height="26" rx="6"/>
+      </g>
+
+      <!-- body -->
+      <rect class="shell" x="66" y="122" width="68" height="52" rx="14"/>
+      <path class="line" d="M86 148 h28"/>
+      <!-- arms: the left one waves -->
+      <path class="line arm" d="M66 132 L44 120"/>
+      <path class="line" d="M134 132 L156 144"/>
+      <!-- feet -->
+      <path class="line" d="M84 174 v10 M116 174 v10"/>
+    </svg>
+
+    <p class="lost-code">Error 404</p>
+    <h1>This page isn&rsquo;t here</h1>
+    <p class="lede">
+      Sorry &mdash; whatever you were after has either moved or never existed. My robot looked,
+      and my robot is usually thorough.
+    </p>
+    <div class="btn-group">
+      <a href="/index.html" class="btn btn-primary">Take me home</a>
+      <a href="/projects/index.html" class="btn">Browse all projects</a>
+    </div>
+  </header>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <nav class="footer-nav">
+      <a href="/index.html">Home</a>
+      <a href="/projects/index.html">All Projects</a>
+      <a href="/resume.html">CV</a>
+      <a href="/message.html">Contact</a>
+    </nav>
+    <p class="copyright">&copy; 2026 Eric Xiao<span class="sep">&middot;</span><time class="last-updated" datetime="2026-09-10T15:39:31+00:00">Last updated September 2026</time></p>
+    <div class="footer-end">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/eric-xiaoy/">LinkedIn</a>
+        <a href="https://github.com/sixym3">GitHub</a>
+        <a href="mailto:ericxiao.me@gmail.com" class="copy-email" data-email="ericxiao.me@gmail.com" title="Click to copy">Email</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=7df99bc4" defer></script>
+</body>
+</html>

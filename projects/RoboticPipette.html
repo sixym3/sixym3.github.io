@@ -45,7 +45,7 @@
                     </span>
                 </div>
                 <p class="section-subtitle">
-                    High-precision robotic liquid handling system achieving 5μL accuracy for scientific research applications - Developed Summer 2025 at Brookhaven National Laboratory
+                    Microcontroller-driven liquid handling for a UR5e, unified with the beamline&rsquo;s hardware drivers over RS485 - Developed Summer 2025 at Brookhaven National Laboratory
                 </p>
             </div>
 
@@ -63,7 +63,7 @@
                 <section>
                     <h2>Overview</h2>
                     <p>
-                        Industrial arms move precisely but cannot handle liquids. This end effector gives a UR5e microliter pipetting: two 3D-printed actuators driven over RS485, with a ROS2 driver on top. It hits 5&thinsp;&micro;L &plusmn;0.5&thinsp;&micro;L, takes standard laboratory pipettes, and mounts on the arm&rsquo;s existing tool exchanger. Built at NSLS-II so a robot could run liquid-handling steps inside an active beamline hutch.
+                        Industrial arms move precisely but cannot handle liquids. This end effector gives a UR5e microliter pipetting: two 3D-printed actuators driven by a microcontroller over RS485, exposed to ROS2 as a driver the motion stack can call. It takes standard laboratory pipettes and mounts on the arm&rsquo;s existing tool exchanger. Built at NSLS-II so a robot could run liquid-handling steps inside an active beamline hutch.
                     </p>
                 </section>
 
@@ -74,19 +74,19 @@
                         <div>
                             <h3>Dual actuators</h3>
                             <p>
-                                One actuator drives the plunger with position feedback, a second ejects the tip with a force limit. Stepper motors give repeatable travel, which is what the volume accuracy actually depends on.
+                                One actuator drives the plunger with position feedback, a second ejects the tip with a force limit. Stepper motors give repeatable travel, which is what dispensed volume actually depends on.
                             </p>
                         </div>
                         <div>
                             <h3>Quick-swap holder</h3>
                             <p>
-                                Pipettes change without stopping the workflow. The holder locks the tool during motion and repeats its alignment on re-seating, so accuracy survives a swap.
+                                Pipettes change without stopping the workflow. The holder locks the tool during motion and repeats its alignment on re-seating, so the pipette returns to the same pose after a swap.
                             </p>
                         </div>
                         <div>
                             <h3>Integration</h3>
                             <p>
-                                RS485 to the microcontroller, exposed to ROS2 as an end effector the motion stack can call. It shares the UR5e tool exchanger with the gripper and vacuum tools.
+                                RS485 carries commands to the microcontroller, wrapped in a ROS2 driver the motion stack calls like any other end effector. The beamline splits its robot control, detector, and experiment software across separate virtual machines, so the hard part was the networking: routing the serial link and the ROS2 graph between VMs to put the pipettor, gripper, and vacuum tools behind one driver interface. It shares the UR5e tool exchanger with the other two.
                             </p>
                         </div>
                     </div>
